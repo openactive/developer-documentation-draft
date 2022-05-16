@@ -10,12 +10,14 @@
 
 ## Required features guides
 
+* [Opportunity feeds](required-features-guides/opportunity-feeds/README.md)
+  * [Overview](required-features-guides/opportunity-feeds/overview.md)
+  * [Patterns](required-features-guides/opportunity-feeds/patterns.md)
 * [Simple booking](required-features-guides/simple-booking/README.md)
   * [Page 1](required-features-guides/simple-booking/page-1.md)
 
 ***
 
-* [Opportunity feeds](opportunity-feeds.md)
 * [Authentication](authentication.md)
 
 ## Optional features guides
@@ -25,6 +27,7 @@
 
 ## Reference
 
+* [Data model](reference/data-model.md)
 * [Booking flows](reference/booking-flows.md)
 * [Opportunity feeds](reference/opportunity-feeds.md)
 * [Authentication](reference/authentication.md)
