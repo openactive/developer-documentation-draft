@@ -14,7 +14,7 @@
   * [Overview](required-features-guides/opportunity-feeds/overview.md)
   * [Patterns](required-features-guides/opportunity-feeds/patterns.md)
 * [Simple booking](required-features-guides/simple-booking/README.md)
-  * [Page 1](required-features-guides/simple-booking/page-1.md)
+  * [API flow overview](required-features-guides/simple-booking/api-flow-overview.md)
 
 ***
 
