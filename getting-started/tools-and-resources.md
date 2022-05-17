@@ -2,12 +2,37 @@
 description: Ensure you've taken these steps before you get started with the guides
 ---
 
-# Testing
+# Tools and resources
 
-* Should mention the validator
-* Should mention the Postman
+## OpenActive Postman workspace
 
-Your going to want to start by setting up the test suite to test your implementation
+This + validator are the primary tools we will use to test our implementation as we build it
+
+Install postman instructions
+
+Link to workspace
+
+Test against the reference implementation
+
+Workspace configuration
+
+## OpenActive validator
+
+Link to website
+
+We can use this to validate Open Opportunity and Open Booking responses as we implement them
+
+How to use
+
+## OpenActive test suite
+
+Use this tool to validate your implementation once you think you have it working
+
+Can be configured to test the features your booking system implements
+
+For now just download and make sure it works by running it against the reference implementation
+
+### Instructions
 
 Visit [https://github.com/openactive/openactive-test-suite](https://github.com/openactive/openactive-test-suite)
 
@@ -45,7 +70,5 @@ Check http://localhost:4567/status for current harvesting status
 Downloading Dataset Site JSON-LD from "https://localhost:4000/openactive"...
 Error while extracting JSON-LD from datasetSiteUrl "https://localhost:4000/openactive"
 ```
-
-Link to postman test goes here
 
 We will move on to setting up your dataset site in our first guide.

@@ -4,19 +4,19 @@
 
 ## Getting started
 
-* [How to use this book](getting-started/how-to-use-this-book.md)
-* [OpenActive overview](getting-started/openactive-overview.md)
-* [Testing](getting-started/testing.md)
+* [How to use this book](getting-started/what-you-are-going-to-do.md)
+* [OpenActive overview](getting-started/what-this-is.md)
+* [Tools and resources](getting-started/tools-and-resources.md)
 
 ## Guides
 
-* [Authentication](authentication.md)
-* [Dataset site](guides/dataset-site.md)
-* [Open opportunity feeds ](required-features-guides/opportunity-feeds/README.md)
+* [Open Opportunity Feeds](required-features-guides/opportunity-feeds/README.md)
   * [Overview](required-features-guides/opportunity-feeds/overview.md)
   * [Patterns](required-features-guides/opportunity-feeds/patterns.md)
-* [Open booking API](required-features-guides/simple-booking/README.md)
+  * [Dataset site](guides/open-opportunity-feeds/dataset-site.md)
+* [Open Booking API](required-features-guides/simple-booking/README.md)
   * [API flow overview](required-features-guides/simple-booking/api-flow-overview.md)
+  * [Authentication](guides/open-booking-api/authentication.md)
 
 ## Reference
 
