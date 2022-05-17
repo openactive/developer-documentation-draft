@@ -1,17 +1,15 @@
 # Overview
 
-Introduction
+What we are going to achieve
 
-## Response format
+Example feed output
 
-* Example response
-* Top level fields
-* Item generic fields
-* Item data fields (OpenActive models)
+Outline of approach
 
-## Paging and ordering
-
-* RDPE ([https://openactive.io/realtime-paged-data-exchange/#core-concept](https://openactive.io/realtime-paged-data-exchange/#core-concept))
-* Updated and deleted states
-* Ordering
-
+* Consider which feeds your system will need (Planning)
+* Start with a single feed
+* Basic output
+* Valid feed
+* Valid output in all cases
+* Data quality
+* Repeat for other feeds

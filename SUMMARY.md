@@ -6,17 +6,23 @@
 
 * [How to use this book](getting-started/what-you-are-going-to-do.md)
 * [OpenActive overview](getting-started/what-this-is.md)
-* [Tools and resources](getting-started/tools-and-resources.md)
+* [Tools and resources](getting-started/how-to-test-your-implementation.md)
 
 ## Guides
 
 * [Open Opportunity Feeds](required-features-guides/opportunity-feeds/README.md)
   * [Overview](required-features-guides/opportunity-feeds/overview.md)
-  * [Patterns](required-features-guides/opportunity-feeds/patterns.md)
+  * [Planning](guides/open-opportunity-feeds/planning.md)
+  * [Adding feed endpoints](guides/open-opportunity-feeds/adding-feed-endpoints.md)
+  * [SessionSeries/ScheduledSession](guides/open-opportunity-feeds/sessionseries-scheduledsession.md)
+  * [FacilityUse/Slot](guides/open-opportunity-feeds/facilityuse-slot.md)
+  * [Paging / RDPE](guides/open-opportunity-feeds/paging-rdpe.md)
+  * [Identifying what additional information needs to be in your feed](guides/open-opportunity-feeds/identifying-what-additional-information-needs-to-be-in-your-feed.md)
+  * [Efficient database queries](guides/open-opportunity-feeds/efficient-database-queries.md)
   * [Dataset site](guides/open-opportunity-feeds/dataset-site.md)
 * [Open Booking API](required-features-guides/simple-booking/README.md)
   * [API flow overview](required-features-guides/simple-booking/api-flow-overview.md)
-  * [Authentication](guides/open-booking-api/authentication.md)
+  * [Authentication](authentication.md)
 
 ## Reference
 

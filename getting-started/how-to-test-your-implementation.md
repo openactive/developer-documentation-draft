@@ -4,6 +4,8 @@ description: Ensure you've taken these steps before you get started with the gui
 
 # Tools and resources
 
+## JSON viewer extensions
+
 ## OpenActive Postman workspace
 
 This + validator are the primary tools we will use to test our implementation as we build it
@@ -12,9 +14,12 @@ Install postman instructions
 
 Link to workspace
 
-Test against the reference implementation
+Postman tutorial, testing against the reference implementation
 
 Workspace configuration
+
+* Creating an environment
+* Setting the baseUrl
 
 ## OpenActive validator
 
@@ -22,7 +27,9 @@ Link to website
 
 We can use this to validate Open Opportunity and Open Booking responses as we implement them
 
-How to use
+Example how to use
+
+## The reference implementation
 
 ## OpenActive test suite
 
