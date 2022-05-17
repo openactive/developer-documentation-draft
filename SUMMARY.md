@@ -4,23 +4,23 @@
 
 ## Getting started
 
-* [What you are going to do](getting-started/what-you-are-going-to-do.md)
-* [What this is](getting-started/what-this-is.md)
-* [Getting started](getting-started/getting-started.md)
+* [How to use this book](getting-started/how-to-use-this-book.md)
+* [OpenActive overview](getting-started/openactive-overview.md)
+* [Testing](getting-started/testing.md)
 
 ## Guides
 
+* [Authentication](authentication.md)
 * [Dataset site](guides/dataset-site.md)
-* [Authentication](guides/authentication.md)
-* [Open opportunity feeds ](guides/open-opportunity-feeds/README.md)
-  * [Overview](guides/open-opportunity-feeds/overview.md)
-  * [Patterns](guides/open-opportunity-feeds/patterns.md)
-* [Open booking API](guides/open-booking-api/README.md)
-  * [API flow overview](guides/open-booking-api/api-flow-overview.md)
+* [Open opportunity feeds ](required-features-guides/opportunity-feeds/README.md)
+  * [Overview](required-features-guides/opportunity-feeds/overview.md)
+  * [Patterns](required-features-guides/opportunity-feeds/patterns.md)
+* [Open booking API](required-features-guides/simple-booking/README.md)
+  * [API flow overview](required-features-guides/simple-booking/api-flow-overview.md)
 
 ## Reference
 
 * [Data model](reference/data-model.md)
 * [Booking flows](reference/booking-flows.md)
-* [RDPE](reference/rdpe.md)
+* [RDPE](reference/opportunity-feeds.md)
 * [Authentication](reference/authentication.md)

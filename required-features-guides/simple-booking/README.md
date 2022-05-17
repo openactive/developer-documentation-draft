@@ -2,7 +2,7 @@
 description: The core flow for making a customer booking
 ---
 
-# Simple booking
+# Open booking API
 
 This guide will explain how to implement an Open Booking API so that a Customer can create an order in your booking system, using the simple booking flow.
 
