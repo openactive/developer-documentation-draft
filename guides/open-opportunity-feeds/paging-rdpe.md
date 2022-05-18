@@ -55,13 +55,15 @@ Prefer change number because it can avoid problems where updates are committed o
 
 Sidebar: how can I implement change number? (Some DBs have rowversion, if using a cache table you could auto increment)
 
+Say why you might use timestamp/id instead (it's sometimes easier)
+
 ## Making our feed an RDPE feed
 
 First your feed endpoint needs to accept afterTimestamp/afterId or afterChangeNumber parameters
 
 Then filter your query using these parameters
 
-An extension to our example SQL query&#x20;
+An extension to our example SQL query from earlier:
 
 ```
 SELECT ... JOIN ... WHERE ... LIMIT 500
@@ -75,6 +77,6 @@ You should have some output like this:
 
 And when you visit the "next" URL you should see the next page of results.
 
-Check that the last page of results works properly
+Check that the last page of results works properly (explain what "properly" means)
 
 Test your feed with the validator

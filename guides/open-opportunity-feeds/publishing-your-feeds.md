@@ -2,7 +2,13 @@
 description: How to create your dataset site
 ---
 
-# Dataset site
+# Publishing your feeds
+
+You should be ready to publish now.
+
+But how will people know where to find your data.
+
+## Dataset Site
 
 In the setup we ran the test suite - check your env variables are setup&#x20;
 
@@ -42,9 +48,11 @@ Re run your test and it should now pass
 
 `NODE_ENV=dev npm start -- --runInBand test/features/core/dataset-site/`
 
+## Checklist before publishing
 
+## Listing with OpenActive
 
-
+Blah
 
 
 

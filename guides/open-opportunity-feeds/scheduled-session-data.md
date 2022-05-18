@@ -1,2 +1,0 @@
-# SessionSeries/ScheduledSession
-
