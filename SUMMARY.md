@@ -24,8 +24,16 @@
   * [Feed performance](guides/open-opportunity-feeds/efficient-database-queries.md)
   * [Publishing your feeds](guides/open-opportunity-feeds/dataset-site.md)
 * [Open Booking API](required-features-guides/simple-booking/README.md)
-  * [API flow overview](required-features-guides/simple-booking/api-flow-overview.md)
-  * [Authentication](authentication.md)
+  * [Introduction](guides/open-booking-api/introduction.md)
+  * [API endpoints](guides/open-booking-api/api-endpoints.md)
+  * [Checkpoint 1](guides/open-booking-api/checkpoint-1.md)
+  * [Checkpoint 2](guides/open-booking-api/checkpoint-2.md)
+  * [Booking](guides/open-booking-api/booking.md)
+  * [Test suite](guides/open-booking-api/test-suite.md)
+  * [Handling abandonment, cancellation, and errors](guides/open-booking-api/handling-abandonment-cancellation-and-errors.md)
+  * [Authentication](guides/open-booking-api/authentication.md)
+  * [Retrieving orders](guides/open-booking-api/retrieving-orders.md)
+  * [Adding necessary features](guides/open-booking-api/adding-necessary-features.md)
 
 ## Reference
 
