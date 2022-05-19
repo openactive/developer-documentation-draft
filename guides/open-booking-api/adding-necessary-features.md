@@ -28,6 +28,8 @@ You can use the reference documentation listed above to implement additional fea
 
 ## Adding X to our feed
 
+_Payments might be a good guide example_
+
 We are going add X to our feed
 
 This is how it will change the output of C1/C2/B
