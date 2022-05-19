@@ -1,5 +1,7 @@
 # Your second feed
 
+NOTE: Need to talk about materializing scheduledSession
+
 The data in your scheduled session feed is a list of specific events that occur at a place and time. To make it easier navigate your booking system you can add a second feed that lists all the event series you have.
 
 Created another URL called localhost:3000/feeds/session-series and have it return a similar structure to your previous feed, with one item and no data.

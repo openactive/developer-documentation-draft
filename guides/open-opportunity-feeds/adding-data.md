@@ -1,5 +1,7 @@
 # Adding Data
 
+NOTE: This isn't necessarily how it will work, but stick with it for now
+
 [https://developer.openactive.io/data-model/types/scheduledsession](https://developer.openactive.io/data-model/types/scheduledsession)
 
 We are going to fill in the data for your scheduled session feed - let's rename the feed from event to scheduled session

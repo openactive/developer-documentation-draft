@@ -1,5 +1,7 @@
 # Validating your feed
 
+Mention ngrok and similar tools
+
 Now you have at least one valid feed set/group which conforms to the RDPE format we will do the following:
 
 * Double check the feed in the validator

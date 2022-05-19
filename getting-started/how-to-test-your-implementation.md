@@ -23,6 +23,8 @@ Workspace configuration
 
 ## OpenActive validator
 
+Make sure people know there is an RPDE tab and model tab
+
 Link to website
 
 We can use this to validate Open Opportunity and Open Booking responses as we implement them

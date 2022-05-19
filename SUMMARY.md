@@ -4,7 +4,7 @@
 
 ## Getting started
 
-* [How to use this book](getting-started/what-you-are-going-to-do.md)
+* [How to use the docs](getting-started/how-to-use-the-docs.md)
 * [OpenActive overview](getting-started/what-this-is.md)
 * [Tools and resources](getting-started/how-to-test-your-implementation.md)
 * [Estimating an OpenActive Implementation](getting-started/estimating-an-openactive-implementation.md)
@@ -16,11 +16,11 @@
   * [Starting your feed](guides/open-opportunity-feeds/adding-feed-endpoints.md)
   * [What data to use?](guides/open-opportunity-feeds/what-data-to-use.md)
   * [Adding Data](guides/open-opportunity-feeds/adding-data.md)
-  * [Your second feed](guides/open-opportunity-feeds/your-second-feed.md)
   * [Adding the rest of your data](guides/open-opportunity-feeds/paging-rdpe.md)
   * [Deleting items](guides/open-opportunity-feeds/deleting-items.md)
   * [RPDE tips and pitfalls](guides/open-opportunity-feeds/rpde-tips-and-pitfalls.md)
   * [Validating your feed](guides/open-opportunity-feeds/validating-your-feed.md)
+  * [Your second feed](guides/open-opportunity-feeds/your-second-feed.md)
   * [Identifying what additional information needs to be in your feed](guides/open-opportunity-feeds/identifying-what-additional-information-needs-to-be-in-your-feed.md)
   * [Feed performance](guides/open-opportunity-feeds/efficient-database-queries.md)
   * [Publishing your feeds](guides/open-opportunity-feeds/dataset-site.md)
