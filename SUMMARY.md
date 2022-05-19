@@ -41,6 +41,3 @@
 ## Reference
 
 * [Data model](reference/data-model.md)
-* [Booking flows](reference/booking-flows.md)
-* [RDPE](reference/opportunity-feeds.md)
-* [Authentication](reference/authentication.md)
