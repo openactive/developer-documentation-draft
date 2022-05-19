@@ -39,11 +39,13 @@ Here is what your response will eventually look like:
 
 RESPONSE
 
-Expand fields
+Explain fields
+
+Now do make it return response - postman - blah
 
 Lease field - Should this be persisted?&#x20;
 
-* This can be stateless but if your system operates a lease system and it makes sense for you to put the lease here, you will need to set a lease on the opportunity and return
+* You should persist the orderquote has happened, but it doesn't need to affect your main booking system, unless you use leases
 
 Error handling - user error
 
