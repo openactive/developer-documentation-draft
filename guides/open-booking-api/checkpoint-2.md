@@ -22,9 +22,7 @@ Explain additional fields
 
 NOTE: User data must not be persisted beyond lease
 
-Lease field - Should this be persisted?&#x20;
-
-* This can be stateless but if your system operates a lease system and it makes sense for you to put the lease here, you will need to set a lease on the opportunity and return
+Explain that you can do the lease here if you want - as mentioned previously
 
 Error handling - user error
 

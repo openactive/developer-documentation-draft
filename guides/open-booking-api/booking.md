@@ -8,7 +8,7 @@ Here's what a request will look like:
 
 REQUEST
 
-As you can see it is very similar to C2
+As you can see it is very similar to C2 OrderQuote
 
 Explain any differences
 

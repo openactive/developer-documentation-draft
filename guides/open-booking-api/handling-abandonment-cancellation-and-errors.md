@@ -38,8 +38,6 @@ Could be that something goes wrong with order
 
 Broker will call `PATCH /order/{uuid}`
 
-Add endpoint
-
 Check input (error returns)
 
 Leave a stub `deleted` record remaining for that UUID
