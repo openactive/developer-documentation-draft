@@ -29,11 +29,13 @@
   * [Checkpoint 1](guides/open-booking-api/checkpoint-1.md)
   * [Checkpoint 2](guides/open-booking-api/checkpoint-2.md)
   * [Booking](guides/open-booking-api/booking.md)
+  * [What about payment?](guides/open-booking-api/what-about-payment.md)
   * [Test suite](guides/open-booking-api/test-suite.md)
   * [Handling abandonment, cancellation, and errors](guides/open-booking-api/handling-abandonment-cancellation-and-errors.md)
   * [Authentication](guides/open-booking-api/authentication.md)
   * [Retrieving orders](guides/open-booking-api/retrieving-orders.md)
   * [Adding necessary features](guides/open-booking-api/adding-necessary-features.md)
+  * [Going live](guides/open-booking-api/going-live.md)
 
 ## Reference
 
