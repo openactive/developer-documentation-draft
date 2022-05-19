@@ -7,6 +7,7 @@
 * [How to use this book](getting-started/what-you-are-going-to-do.md)
 * [OpenActive overview](getting-started/what-this-is.md)
 * [Tools and resources](getting-started/how-to-test-your-implementation.md)
+* [Estimating an OpenActive Implementation](getting-started/estimating-an-openactive-implementation.md)
 
 ## Guides
 
@@ -26,6 +27,7 @@
 * [Open Booking API](required-features-guides/simple-booking/README.md)
   * [Introduction](guides/open-booking-api/introduction.md)
   * [API endpoints](guides/open-booking-api/api-endpoints.md)
+  * [Database structure](guides/open-booking-api/database-structure.md)
   * [Checkpoint 1](guides/open-booking-api/checkpoint-1.md)
   * [Checkpoint 2](guides/open-booking-api/checkpoint-2.md)
   * [Booking](guides/open-booking-api/booking.md)

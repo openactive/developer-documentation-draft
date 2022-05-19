@@ -45,6 +45,15 @@ These steps indicate the flow of information required to make a booking but they
 
 The endpoints will deal with all situations in the journey, abandonment, cancellation, errors as well as exposing orders that have been completed.
 
+## Booking System Architecture
+
+Following this guide it is useful to ascertain which of the following architectures your booking system conforms to:
+
+* **Single Seller**: The booking system either supports a single Seller by design (e.g. an agency build for a specific organisation), or the booking system is designed to have a database provisioned for each customer (e.g. larger leisure management solutions deployed on-premise or cloud hosted).
+* **Multiple Sellers**: The booking system is multi-tenancy within the same database, so for example multiple Sellers are able to log in and manage sessions and facilities within the same underlying database (e.g. a booking system targeting at a large number of small/medium size activity providers).
+
+This will be useful when following the instructions in the guide.
+
 ## Approach
 
 This guide will take you through the implementation of the Open Booking API for your booking system. Each stage will take the following approach:
