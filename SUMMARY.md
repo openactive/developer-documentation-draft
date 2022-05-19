@@ -4,7 +4,7 @@
 
 ## Getting started
 
-* [How to use the docs](getting-started/how-to-use-the-docs.md)
+* [How to use the docs](getting-started/what-you-are-going-to-do.md)
 * [OpenActive overview](getting-started/what-this-is.md)
 * [Tools and resources](getting-started/how-to-test-your-implementation.md)
 * [Estimating an OpenActive Implementation](getting-started/estimating-an-openactive-implementation.md)
@@ -43,3 +43,5 @@
 ## Reference
 
 * [Data model](reference/data-model.md)
+* [Feed features](reference/feed-features.md)
+* [Booking API features](reference/booking-api-features.md)
