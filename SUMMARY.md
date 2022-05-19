@@ -30,6 +30,7 @@
   * [Checkpoint 2](guides/open-booking-api/checkpoint-2.md)
   * [Booking](guides/open-booking-api/booking.md)
   * [What about payment?](guides/open-booking-api/what-about-payment.md)
+  * [Approval booking flow](guides/open-booking-api/approval-booking-flow.md)
   * [Test suite](guides/open-booking-api/test-suite.md)
   * [Handling abandonment, cancellation, and errors](guides/open-booking-api/handling-abandonment-cancellation-and-errors.md)
   * [Authentication](guides/open-booking-api/authentication.md)
@@ -43,7 +44,3 @@
 * [Booking flows](reference/booking-flows.md)
 * [RDPE](reference/opportunity-feeds.md)
 * [Authentication](reference/authentication.md)
-
-## Parked
-
-* [Planning](guides/open-opportunity-feeds/planning.md)
