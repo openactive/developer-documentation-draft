@@ -6,7 +6,7 @@ description: What data you could add, and how to add it.
 
 The items that make up your feed are made up of data. There are five categories of data that you will be using in your feeds.
 
-### Classes and recurring sessions
+### Recurring sessions
 
 A event series made up of individual sessions. For example "Thursday night boxing" is a series of events, made up of instances of that event "Boxing on Thursday 19th May 2022".
 
