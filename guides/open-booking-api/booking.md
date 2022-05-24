@@ -306,8 +306,6 @@ If for some reason the booking cannot logically be completed you because there i
 
 As in C1 and C2 you should ensure that booking endpoint B can respond to connectivity issues with a 500 error.
 
-??? If there are issues with other properties of the `OrderQuote` outside of `orderedItem`, the [Booking System](https://openactive.io/open-booking-api/EditorsDraft/1.0CR3/#dfn-booking-system) _must_ respond with a JSON-LD response which includes only the appropriate `OpenBookingError` and the appropriate status code. ???
-
 <details>
 
 <summary>Example 500 error</summary>
@@ -326,5 +324,5 @@ As in C1 and C2 you should ensure that booking endpoint B can respond to connect
 
 ### Up next
 
-Now you have created main end points for the API it's time consider payment&#x20;
+Now you have created the 'happy path' end points for the API it's time consider payment&#x20;
 

@@ -7,7 +7,7 @@ Now you have completed checkpoint one (C1), it's time to move on to checkpoint 2
 Start by creating an endpoint `{baseUri}/order-quotes/{uuid}`
 
 {% hint style="info" %}
-C1 and C2 are very similar endpoints. Most of the logic in your booking system can probably be shared.
+C1 and C2 are very similar endpoints.  lot of the logic in your booking system is probably able to be shared
 {% endhint %}
 
 Here is an example of a C2 request that will be made to this endpoint.
@@ -68,8 +68,6 @@ Here is an example of a C2 request that will be made to this endpoint.
 ```
 
 </details>
-
-??? highlight differences in request ???
 
 ??? postman link to check endpoint functions ???
 
@@ -471,8 +469,6 @@ Issues with the orderItem's themselves can be responded to in the same way as in
 ??? Postman here for error ???
 
 Issues outside of the orderItem's for example a connectivity error should be responded to with a 500 error.&#x20;
-
-??? If there are issues with other properties of the `OrderQuote` outside of `orderedItem`, the [Booking System](https://openactive.io/open-booking-api/EditorsDraft/1.0CR3/#dfn-booking-system) _must_ respond with a JSON-LD response which includes only the appropriate `OpenBookingError` and the appropriate status code. ???
 
 <details>
 
