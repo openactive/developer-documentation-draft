@@ -342,7 +342,7 @@ Since the only request made to this endpoint is a rejection of an orderProposal 
 
 ### Error handling
 
-If the request made is not rejection of an orderProposal you should return the following error:&#x20;
+If the request made is not a rejection of an orderProposal you should return the following error:&#x20;
 
 <details>
 
@@ -362,4 +362,4 @@ If the request made is not rejection of an orderProposal you should return the f
 
 ## Up next
 
-Now you've worked through the approval booking flow, you will have created all the possible endpoints for the happy path - it's not time to utilise the testsuite to check your implementation.&#x20;
+Now you've worked through the approval booking flow, it's not time to utilise the testsuite to check your implementation.&#x20;
