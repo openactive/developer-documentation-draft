@@ -77,6 +77,8 @@ Here's what a request will look like
 
 </details>
 
+??? Postman link to checkend point can be hit ???
+
 ??? Explain breakdown of fields of request ???
 
 ### Response
@@ -300,6 +302,8 @@ If for some reason the booking cannot logically be completed you because there i
 
 </details>
 
+??? postman link here for error ???
+
 As in C1 and C2 you should ensure that booking endpoint B can respond to connectivity issues with a 500 error.
 
 <details>
@@ -315,6 +319,8 @@ As in C1 and C2 you should ensure that booking endpoint B can respond to connect
 ```
 
 </details>
+
+??? postman link here for error ???
 
 ### Up next
 

@@ -69,11 +69,11 @@ Here is an example of a C2 request that will be made to this endpoint.
 
 </details>
 
-As before, use this postman link ??? to check the validity of this request.
+??? postman link to check endpoint functions ???
 
 ### Response
 
-Here's what your response will look like
+Here is an example of what your response will look like:
 
 <details>
 
@@ -259,6 +259,10 @@ Here's what your response will look like
 </details>
 
 This response contains the same fields as in C1 except in addition it confirms the customer details.
+
+??? explain fields ???
+
+??? postman link to check valid response created ???
 
 {% hint style="info" %}
 A lease can be created or extended in this response
@@ -462,6 +466,8 @@ Issues with the orderItem's themselves can be responded to in the same way as in
 
 </details>
 
+??? Postman here for error ???
+
 Issues outside of the orderItem's for example a connectivity error should be responded to with a 500 error.&#x20;
 
 <details>
@@ -478,7 +484,7 @@ Issues outside of the orderItem's for example a connectivity error should be res
 
 </details>
 
-??? Postman here for both errors ???
+??? Postman link here for error ???
 
 ### Up next
 
