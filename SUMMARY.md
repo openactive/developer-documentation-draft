@@ -45,3 +45,4 @@
 * [Data model](reference/data-model.md)
 * [Feed features](reference/feed-features.md)
 * [Booking API features](reference/booking-api-features.md)
+* [Implementing the test interface](reference/implementing-the-test-interface.md)
