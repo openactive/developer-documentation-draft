@@ -26,13 +26,13 @@ Ensure that an error is returned if a request is made using this endpoint to a U
 
 ## Order cancellation
 
-Once an order has been completed the customer may with to cancel it, you should create this endpoint to enable that.
+Once an order has been completed the customer may wish to cancel it, you should create this endpoint to enable that.
 
 ### Request
 
 Ensure this route is present in your booking system `/order/{uuid}`
 
-This endpoint will recieve a PATCH request, as shown in this example:&#x20;
+This endpoint will receive a PATCH request, as shown in this example:&#x20;
 
 <details>
 
@@ -62,23 +62,89 @@ Any orderItem omitted from the cancellation request must be ignored.
 
 ### Response
 
-You should cancel the bookings for the orderItems in the request, and you should return a 204, even if the item has already been cancelled (the&#x20;
+You should cancel the bookings for the orderItems in the request, and you should return a empty response with a 204 status, even if the item has already been cancelled.
 
-Return 204
+??? Postman link for valid response ???
 
-NOTE: Idempotent, always return same
+### Error handling
 
-After delete C1/C2/B against UUID should return error
+If the request being made to this endpoint does not align with the rules in your booking system you should return a 400 error stating that the cancellation is not permitted, as shown in this example:&#x20;
+
+<details>
+
+<summary>Example error</summary>
+
+```
+{
+  "@context": "https://openactive.io/",
+  "@type": "CancellationNotPermittedError",
+  "description": "The horse has already been fed, and cannot be put back in the box."
+}
+```
+
+</details>
+
+??? Postman link for valid error response ???
+
+The `orderItemStatus` can only be a customer cancellation, any other status should return a 400 error to say the property is not allowed for the PATCH request.
+
+<details>
+
+<summary>Example error</summary>
+
+```
+{
+  "@context": "https://openactive.io/",
+  "@type": "PatchNotAllowedOnProperty",
+  "description": "Only 'https://openactive.io/CustomerCancelled' is permitted for this property."
+}
+```
+
+</details>
+
+??? Postman link for valid error response ???
 
 ## Deleting an order
 
-Could be that something goes wrong with order
+If something goes wrong with the entire booking flow, either because of a fatal error or perhaps during testing this end point can be used.
 
-Broker will call `PATCH /order/{uuid}`
+### Request
 
-Check input (error returns)
+Ensure this route is present in your booking system `/order/{uuid}`
 
-Leave a stub `deleted` record remaining for that UUID
+An empty DELETE request will be made by the broker to this endpoint, at which point the order should be hard deleted within your system, with only a stub of the order remaining containing the UUID. Alternatively, you may want to soft delete the order and purge all personal data from it.
 
-Return 204
+If the order is present in the orders feed (??? LINK), a topic we will come on to shortly, it must be marked as deleted.&#x20;
+
+This request should only be used by the broker in cases of a fatal error or when testing, it is not meant for cancelling an order.
+
+### Response
+
+The response should be empty with a 204 status when a order is succesfully deleted in your system following the request.
+
+### Error Handling
+
+If the order is not recognised a 404 error should be returned, as shown in this example:&#x20;
+
+<details>
+
+<summary>Example error</summary>
+
+```
+{
+  "@context": "https://openactive.io/",
+  "@type": "NotFoundError",
+  "description": "This Order does not exist."
+}
+```
+
+</details>
+
+{% hint style="info" %}
+C1, C2, P, B endpoints should return `OrderAlreadyExistsError` in response to a request that includeds the UUID of a soft deleted, or hard deleted and stubbed UUID order.
+{% endhint %}
+
+## Up next
+
+??? Auth linking sentence ???
 
