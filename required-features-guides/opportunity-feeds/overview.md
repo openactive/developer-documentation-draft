@@ -4,13 +4,13 @@ Your booking system likely contains information about different types of activit
 
 An Open Opportunity Feed is a way to distribute that information in a organised, logical and standardised way.&#x20;
 
-This feed can be viewed by anyone - and used to display availability in your system and facilitate bookings (we will come on to _that later)._&#x20;
+This feed can be viewed by anyone - and will be used by a broker to display availability in your system and facilitate bookings made by customers (we will come on to _that later ??? LINK ???)._&#x20;
 
 There are different types of feeds that you can create and you should consider which bests suits your booking system as you go through this guide.
 
 A feed is made up of pages of JSON objects that are accessed via a HTTP request made to your application.
 
-In this guide we will walk you through making an opportunity feed - this is what one looks like.&#x20;
+In this guide we will walk you through making an opportunity feed, here is an example of what one looks like.&#x20;
 
 <details>
 

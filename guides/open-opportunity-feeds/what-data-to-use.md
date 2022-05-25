@@ -4,9 +4,9 @@ description: What data you could add, and how to add it.
 
 # What data to use?
 
-The items that make up your feed are made up of data. There are five categories of data that you will be using in your feeds.
+The items that make up your feed are made up of data. Below is an outline of the types of data that you may want to use in your feeds.
 
-### Recurring sessions
+### Recurring classes and sessions
 
 A event series made up of individual sessions. For example "Thursday night boxing" is a series of events, made up of instances of that event "Boxing on Thursday 19th May 2022".
 
@@ -16,15 +16,19 @@ A facility that can be used in slots. For example a facility with a particular u
 
 ### AdHoc Event
 
-A course that is made up of events. For example a course could be "Strength and Conditioning" and an event could be "Strength training part 1".
+This would be an one off event such as a "Yoga launch party".
 
-### Headline event and Event
+### Headline event
 
-Explain
+This would be a whole day or multi-day event such as a music festival, perhaps with smaller events within the whole such as different stages at a music festival.
 
-### Event series and Event
+### &#x20;Courses
 
-Explain
+This would represent a fixed length course made up of a description of the whole course "1 month strength training course", and individual instances of the course "1 month strength training course, starting 2nd May 2022". &#x20;
+
+{% hint style="info" %}
+You will have noticed that in some of these examples there are two types of data, the overall event description and a single instance of that event - this is implemented with a split feed approach (i.e. 2 feeds linked by @id)
+{% endhint %}
 
 ### Mapping your data
 
@@ -32,5 +36,5 @@ An open opportunity feed contains data about `Event` objects which are structure
 
 You will have data in your booking system that does not line up exactly with one of the above categories, you should think about which category best aligns with your system.&#x20;
 
-For now we will implement the Series and Sessions category - starting with a `ScheduledSession` feed.&#x20;
+For now we will look at the recurring classes and sessions implementation. The split feed approach involves implementing two feeds, the`SessionSeries`and `ScheduledSession` feed. We will start by implementing the `ScheduledSession` .
 

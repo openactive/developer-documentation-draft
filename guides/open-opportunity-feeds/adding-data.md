@@ -1,14 +1,24 @@
+---
+description: Creating your first feed containing data
+---
+
 # Adding Data
 
-NOTE: This isn't necessarily how it will work, but stick with it for now
+We are going to fill in the data within an item in a `ScheduledSession` feed. Start by changing your events endpoint you've created `{baseUri}/events` to `{baseUri}/scheduled-session`
 
-[https://developer.openactive.io/data-model/types/scheduledsession](https://developer.openactive.io/data-model/types/scheduledsession)
+{% hint style="info" %}
+This guide is taking you step-by-step through building a endpoint - it's not how you'll build every feed, but helps you grasp the concepts within the feeds.
+{% endhint %}
 
-We are going to fill in the data for your scheduled session feed - let's rename the feed from event to scheduled session
+??? postman link for change to scheduled-session ???
+
+### Example feed
+
+Next you will be adding populating the `"data"` field so that it returns as shown in this example:&#x20;
 
 ```
 {
-  "next": "localhost:3000/feeds/scheduled-session",
+  "next": "{baseUri}/scheduled-session",
   "items": [
     {
       "state": "updated",
@@ -31,38 +41,45 @@ We are going to fill in the data for your scheduled session feed - let's rename 
 }  
 ```
 
-Required properties
+Let's go through each of the fields in the data object of this item so you can get an understanding of the data being shared in this feed.
 
-@type must be present and set to "ScheduledSession"
+### Key properties
 
-@id is a unique URI based identifier for the record and used for compatability with JSON-LD, this does not need to be a actual end point but is helpful namespacing&#x20;
+`@context` provides a globally unique identifier that provides definitions for the remainder of the fields in this context. For example using `"https://openactive.io/"` defines the property `"startDate"` of the type `"Event"` . You should use this URL for your data objects as it will provide a JSON-LD representation of the object. You can learn more about this here. (LINK ???)&#x20;
 
-startDate is the start date and time of this event
+`@type` must be present and set to `"ScheduledSession"`
 
-@context - discuss JSON-LD Linked Data this enables others to know the definitions of the terms in this data [https://www.youtube.com/watch?v=vioCbTo3C-4](https://www.youtube.com/watch?v=vioCbTo3C-4)&#x20;
+`@id` is a unique URI based identifier for the record and used for compatability with JSON-LD, this does not need to be a actual end point but is helpful name-spacing. The `@id` field is used to link between split feeds which we will come to later on.&#x20;
 
-Recommended properties
+`startDate` is the start date and time of this event
 
-endDate
+### Recommended properties
 
-eventStatus
+`endDate` is the end date and time of this event
 
-leader
+`eventStatus` it the status of an event. It can be used to indicate rescheduled or cancelled events.
 
-maximumAttendeeCapacity
+`leader` refers to a person who will be leading an event e.g. a coach. This is a more specific role than an organiser or a contributor. The person will need to have given their consent for their personal information to be present in the Open Data.
 
-offers
+`maximumAttendeeCapacity`is the maximum capacity of the event.
 
-remainingAttendeeCapactiy
+`offers` is an array that includes the price of attending the event.
 
-url
+`remainingAttendeeCapactiy` is the number of places that are still available for the event.
 
-SuperEvent????
+`url` is the web page that describes the event.
 
-Example mapping exercise
+`superEvent` ???
 
-* You should have tables that you can join to be able to fill these fields for examples you may want to join an activity table and slots table.
-* You would need to do a query like this:
+`duration` ???
+
+{% hint style="info" %}
+Ensure empty objects, arrays, strings or nulls are removed from items
+{% endhint %}
+
+### Example mapping exercise
+
+You should have tables that you can join to be able to fill these fields for example you may want to join an activity table and slots table. You would need to do a query like this:
 
 ```
 SELECT ... JOIN ... LIMIT 10
@@ -70,10 +87,22 @@ SELECT ... JOIN ... LIMIT 10
 
 It might not be easy or even possible to do it in one query, don't worry about being performant or elegant, just get the right data out.
 
-Mention that there are libraries for Ruby, .NET, PHP, JS to help.
+### Libraries
 
-Note - ensure Empty objects/arrays/strings and nulls should be removed from items
+You may find it helpful to investigate some of the OpenActive libraries at this point, they have been made to make it easy to create open opportunity data feeds.
 
-Hit postman link to see if built correctly
+| Language              | Open Opportunity Data Feeds                                                  |   |
+| --------------------- | ---------------------------------------------------------------------------- | - |
+| .NET                  | [OpenActive.NET](https://www.nuget.org/packages/OpenActive.NET/)             |   |
+| PHP                   | [openactive/models](https://packagist.org/packages/openactive/models)        |   |
+| Ruby                  | [openactive](https://rubygems.org/gems/openactive)                           |   |
+| JavaScript/TypeScript | @openactive/[models-ts](https://www.npmjs.com/package/@openactive/models-ts) |   |
+|                       |                                                                              |   |
 
-Now we will move on to repeat this exercise for the superEvent SessionSeries
+### Validate
+
+Check the response that you've created is functioning correctly and contains the correct fields ??? post man link ???
+
+### Up next
+
+Now you've setup your ScheduledSession with one item with data, it's time to look at adding more items to your feed.
