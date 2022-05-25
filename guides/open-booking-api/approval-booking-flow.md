@@ -4,7 +4,15 @@ description: Two optional endpoints that enable sellers to approve or reject boo
 
 # Approval booking flow
 
+{% hint style="info" %}
+The Approval Booking Flow endpoints are not required and many booking system use the Simple Booking Flow. You need to decide which flow makes sense for your booking system.
+{% endhint %}
+
 We've previously discussed the approval booking flow (??? LINK) and how it enables Sellers using your booking system to approve or reject bookings, now it's time to actually create the endpoints required.
+
+??? Probably need more explanation and discussion of why you would use this
+
+??? Need to include the necessary changes to C1/C2
 
 ## Order Proposal (P)
 
@@ -342,7 +350,7 @@ Since the only request made to this endpoint is a rejection of an orderProposal 
 
 ### Error handling
 
-If the request made is not rejection of an orderProposal you should return the following error:&#x20;
+If the request made is not a rejection of an orderProposal you should return the following error:&#x20;
 
 <details>
 
@@ -362,4 +370,4 @@ If the request made is not rejection of an orderProposal you should return the f
 
 ## Up next
 
-Now you've worked through the approval booking flow, you will have created all the possible endpoints for the happy path - it's not time to utilise the testsuite to check your implementation.&#x20;
+Now you've worked through the approval booking flow, it's not time to utilise the testsuite to check your implementation.&#x20;

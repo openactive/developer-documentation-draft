@@ -4,11 +4,17 @@ description: >-
   used in the requests and responses and how they map to your database.
 ---
 
-# Database structure
+# Open Booking API data model
 
 
 
 ![Schema to support Open Booking API](<../../.gitbook/assets/image (1).png>)
+
+??? Change this to be more discursive of how an implementer might need to change their DB structure.
+
+??? Keep the description of the Open Booking API data model, but put in context of mapping or changing your existing schema.
+
+??? Mention data model libraries and how to use them.
 
 #### Order
 

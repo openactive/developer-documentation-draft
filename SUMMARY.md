@@ -27,7 +27,7 @@
 * [Open Booking API](required-features-guides/simple-booking/README.md)
   * [Introduction](guides/open-booking-api/introduction.md)
   * [API endpoints](guides/open-booking-api/api-endpoints.md)
-  * [Database structure](guides/open-booking-api/database-structure.md)
+  * [Open Booking API data model](guides/open-booking-api/open-booking-api-data-model.md)
   * [Checkpoint 1 (C1)](guides/open-booking-api/checkpoint-1.md)
   * [Checkpoint 2 (C2)](guides/open-booking-api/checkpoint-2.md)
   * [Booking (B)](guides/open-booking-api/booking.md)

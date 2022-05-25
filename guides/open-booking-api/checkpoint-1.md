@@ -8,7 +8,7 @@ Now you have an understanding of how the booking flow works, and have understood
 
 ### Endpoint URL
 
-Firstly you should create a `baseUri` to form a namespace for your implementation of the API (e.g. `/openactive/api`)
+Firstly you should decide on the `baseUri` to form a namespace for your implementation of the API (e.g. `/openactive/api`)
 
 {% hint style="info" %}
 Set your`DatasetSiteUrl`in your dataset site template to this `baseUri`. It will be the homepage for your Open Booking API, making it easy to discover.
@@ -91,7 +91,7 @@ Here's a breakdown of the key fields in this request:
 * orderItem is an array of items that make up the OrderQuote
   * Each orderItem has an @id which is unique URI (that does not need to be an actual working link but a unique identifier) and a @type which corresponds to the type of orderItem (??? link to item types ???)
 
-Write the logic to check the request is well-formed - table of what should be checked
+??? check whether request is valid ???
 
 ### Response
 
@@ -477,6 +477,8 @@ If the items being ordered can no longer be ordered, for example if all the avai
 ??? Postman link here for error ???
 
 If for some reason there is an error outside of the orderQuote you should respond with a 500 error. Here's an example:&#x20;
+
+??? If there are issues with other properties of the `OrderQuote` outside of `orderedItem`, the [Booking System](https://openactive.io/open-booking-api/EditorsDraft/1.0CR3/#dfn-booking-system) _must_ respond with a JSON-LD response which includes only the appropriate `OpenBookingError` and the appropriate status code ???
 
 <details>
 
