@@ -1,14 +1,10 @@
 # Adding necessary features
 
-We have a minimal booking system that passes the core tests of the open active test suite. However it is probably missing features of your booking system.&#x20;
+We have a minimal booking system that passes the core tests of the open active test suite. However it is probably missing features of your booking system. The Open Booking API standard has been developed in partnership with several large and small booking systems, and therefore likely has the additional features your system needs.
 
-Open Active booking API likely has the features your system needs.
-
-Here is a list of the most common features:
+Here are the most common features:
 
 * **Broker Roles** - Relationship between the Broker and Seller
-* **Approval Flow** - Allow bookings to be approved by the Seller before they are confirmed
-* **Authentication** - Securing the connection to the Open Booking API (for multiple seller systems this requires OpenID Connect Authentication Flow, otherwise API keys or OpenID Connect Client Credential Flow may be used)
 * **Payment & Free Bookings** - Accepting payment and/or handling free bookings
 * **Prepayment** - Permitting bookings where payment is accepted upon arrival
 * **Booking Restrictions** - Restrictions on the circumstances in which bookings can be made
@@ -20,25 +16,29 @@ Here is a list of the most common features:
 * **Notifications** - Notifications of changes to a confirmed booking
 * **Terms -** Displaying terms and policies
 
-As an example, your system might do X, in which case&#x20;
+## Planning
 
-You can see the whole list here: LINK TO FEATURES
+First identify which features are part of your existing booking system, then split them in to three categories:
 
-Split them in to three categories:
+1. Features required for your booking system to work at all
+2. Features required to give Open Booking users a good experience of your system
+3. Features that enhance booking through your system, but are not essential
 
-* Features required for your booking system to work at all
-* Features required to give Open Booking users a good experience of your system
-* Features that enhance booking through your system, but are not essential
+Obviously you must implement all features from (1) before you can make your API publicly available. We also strongly recommend implementing all features from (2) before going live, particularly if you have a multiple seller system, to avoid customers booking through your API from having a lesser experience.
 
-Identify how these map on to the Open Booking API features.
+## Implementing features
 
-If you are having trouble, ask on slack
+Most features simply require exposing more fields in your API responses, though some are more involved. The OpenActive test suite has tests for most features, and we will go over how to configure for your booking system's feature-set below.
 
-We will go through adding a single feature
+Reference documentation for all features can be found here (LINK).
 
-You can use the reference documentation listed above to implement additional features
+We will go through adding one of the most common features, payment and free bookings, and the steps will be similar for adding most other features.&#x20;
 
-## Adding X to our feed
+{% hint style="info" %}
+Remember, if you have problems you can get help on the OpenActive slack (LINK)
+{% endhint %}
+
+## Adding payment and free bookings
 
 _Payments might be a good guide example_
 

@@ -5,7 +5,7 @@ description: Two optional endpoints that enable sellers to approve or reject boo
 # Approval booking flow
 
 {% hint style="info" %}
-The Approval Booking Flow endpoints are not required and many booking system use the Simple Booking Flow. You need to decide which flow makes sense for your booking system.
+The Approval Booking Flow endpoints are not required and many booking system use the Simple Booking Flow. Decide which flow makes sense for your booking system and skip this section if you do not need the approval endpoints.
 {% endhint %}
 
 We've previously discussed the approval booking flow (??? LINK) and how it enables Sellers using your booking system to approve or reject bookings, now it's time to actually create the endpoints required.
