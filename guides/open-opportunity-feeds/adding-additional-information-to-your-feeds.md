@@ -4,8 +4,16 @@ You're OpenActive feed needs to give the same information for booking as your bo
 
 In order to compare your system with the required, recommended and optional properties of each of the feeds you should use the references that we have provided for each type.
 
-??? It might also be that you realise you need to add some fields when you make your Booking API, so keep that in mind
+Here are the categories of feeds discussed earlier (LINK ???) and the objects that make them up.
 
-??? List of common fields that are added
+Recurring classes and sessions - feeds scheduledsession and sessionseries
 
-??? Link to reference material
+Facility and slots - feeds facillityUse, individualfacilityuse
+
+AdHoc - Event and EventSeries
+
+Headline - Headline Event and Event
+
+Course - Course instance
+
+All of the different types of objects used in the OpenActive eco-system can be found in the references here (??? LINK)
