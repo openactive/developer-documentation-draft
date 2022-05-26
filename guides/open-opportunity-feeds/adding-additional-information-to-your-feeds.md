@@ -9,3 +9,5 @@ In order to compare your system with the required, recommended and optional prop
 ??? List of common fields that are added
 
 ??? Link to reference material
+
+??? Go through this step by step for a single feature (e.g. tax)
