@@ -1,10 +1,13 @@
 # RPDE tips and pitfalls
 
-If you've been following the guide while you implement you're RDPE feed you will have seen these pitfalls mentioned, but to reiterate, there are three pitfalls that you want to avoid when implementing your RDPE feed.
+* Misreading/misunderstanding the ordering
+* Items must not be removed from the feed
+* Race conditions on updates affecting timestamps
+  * First commit the transaction, then update the timestamps or change numbers after the transaction has been committed as an atomic operation, outside of a transaction, using `GETDATE()` or similar
+  * Ensure the RPDE endpoint filters out all items with a "modified" date after 2 seconds in the past, to delay items appearing in the feed
+  * If using the [Modified Timestamp and ID](https://www.w3.org/2017/08/realtime-paged-data-exchange/#modified-timestamp-and-id) ordering strategy, use a timestamp column with a high degree of accuracy (e.g. `datetime2` in SQL Server).
 
-* Misreading or misunderstanding the ordering. The ordering is key for the RDPE to function in an accurate an performant way for data consumers. (??? LINK BACK)
-* Items must not be removed from the feed. Data consumers need to know when an item has been deleted, so it's state should be changed to "deleted" but not actually removed from the feed (??? LINK BACK)
-* Race conditions can cause a data consumer to temporarily fall out of sync, as you make concurrent updates to your feed you need to ensure that transactions are carried out so that your feed is never presented in the incorrect order. (??? LINK BACK)
+
 
 #### 6.1 Common implementation issues <a href="#common-implementation-issues" id="common-implementation-issues"></a>
 

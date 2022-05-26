@@ -6,8 +6,6 @@ description: >-
 
 # What about payment?
 
-??? Might need to be higher up ???
-
 Due to the variety of business models available in the OpenActive ecosystem, conformance to this guide requires that the Payment Provider be distinct from your Booking System. You **may** separately expose your own native payment functionality as if it were a payment provider however its use **must** be optional.
 
 Although the details of payments and refunds are not in the scope of this guide, a single `Payment` object is included in the `Order` in the `payment` property to ensure payments are fully traceable in case of audit.
