@@ -20,5 +20,5 @@ These items do not have to be in your feed forever, they should, however remain 
 Remember:  empty objects/arrays/strings and nulls should be removed from items
 {% endhint %}
 
-
+Now you've understood how deleting items in your feed, let's move on to checking that the feed you've created avoids the common implementation pitfalls.&#x20;
 

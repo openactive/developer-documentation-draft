@@ -107,7 +107,7 @@ In the same way as before run a query to return the data that would be appropria
 
 </details>
 
-Outlined below are the key properties and recommended properties for this feed, these can be found also in the references (??? LINK)
+Outlined below are the key properties and recommended properties for this feed, these can be found also in the references (??? LINK)Se
 
 ### Key properties
 
