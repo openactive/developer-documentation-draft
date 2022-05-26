@@ -35,24 +35,112 @@ Reference documentation for all features can be found here (LINK).
 We will go through adding one of the most common features, payment and free bookings, and the steps will be similar for adding most other features.&#x20;
 
 {% hint style="info" %}
-Remember, if you have problems you can get help on the OpenActive slack (LINK)
+Remember, if you have problems you can get help on the [OpenActive slack](https://openactive.io/public-chat/).
 {% endhint %}
 
-## Adding payment and free bookings
+## Adding payment fields
 
-_Payments might be a good guide example_
+Most booking systems will require payment for some or all of their opportunities. Typically the broker will take this payment from the customer and later reconcile with the seller. As mentioned previously the details of how this will work for your system are not part of the Open Booking API standard, but the broker is still required to send some details of the payment with the order request for the seller's records.&#x20;
 
-We are going add X to our feed
+You will need to save this payment information as part of endpoint **Order Creation B**.&#x20;
 
-This is how it will change the output of C1/C2/B
+### Testing and finding the relevant documentation
 
-RESPONSE
+When implementing a feature the most reliable guide to whether you have implemented the feature correctly will be the test suite.&#x20;
 
-Brokers can use this to Y
+To turn on the payment feature in the test suite set the integrationTests -> implementedFeatures -> prepayment-required field in the test suite configuration to true. Now run the tests and you should see failing tests related to making orders with payment required.
 
-Using the test suite
+{% hint style="info" %}
+For these tests to work in "random" mode your feeds must include some bookable opportunities that have an `Offer` with a non-zero price.
+{% endhint %}
 
-Loop through adding the feature/test until all tests are satisfied
+An `Order` with payment looks like this:
 
+<details>
 
+<summary>Example Order with payment</summary>
+
+```
+{
+  "@context": "https://openactive.io/",
+  "@type": "Order",
+  "brokerRole": "https://openactive.io/AgentBroker",
+  "broker": {
+    "@type": "Organization",
+    "name": "MyFitnessApp",
+    "url": "https://myfitnessapp.example.com",
+    "description": "A fitness app for all the community",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://data.myfitnessapp.org.uk/images/logo.png"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Alan Peacock Way",
+      "addressLocality": "Village East",
+      "addressRegion": "Middlesbrough",
+      "postalCode": "TS4 3AE",
+      "addressCountry": "GB"
+    }
+  },
+  "seller": {
+    "@type": "Organization",
+    "@id": "https://example.com/api/organisations/123"
+  },
+  "customer": {
+    "@type": "Person",
+    "email": "geoffcapes@example.com",
+    "telephone": "020 811 8055",
+    "givenName": "Geoff",
+    "familyName": "Capes"
+  },
+  "orderedItem": [
+    {
+      "@type": "OrderItem",
+      "position": 0,
+      "acceptedOffer": {
+        "@type": "Offer",
+        "@id": "https://example.com/events/452#/offers/878"
+      },
+      "orderedItem": {
+        "@type": "ScheduledSession",
+        "@id": "https://example.com/events/452/subEvents/132"
+      }
+    }
+  ],
+  "totalPaymentDue": {
+    "@type": "PriceSpecification",
+    "price": 5,
+    "priceCurrency": "GBP"
+  },
+  "payment": {
+    "@type": "Payment",
+    "name": "AcmeBroker Points",
+    "identifier": "1234567890npduy2f"
+  }
+} 
+```
+
+</details>
+
+Details for all fields can be found in the data model reference (LINK), or the relevant section of the [Open Booking API specification](https://openactive.io/open-booking-api/EditorsDraft/1.0CR3/#oa-payment).
+
+The broker will send payment information as part of endpoint B, so you will need to change that endpoint to do the following:
+
+* Make sure your endpoint accepts the `payment` field on the `Order` as valid.
+* Save the payment information with your model.
+* Return the `payment` field in your `Order` response.
+* Depending on how you have chosen to reconcile payments with brokers, you might need to use this payment information in your booking system's administration interface.
+
+You should be able to follow a similar process for adding other features of your booking system.
+
+1. Find the relevant feature in the test suite configuration and turn it on.
+2. Run the tests and see what tests have failed.
+3. Use the data model reference and Open Booking API specification to figure out what fields need to be added to which endpoints.
+4. Plan execute any code changes that need to be made to your booking system.
+5. Iterate through 2-4 until the tests pass and you are confident the feature is working as expected.
+
+## Up next
+
+You are almost there! Next we will go through what you need to think about before making your API publicly available, in particular some additional features that multiple seller systems should add for the sellers to manage how the data is used in the API.
 

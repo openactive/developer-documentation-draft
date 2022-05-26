@@ -21,7 +21,7 @@
   * [RPDE tips and pitfalls](guides/open-opportunity-feeds/rpde-tips-and-pitfalls.md)
   * [Validating your feed](guides/open-opportunity-feeds/validating-your-feed.md)
   * [Your second feed](guides/open-opportunity-feeds/your-second-feed.md)
-  * [Adding additional information to your feeds](guides/open-opportunity-feeds/adding-additional-information-to-your-feeds.md)
+  * [Adding additional information to your feeds](guides/open-opportunity-feeds/identifying-what-additional-information-needs-to-be-in-your-feed.md)
   * [Feed performance](guides/open-opportunity-feeds/efficient-database-queries.md)
   * [Publishing your feeds](guides/open-opportunity-feeds/dataset-site.md)
 * [Open Booking API](required-features-guides/simple-booking/README.md)
