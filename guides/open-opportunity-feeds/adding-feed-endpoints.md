@@ -6,7 +6,7 @@ description: Creating a generic URL which returns a JSON object
 
 In order to create an opportunity feed you need to create a URL where your feed can be accessed via a HTTP request.
 
-To strat you may wish to use a baseUri called `feeds` to make it clear which group these endpoints are part. Create your first endpoint`{baseUri}/events` (you can change this name later on) that returns successfully.&#x20;
+To start you may wish to use a baseUri called `feeds` to make it clear which group these endpoints are part. Create your first endpoint`{baseUri}/events` (you can change this name later on) that returns successfully.&#x20;
 
 ## Top level fields
 

@@ -1,18 +1,24 @@
 # Deleting items
 
-Now we are publishing all our items, but what if we want to delete an item
+Now we are publishing all our items, but naturally you will delete records from your database, but this should not result in your deleting items in your feed.
 
-Why not just remove it from the feed? Returning feed consumers will not know the item is gone and it will stay in their database forever.
+The reason for this is that returning feed consumers will not know the item is gone and it will stay in their database forever.
 
-Solution: soft deletes
+The best solution for this is to implement soft deletes in your database. When deleting a record you should add a `deleted` boolean or better still use a `deleted_at` timestamp.&#x20;
 
-Instead of removing items from your DB, add a `deleted` boolean or (preferred) `deleted_at` timestamp.
+_??? Include options for soft deletes in various ORMs ???_
 
-_Include options for soft deletes in various ORMs etc._
+{% hint style="info" %}
+If you are concerned that your database or feed is too big, don't worry. We'll explain how to handle this later.
+{% endhint %}
 
-Sidebar: what if my DB and/or feed would be too big? We'll explain how to handle this later.
+Now your items can be soft deleted, make your feed as before but for items that are "deleted" set the state to "deleted" and remove the "data" field.&#x20;
 
-Now your items can be soft deleted, make your feed as before but for items that are "deleted" set the state to "deleted" and remove the "data" field
+These items do not have to be in your feed forever, they should, however remain in your feed for at least 7 days so all data consumers can remain in-sync.
 
-Remember: empty objects/arrays/strings and nulls should be removed from items
+{% hint style="info" %}
+Remember:  empty objects/arrays/strings and nulls should be removed from items
+{% endhint %}
+
+
 

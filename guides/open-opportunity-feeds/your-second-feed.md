@@ -1,10 +1,14 @@
 # Your second feed
 
-NOTE: Need to talk about materializing scheduledSession
+??? Need to talk about materializing scheduledSession ???
 
-The data in your scheduled session feed is a list of specific events that occur at a place and time. To make it easier navigate your booking system you can add a second feed that lists all the event series you have.
+The data in your scheduled session feed is a list of specific events that occur at a place and time. So that data consumers can easily navigate your booking system we are going to add a second feed that lists all the event series you have.&#x20;
 
-Created another URL called localhost:3000/feeds/session-series and have it return a similar structure to your previous feed, with one item and no data.
+{% hint style="info" %}
+Reminder: There are other [types of data](what-data-to-use.md) that may be more suited to your system.
+{% endhint %}
+
+As before this feed will be made up of JSON objects, and will have the same top level structure. To get started will start by returning three top level fields from your `{baseUri}/session-series`
 
 ```
 {
@@ -21,9 +25,13 @@ Created another URL called localhost:3000/feeds/session-series and have it retur
 }  
 ```
 
-Postman link for session series feed
+??? Postman link for session series feed ???
 
-Your now ready to add some data
+In the same way as before run a query to return the data that would be appropriate for the `SessionSeries`
+
+<details>
+
+<summary>Example feed</summary>
 
 ```
 {
@@ -97,38 +105,47 @@ Your now ready to add some data
       
 ```
 
-@context&#x20;
+</details>
 
-@type&#x20;
+Outlined below are the key properties and recommended properties for this feed, these can be found also in the references (??? LINK)
 
-@id&#x20;
+### Key properties
 
-name
+`@context` provides a globally unique identifier that provides definitions for the remainder of the fields in this context. For example using `"https://openactive.io/"` defines the property `"name"` of the type `"Event"` . You should use this URL for your data objects as it will provide a JSON-LD representation of the object. You can learn more about this here. (LINK ???)&#x20;
 
-activity
+`@type` must be present and set to `"SessionSeries"`
 
-location
+`@id` is a unique URI based identifier for the record and used for compatability with JSON-LD, this does not need to be a actual end point but is helpful name-spacing.
 
-offers
+`name` is for the name of the event
 
-organizer
+`activity` specifies the physical activity or activities that will take place during an event, as an array of the event's properties.
 
-url
+`location` is the location at which the event will take place. Or, in the case of events that may span multiple locations, the initial meeting or starting point. Locations must be specified as a Place complete with a fully described geographic location and/or address.
 
-recommended
+`offers` is an array of Offer objects that include the price of attending.
 
-ageRange
+`organizer` it the person or organization ultimately responsible for an event. An organizer might be an Organization or a Person.
 
-description
+`url` is a web page (or section of a page) that describes the event.
 
-genderRestriction
+### Recommended properties
 
-image
+`ageRange` gives an indication that an event is recommended as being suitable for or is targeted at a specific age range.
 
-leader
+`description` gives a plain text description of the event, which must not include HTML or other markup.
 
-level
+`genderRestriction` indicates that an event is restricted to male, female or a mixed audience. This information must be displayed prominently to the user before booking. If a gender restriction isn't specified then applications should assume that an event is suitable for a mixed audience.
 
-[https://developer.openactive.io/data-model/types/sessionseries](https://developer.openactive.io/data-model/types/sessionseries)
+`image` is an image or photo that depicts the event, e.g. a photo taken at a previous event.
 
-There are other types of feeds that you can create - they are outlined here - but for now we will move onto adding the rest of your data
+`leader` refers to a Person who will be leading an event e.g. a coach. This is a more specific role than an organiser or a contributor. The Person will need to have given their consent for their personal information to be present in the Open Data.
+
+`level` is a general purpose property for specifying the suitability of an event for different participant “levels”. E.g. `Beginner`, `Intermediate`, `Advanced`. Or in the case of martial arts, specific belt requirements.
+
+### Validation
+
+Once you are happy that you have created the required fields for your feed as well as any recommended or optional fields you should run the validation steps outlined here.&#x20;
+
+
+
