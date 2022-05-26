@@ -40,19 +40,35 @@ The test suite runs a mock broker service on port 3000. If you already have some
 
 The test suite uses the `NODE_ENV` environment variable to choose which config file to use, here we have told it to use the `dev.json` file you just created. The `core` option tells the test suite to run just the core API and feeds tests.
 
-You should get the following error:
+You should see the following error in the output:
 
-??? authentication error goes here
+```
+  ***************************************************************************
+  |                   OpenID Connect Authentication Error!                  |
+  |                                                                         |
+  | NOTE: Due to OpenID Connect Authentication failure, tests unrelated to  |
+  | authentication will not run and open data harvesting will be skipped.   |
+  | Please use the 'authentication' tests to debug authentication,          |
+  | in order to allow other tests to run.                                   |
+  |                                                                         |
+  ***************************************************************************
+```
 
 {% hint style="info" %}
-If you get a different error you may have not set up your dataset site or feeds correctly. The error shown should give you a hint at how to fix it. If you get stuck you can get help on the OpenActive Slack (??? link to slack).
+If you get a different error you may have not set up your dataset site or feeds correctly. The error shown should give you a hint at how to fix it. If you get stuck you can get help on the [OpenActive Slack](https://openactive.io/public-chat/).
 {% endhint %}
 
 This is because the test suite expects your API to use [OpenID authentication](authentication.md), which we have not implemented yet. This is not essential to test the basic functionality of your API, so for now we will add fake authentication.
 
 ## Adding fake authentication
 
-??? Guide on adding fake authentication
+We will use the [OpenActive reference implementation](https://reference-implementation.openactive.io/OpenActive) authentication server to trick the test suite in to thinking we have implemented authentication. Change the accessService -> authenticationAuthority field in your dataset site's embedded JSON-LD schema to this URL:
+
+```
+https://auth.reference-implementation.openactive.io/
+```
+
+The default credentials in your `dev.json` configuration will work with the reference authentication server. Your endpoints do not actually have authentication enabled so this should be enough for the tests to run.
 
 ## Running the test suite (again)
 
@@ -62,9 +78,22 @@ Run the test suite again.
 NODE_ENV=dev npm start -- core
 ```
 
-This time the test suite will start harvesting your feeds, and after a minute or two (depending on the size of your feeds) it will start to run the tests.
+This time the test suite will start harvesting your feeds, and after a minute or two (depending on the size of your feeds) it will start to run the tests. The final output should look something like this:
 
-??? Example test output
+```
+Ran 2516 tests in 11.776s
+✅ 1228 passing
+❌ 1288 failing
+
+Pausing broker microservice...
+Harvesting paused
+
+When data feeds are stable or when using 'controlled' mode, tests can be rerun
+quickly without reharvesting. However, for 'random' mode, if data feeds have
+been updated without the RPDE 'modified' property being updated (e.g. when
+implementing the RPDE feed itself), please exit the test suite and rerun it,
+in order to harvest the latest data.
+```
 
 Some of the tests should pass, however many of them will fail. The default configuration for the test suite tests some features that you have not implemented yet, and possibly some that you may not need to implement for your booking system.&#x20;
 
@@ -255,9 +284,9 @@ The section we are interested in is `integrationTests` . Change the following pa
 
 * `bookableOpportunityTypesInScope` By default `ScheduledSession` and `FacilityUseSlot` are set to true. This means the test suite will only run tests that are relevant to those opportunity types. Configure this so that opportunity types that currently work with your API are set to `true` and all the rest are set to `false`.
 * `bookingFlowsInScope` By default both simple and approval booking flows are tested. If you have not implemented the approval booking flow, set `OpenBookingApprovalFlow` to `false` .
-* `implementedFeatures` ??? Can we just delete all of them to turn them off? [https://github.com/openactive/openactive-test-suite/blob/master/packages/openactive-integration-tests/test/features/README.md](https://github.com/openactive/openactive-test-suite/blob/master/packages/openactive-integration-tests/test/features/README.md)
+* `implementedFeatures` This is where you will eventually configure the test suite to enable the specific features your booking system implements. For now set all fields that are currently set to `true` to false, except for `dataset-site` , `opportunity-feed`, and `multiple-sellers`, `named-leasing`, or `anonymous-leasing` if applicable.
 
-Now run the test suite again and all the tests run should pass. If any have failed go back and fix your implementation so that they pass.
+Now run the test suite again and fewer test will run, and more of them should pass. If any have failed go back and fix your implementation so that they pass.
 
 ## Random and Controlled mode
 
