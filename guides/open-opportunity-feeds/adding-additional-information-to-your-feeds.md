@@ -4,6 +4,8 @@ You're OpenActive feed needs to give the same information for booking as your bo
 
 In order to compare your system with the required, recommended and optional properties of each of the feeds you should use the references that we have provided for each type.
 
+??? It might also be that you realise you need to add some fields when you make your Booking API, so keep that in mind
+
 ??? List of common fields that are added
 
 ??? Link to reference material
