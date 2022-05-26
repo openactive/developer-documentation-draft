@@ -39,7 +39,7 @@ This system has some clear advantages, that are:
 
 ## Important properties of RDPE
 
-As we've already mentioned it's important to have a good understanding of how RDPE feeds work, below are some properties of these feeds that can go overlooked: &#x20;
+Below is a list of the important properties of RDPE feeds that when understood will help complete your implementation: &#x20;
 
 * The feed must be a continuous list of records that are sorted deterministically (i.e the sort will return the same result each time it is applied) and chronologically (i.e. in the order they were updated). The ordering could be applied in two ways:
   1. First by modified timestamp, and second by ID&#x20;
@@ -64,19 +64,30 @@ An RDPE feed **is not** a stream of updates - items only appear once, and when u
 
 There are 2 valid ordering strategies as mentioned earlier in the list of important properties of RDPE feeds.
 
-Explain timestamp/id vs changeNumber
+You can either sort the items in your list by there timestamp and then by id, or you can sort by there change number. These will both ensure that updated items in the list will move to the bottom of the list.&#x20;
 
-Prefer change number because it can avoid problems where updates are committed out of order
+{% hint style="info" %}
+Change number is provided by some databases as an accurate internal timestamp that is automatically converted to a integer that is incremented. Some databases have a "row version" which you could apply your own increments to.&#x20;
+{% endhint %}
 
-Sidebar: how can I implement change number? (Some DBs have rowversion, if using a cache table you could auto increment)
+It's important to be aware of the concept of "race conditions" when updating your feed. When updating your feed you may start multiple database transactions at the same time. This could lead to the list being incorrectly sorted for a short time, as a data consumer may be accessing the list whilst these updates are occurring.&#x20;
 
-Say why you might use timestamp/id instead (it's sometimes easier)
+In order to avoid this you should:
+
+* First commit the transaction that updates the item itself, then update the timestamps or change numbers after the transaction has been committed, outside of a transaction, using `GETDATE()` or similar.
+* Ensure the RPDE endpoint filters out all items with a "modified" date after 2 seconds in the past, to delay items appearing in the feed.
+* If using the the timestamp and id ordering strategy, use a timestamp column with a high degree of accuracy (e.g. `datetime2` in SQL Server
+
+??? Seems like both change number and timestamp/id can have race condition issues - is there any benefit of one over the other ???
 
 ## Making our feed an RDPE feed
 
-First your feed endpoint needs to accept afterTimestamp/afterId or afterChangeNumber parameters
+First your feed endpoint needs to accept these parameters depending on the sorting strategy you've chosen:
 
-Then filter your query using these parameters
+* `afterTimestamp` and `afterId`&#x20;
+* `afterChangeNumber`&#x20;
+
+You should use these parameters to filter your query so that your feed end point returns the data in the correct order.
 
 An extension to our example SQL query from earlier:
 
@@ -86,9 +97,12 @@ SELECT ... JOIN ... WHERE ... LIMIT 500
 
 This might be slow if you need to join several tables. For now watch out for n+1 queries and/or reduce the `LIMIT` or make quick in some other way but don't worry if it is a little slow, we will come back to performance optimization and architecture later.
 
-Change the "next" field you return with the feed URL for the next page. ie either with params `afterTimestamp={modified timestamp of last item returned}&afterId={id of last item returned}` or `afterChangeNumber={modified timestamp of last item returned}` .
+You should also update the "next" field you return. Each page is defined by the last items ordering fields from the previous page. So this would make the "next" page field URL either of these two:
 
-You should have some output like this:
+* `{baseUri}/scheduled-sessions?afterTimestamp={modified timestamp of last item returned}&afterId={id of last item returned}`&#x20;
+* &#x20;`{baseUri}/sceduled-sessions?afterChangeNumber={modified timestamp of last item returned}`
+
+This should leave you with an output that matches this example here:
 
 <details>
 
@@ -124,8 +138,11 @@ You should have some output like this:
 
 </details>
 
-And when you visit the "next" URL you should see the next page of results.
+If you have implemented this correctly you should be able to visit the "next" URL and see the next page of your feed.
 
-Check that the last page of results works properly (explain what "properly" means)
+You should check that the last page in your feed is functioning correctly, it should have the following two properties so that the data consumer knows they have reached the end of the feed.
 
-Test your feed with the validator
+* The items property is an empty array.
+* The next property matches the URL of the current page.
+
+??? Test your feed with the validator ???
