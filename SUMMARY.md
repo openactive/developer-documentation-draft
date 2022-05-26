@@ -43,5 +43,5 @@
 ## Reference
 
 * [Data model](reference/data-model.md)
-* [OpenActive Features](reference/openactive-features.md)
+* [OpenActive Features](reference/feed-features.md)
 * [Implementing the test interface](reference/implementing-the-test-interface.md)
