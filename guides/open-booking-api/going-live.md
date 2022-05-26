@@ -73,7 +73,3 @@ You should provide an interface that allows sellers to see how their data will b
 #### Reporting
 
 Sellers should be able to see information on bookings that have been made through he API. This could be a simple list of bookings made through the API with relevant metadata like broker, activity, etc. You may also want to provide useful aggregate metrics such as bookings-per-broker or similar.
-
-## Making your API discoverable
-
-??? Do they need to add something to their dataset site?
