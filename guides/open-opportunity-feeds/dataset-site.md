@@ -48,8 +48,6 @@ Re run your test and it should now pass
 
 `NODE_ENV=dev npm start -- --runInBand test/features/core/dataset-site/`
 
-## Checklist before publishing
-
 ## Listing with OpenActive
 
 [https://developer.openactive.io/publishing-data/dataset-sites#step-6-adding-your-dataset-site-or-data-catalog-to-the-openactive-data-catalog-collection](https://developer.openactive.io/publishing-data/dataset-sites#step-6-adding-your-dataset-site-or-data-catalog-to-the-openactive-data-catalog-collection)
