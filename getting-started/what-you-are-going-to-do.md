@@ -1,6 +1,6 @@
 # How to use the docs
 
-This documentation is here to help you become part of the OpenActive eco-system by enabling your booking system to open it's data to applications, and allow those applications to make bookings.
+This documentation is here to help you become part of the OpenActive eco-system by enabling you to open the data in your booking system to other applications, and to enable those other applications to make bookings.
 
 There are three main areas of this documentation&#x20;
 
@@ -20,4 +20,4 @@ You'll see hints, tips, reminders along the way to help you with your implementa
 You may also see some alerts to draw your attention to important information
 {% endhint %}
 
-??? mention postman and test suite or not ???
+Throughout the guides you will also see links to different tools that will help you test your implementation, such as a validator, test-suite or postman link. For now let's look at what OpenActive actually is, so you have a firm understanding of the context you'll be operating in. &#x20;

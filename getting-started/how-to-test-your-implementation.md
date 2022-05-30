@@ -4,13 +4,94 @@ description: Ensure you've taken these steps before you get started with the gui
 
 # Tools and resources
 
+## Reference implementation
+
+This is an important resource for your implementation. It is an example of how once implemented correctly an Open Opportunity Feed will appear to users. We will be mentioning it throughout the guides and using it in various examples. If you'd like to get familiar with it now you can [view it here](https://reference-implementation.openactive.io/OpenActive).
+
 ## JSON viewer extensions
+
+You will be sharing your booking system data via what is called an Open Opportunity Feed. This is a feed of JSON objects - and it can be very helpful to use a browser extension that makes the JSON easy to read such as [JSON viewer](https://github.com/tulios/json-viewer). This will help you also when examining the reference implementation.&#x20;
+
+## OpenActive validator
+
+As you work through the implementation you will want to check that the Open Opportunity feeds and Open Booking API responses are returning correctly. For this you can use the [OpenActive validator](https://validator.openactive.io/rpde). Don't worry if you don't understand all the terminology at this point, it will be introduced both guides.
+
+### RPDE validation
+
+The [RPDE ](https://validator.openactive.io/rpde)validator is for testing a Open Opportunity Feed URL, particularly that the pages are formatted and operating correctly.
+
+For example you can copy and paste the reference implementation URL below into the validation input bar, click validate and you will see the validator tests run, and results appear.
+
+[`https://reference-implementation.openactive.io/feeds/scheduled-sessions`](https://reference-implementation.openactive.io/feeds/scheduled-sessions)``
+
+### Model validation
+
+The [Model](https://validator.openactive.io/) validator is for testing JSON produced by your Open Booking API and Open Opportunity feed implementation.
+
+For example you can take the code block below and copy it into the text editor on the left hand side of the validator.&#x20;
+
+You can select from the "MODE" drop down menu OrderQuote Creation C1 Request and then click validate. If you add and remove sections of the request or format the request incorrectly the validation with an error message that will suggest corrections to your request.&#x20;
+
+<details>
+
+<summary>Example OrderQuote C1 request</summary>
+
+```
+{
+  "@context": "https://openactive.io/",
+  "@type": "OrderQuote",
+  "brokerRole": "https://openactive.io/AgentBroker",
+  "broker": {
+    "@type": "Organization",
+    "name": "MyFitnessApp",
+    "email": "contact@myfitnessapp.example.com",
+    "url": "https://myfitnessapp.example.com",
+    "description": "A fitness app for all the community",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://data.myfitnessapp.org.uk/images/logo.png"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Alan Peacock Way",
+      "addressLocality": "Village East",
+      "addressRegion": "Middlesbrough",
+      "postalCode": "TS4 3AE",
+      "addressCountry": "GB"
+    }
+  },
+  "seller": {
+    "@type": "Organization",
+    "@id": "https://example.com/api/organisations/123"
+  },
+  "orderedItem": [
+    {
+      "@type": "OrderItem",
+      "position": 0,
+      "acceptedOffer": {
+        "@type": "Offer",
+        "@id": "https://example.com/events/452#/offers/878"
+      },
+      "orderedItem": {
+        "@type": "ScheduledSession",
+        "@id": "https://example.com/events/452/subEvents/132"
+      }
+    }
+  ]
+}
+```
+
+</details>
+
+The validator also contains samples of JSON under the "SAMPLES" dropdown, which may be useful to refer to when working on you implementation.&#x20;
 
 ## OpenActive Postman workspace
 
-This + validator are the primary tools we will use to test our implementation as we build it
+This Postman workspace along side the validator are the primary tools you will be using to test your implementation as you build it.&#x20;
 
-Install postman instructions
+Postman is an API tool - it enables you to generate test requests to your local implementation and tests whether the response you are providing is correct.&#x20;
+
+??? Install postman instructions ??? Finalise once all postman has been added
 
 Link to workspace
 
@@ -20,18 +101,6 @@ Workspace configuration
 
 * Creating an environment
 * Setting the baseUrl
-
-## OpenActive validator
-
-Make sure people know there is an RPDE tab and model tab
-
-Link to website
-
-We can use this to validate Open Opportunity and Open Booking responses as we implement them
-
-Example how to use
-
-## The reference implementation
 
 ## OpenActive test suite
 
