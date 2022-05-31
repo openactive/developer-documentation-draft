@@ -12,7 +12,7 @@ So far we have been using Postman to test your API responses but now you have th
 
 The [OpenActive test suite](https://github.com/openactive/openactive-test-suite) is a tool for testing booking systems against the OpenActive standards. The test suite can be configured to match your implementation of the Open Booking API and once all tests pass you can be reasonably sure that any OpenActive broker will be able to integrate with your system.
 
-You can find a more comprehensive explanation of the test suite in the [Tools and Resources](../../getting-started/tools-and-resources/#openactive-test-suite) section.
+You can find a more comprehensive explanation of the test suite in the [Tools and Resources](../../getting-started/how-to-test-your-implementation.md#openactive-test-suite) section.
 
 ## Setup
 
