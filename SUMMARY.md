@@ -6,7 +6,8 @@
 
 * [How to use the docs](getting-started/what-you-are-going-to-do.md)
 * [OpenActive overview](getting-started/what-this-is.md)
-* [Tools and resources](getting-started/how-to-test-your-implementation.md)
+* [Tools and resources](getting-started/tools-and-resources/README.md)
+  * [Testing with Postman](getting-started/tools-and-resources/testing-with-postman.md)
 * [Estimating an OpenActive Implementation](getting-started/estimating-an-openactive-implementation.md)
 
 ## Guides

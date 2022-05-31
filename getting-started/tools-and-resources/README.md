@@ -4,6 +4,8 @@ description: Ensure you've taken these steps before you get started with the gui
 
 # Tools and resources
 
+## ??? TURN IN TO PAGES ???
+
 ## Reference implementation
 
 This is an important resource for your implementation. It is an example of how once implemented correctly an Open Opportunity Feed will appear to users. We will be mentioning it throughout the guides and using it in various examples. If you'd like to get familiar with it now you can [view it here](https://reference-implementation.openactive.io/OpenActive).
@@ -85,22 +87,7 @@ You can select from the "MODE" drop down menu OrderQuote Creation C1 Request and
 
 The validator also contains samples of JSON under the "SAMPLES" dropdown, which may be useful to refer to when working on you implementation.&#x20;
 
-## OpenActive Postman workspace
 
-This Postman workspace along side the validator are the primary tools you will be using to test your implementation as you build it.&#x20;
-
-Postman is an API tool - it enables you to generate test requests to your local implementation and tests whether the response you are providing is correct.&#x20;
-
-??? Install postman instructions ??? Finalise once all postman has been added
-
-Link to workspace
-
-Postman tutorial, testing against the reference implementation
-
-Workspace configuration
-
-* Creating an environment
-* Setting the baseUrl
 
 ## OpenActive test suite
 

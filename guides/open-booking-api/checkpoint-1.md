@@ -24,7 +24,25 @@ A Broker will call this endpoint after a Customer selects an Opportunity from yo
 Reminder - an opportunity is an instance of an event e.g. "Yoga Tuesday 14th 7pm"&#x20;
 {% endhint %}
 
-??? Postman link here to check valid endpoint ???
+### Testing with Postman
+
+{% hint style="info" %}
+You'll need to have installed Postman and set up the workspace, instructions for this can be [found here](../../getting-started/tools-and-resources/testing-with-postman.md).
+{% endhint %}
+
+We are now going to test with Postman, you'll find links throughout the guide but this first one we will take you through step-by-step.
+
+Click on the collection called "Open Booking API" and click on the "Variables" tab, set the baseUri to the URI you chose.&#x20;
+
+Select the end point in the collection called "Checkpoint 1 (C1)".&#x20;
+
+Click "Send"
+
+You should see the response from your end point in the body tab.
+
+You should see the first test has passed under the "Test Results" tab, and the rest should have failed.
+
+We will move on to ensuring your response to a request at this endpoint passes all tests.&#x20;
 
 ### Request
 
