@@ -89,13 +89,40 @@ First your feed endpoint needs to accept these parameters depending on the sorti
 
 You should use these parameters to filter your query so that your feed end point returns the data in the correct order.
 
-An extension to our example SQL query from earlier:
+For example, here is an extension to our [example SQL query](adding-data.md#example-query-for-building-items) from earlier:
 
 ```
-SELECT ... JOIN ... WHERE ... LIMIT 500
+SELECT
+  s.id AS id,
+  s.updated_at AS modified,
+  s.starts_at,
+  s.duration,
+  s.capacity,
+  s.remaining_capacity,
+  a.id AS activity_id,
+  a.name AS activity_name
+FROM sessions AS s
+JOIN activites AS a 
+  ON a.id = s.activity_id
+WHERE (modified = @afterTimestamp AND s.id > @afterId)
+      OR (modified > @afterTimestamp)
+ORDER BY modified, id
+LIMIT 500
 ```
 
-This might be slow if you need to join several tables. For now watch out for n+1 queries and/or reduce the `LIMIT` or make quick in some other way but don't worry if it is a little slow, we will come back to performance optimization and architecture later.
+The `WHERE` clause should only be included if the `afterTimestamp` and `afterId` parameters are provided. Adjust the `WHERE` and `ORDER` clauses appropriately if you are using `afterChangeNumber` .
+
+This might be slow if you need to join several tables. For now watch out for n+1 queries and/or reduce the `LIMIT` , but don't worry if it is a little slow, we will come back to [performance optimization and architecture later](efficient-database-queries.md).
+
+{% hint style="info" %}
+Ordering and filtering is the most common cause of bugs in Open Opportunity feeds, pay special attention to the `WHERE` and `ORDER` clauses.
+
+```
+WHERE (modified = @afterTimestamp AND s.id > @afterId)
+      OR (modified > @afterTimestamp)
+ORDER BY modified, id
+```
+{% endhint %}
 
 You should also update the "next" field you return. Each page is defined by the last items ordering fields from the previous page. So this would make the "next" page field URL either of these two:
 
