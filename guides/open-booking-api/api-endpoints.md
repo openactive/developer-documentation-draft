@@ -14,7 +14,7 @@ We will then take a look at the endpoints for handling abandonment, cancellation
 
 The Open Booking API is a set of endpoints that allow a broker to create a booking in your system for a customer. The simple booking flow (represented in the diagram below) shows a customers journey and how that interacts with the endpoints you'll be creating (C1, C2 and B).&#x20;
 
-![](<../../.gitbook/assets/image (1) (1).png>)
+![](<../../.gitbook/assets/image (1) (1) (1).png>)
 
 1. The broker generates a UUID which is used to uniquely identify the order the customer wishes to make.
 2. After "**1. Select**" the broker calls the booking system through it's API to confirm the price (the price shown in the booking system opportunity feeds) and the availability of the selected items. Any details that the customer needs to supply to complete the booking are also specified. This corresponds to the API endpoint checkpoint 1 (C1).
@@ -72,7 +72,7 @@ You may want to be able to approve bookings before they are completed, that is b
 
 You can handle this scenario with one additional endpoints and some adjustments to the C2 and orders feed (discussed below) endpoints. This is called the Approval Booking flow and fits in the simple booking flow as shown in the following diagram.
 
-![](<../../.gitbook/assets/image (2).png>)
+![](<../../.gitbook/assets/image (2) (1).png>)
 
 ### Endpoints
 

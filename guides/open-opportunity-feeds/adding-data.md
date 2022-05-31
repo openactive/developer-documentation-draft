@@ -77,15 +77,36 @@ Let's go through each of the fields in the data object of this item so you can g
 Ensure empty objects, arrays, strings or nulls are removed from items
 {% endhint %}
 
-### Example mapping exercise
+### Example query for building items
 
-You should have tables that you can join to be able to fill these fields for example you may want to join an activity table and slots table. You would need to do a query like this:
+You will likely have to join several tables to build the items for your feed. For example if you had the following models in your booking system:
+
+* **Activity** which represents a fitness class, e.g. "Yoga". This would approximately map to **SessionSeries**.
+* **Session** which represents an individual session of an activity. This would approximately map to a **ScheduledSession**.
+
+Then the query you would use to build the **ScheduledSession** feed might look something like this:
 
 ```
-SELECT ... JOIN ... LIMIT 10
+SELECT
+  s.id,
+  s.starts_at,
+  s.duration,
+  s.capacity,
+  s.remaining_capacity,
+  s.updated_at AS modified,
+  a.id AS activity_id,
+  a.name AS activity_name
+FROM sessions AS s
+JOIN activites AS a 
+  ON a.id = s.activity_id
+LIMIT 10
 ```
 
-It might not be easy or even possible to do it in one query, don't worry about being performant or elegant, just get the right data out.
+From which you could construct the **ScheduledSession** items in your feed.&#x20;
+
+Keep in mind that the `@id` and `superEvent` fields must be URIs. You should come up with a sensible scheme for them now as changing once you publish your feeds will be difficult. They don't have to point to the existing relevant URLs in your booking system, but it can make debugging easier if they are.
+
+It might not be easy or even possible to do it in one query. Don't worry about being performant or elegant, we will cover performance in the [Feed performance](efficient-database-queries.md) section later on.
 
 ### Libraries
 

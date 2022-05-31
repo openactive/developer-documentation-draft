@@ -22,7 +22,7 @@ But before getting started with implementing the API in your system, let's take 
 
 The Open Booking API is a standardised collection of HTTP endpoints that enable other applications to make bookings in your system. Here's a high level overview of the actors and relationships between them.
 
-![](../../.gitbook/assets/image.png)
+![](<../../.gitbook/assets/image (1).png>)
 
 #### Customer
 

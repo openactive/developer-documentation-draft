@@ -8,7 +8,7 @@ OpenActive has open source data model libraries (LINK) for .NET, PHP, Ruby, and 
 
 Let's take the objects in the OpenActive data model one by one and discuss how this might fit in your existing system.
 
-![Schema to support Open Booking API](<../../.gitbook/assets/image (1).png>)
+![Schema to support Open Booking API](<../../.gitbook/assets/image (1) (1).png>)
 
 ###
 

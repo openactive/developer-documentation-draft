@@ -10,18 +10,6 @@ But how will people know where to find your data.
 
 ## Dataset Site
 
-In the setup we ran the test suite - check your env variables are setup&#x20;
-
-export NODE\_ENV=dev to bash profile
-
-export PORT=4567 or another available port number of your choice&#x20;
-
-Check this test runs and fails as in your setup
-
-`NODE_ENV=dev npm start -- --runInBand test/features/core/dataset-site/`
-
-It should error because you have not setup your dataset site yet, lets do that.&#x20;
-
 Create a home page for dataset site to get this test to pass
 
 Create a route for your page in your app e.g. `get 'openactive', to: 'openactive#show'`
