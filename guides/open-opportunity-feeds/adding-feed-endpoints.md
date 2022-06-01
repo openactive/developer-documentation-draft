@@ -30,8 +30,6 @@ The `next` URL is a precomputed URL that will be called by the Broker to get the
 
 `items` is where an array of items will be found, for now this is an empty array but we will explain what will go in this array next.&#x20;
 
-??? You can check your implementation by running this postman link ???
-
 ## What are Items?
 
 An item is the generic term for the object listed in your feed. These items are listed in the array of the items field, that is currently empty in your response.
@@ -59,8 +57,6 @@ The `id` property is the unique identifier of the item. Two items **must not** s
 The `modified` property should contain either the modified timestamp or change number of the item. It **must** be appropriately comparable to itself as either a string or integer, representing a chronological ordering. It **must** always be updated when **any** for the item is updated, and such an update **must** set the value of the property to be greater than or equal to all existing `modified` values.&#x20;
 
 The `data` property is present when `state` us `"updated"` but should not be present if the `state` is `"deleted"` . We will come on to what should populate the `data` property in the next section of the guide.
-
-??? Check you response against postman link ????
 
 ## Next steps
 

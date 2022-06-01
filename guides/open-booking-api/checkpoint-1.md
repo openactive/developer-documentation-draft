@@ -109,7 +109,7 @@ Here's a breakdown of the key fields in this request:
 * orderItem is an array of items that make up the OrderQuote
   * Each orderItem has an @id which is unique URI (that does not need to be an actual working link but a unique identifier) and a @type which corresponds to the type of orderItem (??? link to item types ???)
 
-??? check whether request is valid ???
+??? check whether request is valid with validator ???
 
 ### Response
 

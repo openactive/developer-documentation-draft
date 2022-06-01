@@ -122,7 +122,7 @@ You may find it helpful to investigate some of the OpenActive libraries at this 
 
 ### Validate
 
-Check the response that you've created is functioning correctly and contains the correct fields ??? post man link ???
+Check the response that you've created is functioning correctly and contains the correct fields ???&#x20;
 
 ### Up next
 

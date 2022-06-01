@@ -25,8 +25,6 @@ As before this feed will be made up of JSON objects, and will have the same top 
 }  
 ```
 
-??? Postman link for session series feed ???
-
 In the same way as before run a query to return the data that would be appropriate for the `SessionSeries`
 
 <details>
@@ -107,7 +105,7 @@ In the same way as before run a query to return the data that would be appropria
 
 </details>
 
-Outlined below are the key properties and recommended properties for this feed, these can be found also in the references (??? LINK)Se
+Outlined below are the key properties and recommended properties for this feed, these can be found also in the references (??? LINK)
 
 ### Key properties
 
