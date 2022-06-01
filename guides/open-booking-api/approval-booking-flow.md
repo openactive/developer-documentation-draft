@@ -97,8 +97,6 @@ This endpoint will receive a PUT request, like the example below, the details su
 
 </details>
 
-??? Check request is valid with validator ???&#x20;
-
 ### Response
 
 The response should contain the`OrderProposal` with an `orderProposalStatus` of `https://openactive.io/AwaitingSellerConfirmation`.
@@ -301,6 +299,8 @@ You can now run the `PUT Proposal (P)` [Postman request](https://documenter.getp
 * `PUT Checkpoint 1 (C1)`
 * `PUT Checkpoint 2 (C2)`
 * `PUT Proposal (P)`
+
+You can run the [OpenActive Validator](https://validator.openactive.io/) to check that your response is formatted correctly. You can remind yourself of how to use the OpenActive Validator [here](../../getting-started/tools-and-resources/#openactive-validator). &#x20;
 
 ### Error handling&#x20;
 

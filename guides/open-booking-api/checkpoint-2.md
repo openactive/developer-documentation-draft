@@ -71,8 +71,6 @@ Here is an example of a C2 request that will be made to this endpoint.
 
 ??? highlight differences in request ???
 
-??? check the request is valid using validator ???
-
 ### Response
 
 Here is an example of what your response will look like:
@@ -264,7 +262,13 @@ This response contains the same fields as in C1 except in addition it confirms t
 
 ??? explain fields ???
 
-You can now run the `PUT Checkpoint 2 (C2)` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a response that matches the example above.&#x20;
+You can now run the `PUT Checkpoint 2 (C2)` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a response that matches the example above. You may wish to run the requests as follows, using the simple booking flow:&#x20;
+
+* `GET Sample requests`
+* `PUT Checkpoint 1 (C1)`
+* `PUT Checkpoint 2 (C2)`
+
+You can run the [OpenActive Validator](https://validator.openactive.io/) to check that your response is formatted correctly. You can remind yourself of how to use the OpenActive Validator [here](../../getting-started/tools-and-resources/#openactive-validator). &#x20;
 
 {% hint style="info" %}
 A lease can be created or extended in this response

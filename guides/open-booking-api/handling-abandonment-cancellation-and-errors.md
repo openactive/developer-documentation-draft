@@ -57,8 +57,6 @@ This endpoint will receive a PATCH request, as shown in this example:&#x20;
 
 </details>
 
-??? Valid request validator ???
-
 ??? Explain fields ???
 
 Any orderItem omitted from the cancellation request must be ignored.
@@ -74,6 +72,8 @@ You can now run the `PATCH Order Cancellation` [Postman request](https://documen
 * `PUT Checkpoint 2 (C2)`
 * `PUT Book (B)`
 * `PATCH Order Cancellation`
+
+You can run the [OpenActive Validator](https://validator.openactive.io/) to check that your response is formatted correctly. You can remind yourself of how to use the OpenActive Validator [here](../../getting-started/tools-and-resources/#openactive-validator).
 
 ### Error handling
 
@@ -134,6 +134,8 @@ You can now run the `DELETE Order Deletion` [Postman request](https://documenter
 * `PUT Checkpoint 2 (C2)`
 * `PUT Book (B)`
 * `DELETE Order Deletion`
+
+You can run the [OpenActive Validator](https://validator.openactive.io/) to check that your response is formatted correctly. You can remind yourself of how to use the OpenActive Validator [here](../../getting-started/tools-and-resources/#openactive-validator). &#x20;
 
 ### Error Handling
 

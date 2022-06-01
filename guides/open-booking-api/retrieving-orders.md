@@ -8,9 +8,7 @@ Broker and Brokers customers will want to be able to access a list of completed 
 
 Ensure you have the route  `{baseURi}/orders-rpde`
 
-The broker will call this endpoint with a GET request.
-
-??? Validator for request ???
+The broker will call this endpoint with an GET request.
 
 ### Response
 
@@ -105,7 +103,7 @@ You can now run the `GET Orders Feed` [Postman request](https://documenter.getpo
 
 ??? Explain fields ???
 
-??? validator for response ???
+You can run the [OpenActive Validator](https://validator.openactive.io/) to check that your response is formatted correctly. You can remind yourself of how to use the OpenActive Validator [here](../../getting-started/tools-and-resources/#openactive-validator). &#x20;
 
 ### Error handling
 
@@ -120,8 +118,6 @@ This endpoint is similar to orders feed, but the request is for a single opportu
 Ensure you have the endpoint `{baseURi}/orders/{uuid}`
 
 The broker will make a GET request to this endpoint.
-
-??? Validator for request ???
 
 ### Response
 
@@ -316,8 +312,6 @@ You should respond to this request with the full contents of the Opportunity wit
 
 ??? Explain fields ???
 
-??? Valid request ???
-
 You can now run the `GET Order Status` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a response that matches the example above. You may wish to run the requests as follows, using the simple booking flow:&#x20;
 
 * `GET Sample requests`
@@ -328,6 +322,8 @@ You can now run the `GET Order Status` [Postman request](https://documenter.getp
 * `PUT Book (B)`
 * `GET Order Status`
   * You should see a response containing an Order
+
+You can run the [OpenActive Validator](https://validator.openactive.io/) to check that your response is formatted correctly. You can remind yourself of how to use the OpenActive Validator [here](../../getting-started/tools-and-resources/#openactive-validator). &#x20;
 
 ### Error handling
 

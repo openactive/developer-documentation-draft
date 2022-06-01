@@ -274,9 +274,16 @@ You should use the request to make a booking within your system. If the booking 
 
 ??? Explain fields inline here ???
 
-You can now run the `PUT Book (B)` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a response that matches the example above.&#x20;
+You can now run the `PUT Book (B)` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a response that matches the example above. You may wish to run the requests as follows, using the simple booking flow:&#x20;
 
-Build your own test in your booking system to ensure that when a successful request is made, a booking is made within your system.
+* `GET Sample requests`
+* `PUT Checkpoint 1 (C1)`
+* `PUT Checkpoint 2 (C2)`
+* `PUT Book (B)`
+
+You can run the [OpenActive Validator](https://validator.openactive.io/) to check that your response is formatted correctly. You can remind yourself of how to use the OpenActive Validator [here](../../getting-started/tools-and-resources/#openactive-validator). &#x20;
+
+It would be sensible at this point to build your own test in your booking system to ensure that when a successful request is made, a booking is made within your system.
 
 {% hint style="info" %}
 If you have used a lease make sure it is removed following a successful booking
@@ -300,8 +307,6 @@ If for some reason the booking cannot logically be completed you because there i
 
 </details>
 
-??? postman link here for error ???
-
 As in C1 and C2 you should ensure that booking endpoint B can respond to connectivity issues with a 500 error.
 
 ??? If there are issues with other properties of the `OrderQuote` outside of `orderedItem`, the [Booking System](https://openactive.io/open-booking-api/EditorsDraft/1.0CR3/#dfn-booking-system) _must_ respond with a JSON-LD response which includes only the appropriate `OpenBookingError` and the appropriate status code. ???
@@ -319,8 +324,6 @@ As in C1 and C2 you should ensure that booking endpoint B can respond to connect
 ```
 
 </details>
-
-??? postman link here for error ???
 
 ### Up next
 

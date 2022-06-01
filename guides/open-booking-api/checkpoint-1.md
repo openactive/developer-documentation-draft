@@ -105,8 +105,6 @@ Here's a breakdown of the key fields in this request:
 * orderItem is an array of items that make up the OrderQuote
   * Each orderItem has an @id which is unique URI (that does not need to be an actual working link but a unique identifier) and a @type which corresponds to the type of orderItem (??? link to item types ???)
 
-??? check whether request is valid with validator ???
-
 ### Response
 
 Now let's build up your response
@@ -301,7 +299,7 @@ You can choose to use the `lease` field in your response to hold the booking for
 
 You can now run the `PUT Checkpoint 1 (C1)` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a response that matches the example above.&#x20;
 
-??? check this response with validator ???
+You can run the [OpenActive Validator](https://validator.openactive.io/) to check that your response is formatted correctly. You can remind yourself of how to use the OpenActive Validator [here](../../getting-started/tools-and-resources/#openactive-validator). &#x20;
 
 ### Error handling
 
