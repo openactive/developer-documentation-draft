@@ -76,9 +76,9 @@ In order to avoid this you should:
 
 * First commit the transaction that updates the item itself, then update the timestamps or change numbers after the transaction has been committed, outside of a transaction, using `GETDATE()` or similar.
 * Ensure the RPDE endpoint filters out all items with a "modified" date after 2 seconds in the past, to delay items appearing in the feed.
-* If using the the timestamp and id ordering strategy, use a timestamp column with a high degree of accuracy (e.g. `datetime2` in SQL Server
+* If using the the timestamp and id ordering strategy, use a timestamp column with a high degree of accuracy (e.g. `datetime2` for SQL)
 
-??? Seems like both change number and timestamp/id can have race condition issues - is there any benefit of one over the other ???
+If a database provides it's own change number this is preferred to implementing your own, as it is likely that the database accounts for the race condition.
 
 ## Making our feed an RDPE feed
 

@@ -105,11 +105,11 @@ In the same way as before run a query to return the data that would be appropria
 
 </details>
 
-Outlined below are the key properties and recommended properties for this feed, these can be found also in the references (??? LINK)
+Outlined below are the key properties and recommended properties for this feed, these can be found also in the references. (reference link)
 
 ### Key properties
 
-`@context` provides a globally unique identifier that provides definitions for the remainder of the fields in this context. For example using `"https://openactive.io/"` defines the property `"name"` of the type `"Event"` . You should use this URL for your data objects as it will provide a JSON-LD representation of the object. You can learn more about this here. (LINK ???)&#x20;
+`@context` provides a globally unique identifier that provides definitions for the remainder of the fields in this context. For example using `"https://openactive.io/"` defines the property `"name"` of the type `"Event"` . You should use this URL for your data objects as it will provide a JSON-LD representation of the object.
 
 `@type` must be present and set to `"SessionSeries"`
 

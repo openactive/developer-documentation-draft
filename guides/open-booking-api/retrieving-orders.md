@@ -6,7 +6,7 @@ Broker and Brokers customers will want to be able to access a list of completed 
 
 ### Request
 
-Ensure you have the route  `{baseURi}/orders-rpde`
+Ensure you have the route  `GET {baseURi}/orders-rpde`
 
 The broker will call this endpoint with an GET request.
 
@@ -113,9 +113,9 @@ This endpoint is similar to orders feed, but the request is for a single opportu
 
 ### Request
 
-Ensure you have the endpoint `{baseURi}/orders/{uuid}`
+Ensure you have the endpoint `GET {baseURi}/orders/{uuid}`
 
-The broker will make a GET request to this endpoint.
+The broker will make a GET request to this endpoint which you will respond to.
 
 ### Response
 

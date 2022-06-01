@@ -98,20 +98,20 @@ Here's what a request will look like:
 
 Here's a breakdown of the key fields in this request:
 
-* @context is a JSON-LD concept that shares the URL where the definition of the API can be found, particularly a definition of the different @type's.&#x20;
-* @type is the object that is being used as part of this request, in the case `OrderQuote`
-* brokerRole & broker are fields that identify who the broker is, and contain information that will eventually be used in authentication.
-* seller is the organization or person providing access to events or facilities.
-* orderItem is an array of items that make up the OrderQuote
-  * Each orderItem has an @id which is unique URI (that does not need to be an actual working link but a unique identifier) and a @type which corresponds to the type of orderItem.
+* `@context` is a JSON-LD concept, it is a URL that points to the definitions of properties for the API, particularly a definition of the different types.&#x20;
+* `@type` is the object that is being used as part of this request, in the case `OrderQuote`
+* `brokerRole` & `broker` are properties that identify who the broker is, and contain information that will eventually be used in authentication.
+* `seller` is the organization or person providing access to events or facilities.
+* `orderItem` is an array of items that make up the `OrderQuote`
+  * Each `orderItem` has a `@id` which is unique URL (that does not need to be an actual working link but a unique identifier) and a `@type` which corresponds to the type of `orderItem`.
 
 {% hint style="info" %}
-Fields will appear here as&#x20;
+These guides will mention the key properties in requests and responses, for the details of every property used, head to the reference section (reference link).
 {% endhint %}
 
 ### Response
 
-Now let's build up your response
+Now let's build up your response.
 
 Here is what your response will eventually look like:
 
@@ -291,13 +291,10 @@ Here is what your response will eventually look like:
 
 </details>
 
-bookingService
-
-orderRequiresApporval
-
-totalPaymentDue
-
-totalPaymentTax
+* `bookingService` is a property that contains details about your booking system, like it's `name` and `url`
+* `orderRequiresApporval` is a boolean property that indicates if the `OrderItem`'s require approval.&#x20;
+* `totalPaymentDue` is a property that outlines the specification of the price, for example the cost and currency.
+* `totalPaymentTax` is a property that outlines the specification for the tax, for example the amount of tax due, the name of the tax.&#x20;
 
 {% hint style="info" %}
 You can choose to use the `lease` field in your response to hold the booking for the customer, this can be extended or created as part of checkpoint 2 (C2).

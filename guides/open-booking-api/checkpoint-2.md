@@ -69,7 +69,7 @@ Here is an example of a C2 request that will be made to this endpoint.
 
 </details>
 
-Customer ???
+The key difference between the C1 and C2 request is that it comes with a `customer` property which contains personal details, such as the customers `givenName` and `email` .
 
 ### Response
 
@@ -258,9 +258,7 @@ Here is an example of what your response will look like:
 
 </details>
 
-This response contains the same fields as in C1 except in addition it confirms the customer details.
-
-Customer ???
+This response contains the same properties as in C1 except in addition it confirms the customer details.
 
 You can now run the `PUT Checkpoint 2 (C2)` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a response that matches the example above. You may wish to run the requests as follows, using the simple booking flow:&#x20;
 

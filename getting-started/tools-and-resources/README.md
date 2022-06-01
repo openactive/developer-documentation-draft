@@ -4,8 +4,6 @@ description: Ensure you've taken these steps before you get started with the gui
 
 # Tools and resources
 
-## ??? TURN IN TO PAGES ???
-
 ## Reference implementation
 
 This is an important resource for your implementation. It is an example of how once implemented correctly an Open Opportunity Feed will appear to users. We will be mentioning it throughout the guides and using it in various examples. If you'd like to get familiar with it now you can [view it here](https://reference-implementation.openactive.io/OpenActive).

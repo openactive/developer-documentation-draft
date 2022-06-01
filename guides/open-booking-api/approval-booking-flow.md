@@ -26,7 +26,7 @@ An `orderProposal` is sent as a PUT request by the Broker to your booking system
 
 You should create an end point `PUT {baseURi}/order-proposals/{uuid}`
 
-This endpoint will receive a PUT request, like the example below, the details submitted are identical to those required for B with the addition of an optional `lease`.
+This endpoint will receive a `PUT` request, like the example below, the details submitted are identical to those required for endpoint B with the addition of an optional `lease`.
 
 <details>
 
@@ -95,7 +95,7 @@ This endpoint will receive a PUT request, like the example below, the details su
 
 </details>
 
-This request is identical to the one made to the Book (B) endpoint, except that the @type is change to `OrderProposal`.
+This request is identical to the one made to the Book (B) endpoint, except that the `@type` is change to `OrderProposal`.
 
 ### Response
 
@@ -287,13 +287,7 @@ The response should contain the `OrderProposal` with an `orderProposalStatus` of
 }
 ```
 
-
-
 </details>
-
-OrderProposalStatus
-
-OrderProposalVersion
 
 You can now run the `PUT Proposal (P)` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a response that matches the example above. You may wish to run the requests in the approval flow order, as follows:&#x20;
 
@@ -348,8 +342,6 @@ This end point should receive a `PATCH` request, here's an example of the reques
 ```
 
 </details>
-
-OrderProposalStatus
 
 ### Response
 

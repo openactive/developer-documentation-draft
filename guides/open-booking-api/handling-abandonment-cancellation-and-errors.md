@@ -33,9 +33,9 @@ Once an order has been completed the customer may wish to cancel it, you should 
 
 ### Request
 
-Ensure this route is present in your booking system `/order/{uuid}`
+Ensure this route is present in your booking system `PATCH order/{uuid}`
 
-This endpoint will receive a PATCH request, as shown in this example:&#x20;
+This endpoint will receive a `PATCH` request, as shown in this example:&#x20;
 
 <details>
 
@@ -57,9 +57,7 @@ This endpoint will receive a PATCH request, as shown in this example:&#x20;
 
 </details>
 
-orderItemStatus ???
-
-Any orderItem omitted from the cancellation request must be ignored.
+The `orderItemStatus` must indicate a cancellation, as shown in the example above. Any `orderItem` omitted from the cancellation request must be ignored.
 
 ### Response
 
@@ -115,11 +113,11 @@ If something goes wrong with the entire booking flow, either because of a fatal 
 
 ### Request
 
-Ensure this route is present in your booking system `/order/{uuid}`
+Ensure this route is present in your booking system `DELETE order/{uuid}`
 
 An empty DELETE request will be made by the broker to this endpoint, at which point the order should be hard deleted within your system, with only a stub of the order remaining containing the UUID. Alternatively, you may want to soft delete the order and purge all personal data from it.
 
-If the order is present in the orders feed (??? LINK), a topic we will come on to shortly, it must be marked as deleted.&#x20;
+If the order is present in the orders feed, a topic we will come on to shortly, it must be marked as deleted.&#x20;
 
 This request should only be used by the broker in cases of a fatal error or when testing, it is not meant for cancelling an order.
 
@@ -156,10 +154,9 @@ If the order is not recognised a 404 error should be returned, as shown in this 
 </details>
 
 {% hint style="info" %}
-C1, C2, P, B endpoints should return `OrderAlreadyExistsError` in response to a request that includeds the UUID of a soft deleted, or hard deleted and stubbed UUID order.
+C1, C2, P, B endpoints should return `OrderAlreadyExistsError` in response to a request that includes the UUID of a soft deleted, or hard deleted and stubbed UUID order.
 {% endhint %}
 
 ## Up next
 
-??? Auth linking sentence ???
-
+Now you have end points that enable a booking to be placed, in either the simple or approval booking flow, it's time to look at ensuring that only those who are authenticated can use your API to make bookings.

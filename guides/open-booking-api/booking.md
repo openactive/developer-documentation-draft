@@ -77,11 +77,11 @@ Here's what a request will look like
 
 </details>
 
-Type changed to Order
+This request is different to the one made in C2. It now is an `Order` not an `OrderQuote` .
 
-Payment ??? now included in comparision to C2 request
+You will also notice that the request contains a Payment property. This property has fields which you should be able to map to those which your payment provider and booking system require. as well as a totalPaymentDue property.
 
-Total Payment Due ??? now included in comparison to C2 request
+This request also differs to C2 by including the `totalPaymentDue` for the `Order`.
 
 ### Response
 
@@ -276,13 +276,11 @@ You should use the request to make a booking within your system. If the booking 
 
 </details>
 
-Returns Order
+The `Order` response contains some properties that have not appeared before:
 
-OrderItem has @id
-
-Order Number
-
-OrderItemStatus
+* `OrderItem` now contains an `@id` property that is a unique identifier, again in the format of a URL (it does not need to actually link to a web page).
+* `orderNumber` is a property that is meant for the customer, so they can have an identifier for the order.
+* `OrderItem` now contains the `orderItemStatus` property which shows that the item has been booked when the status is shown as `"https://openactive.io/OrderItemConfirmed"`
 
 You can now run the `PUT Book (B)` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a response that matches the example above. You may wish to run the requests as follows, using the simple booking flow:&#x20;
 

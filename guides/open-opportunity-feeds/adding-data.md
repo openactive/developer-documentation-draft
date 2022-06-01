@@ -67,9 +67,9 @@ Let's go through each of the fields in the data object of this item so you can g
 
 `url` is the web page that describes the event.
 
-`superEvent` ???
+`superEvent` is the property that identifies the feed item that is linked to this item.
 
-`duration` ???
+`duration` is the property that show the duration of the event  in ISO8601 format.
 
 {% hint style="info" %}
 Ensure empty objects, arrays, strings or nulls are removed from items
@@ -120,7 +120,7 @@ You may find it helpful to investigate some of the OpenActive libraries at this 
 
 ### Validate
 
-Check the response that you've created is functioning correctly and contains the correct fields ???&#x20;
+Check the response that you've created is functioning correctly and contains the correct fields using the [OpenActive Validator](https://validator.openactive.io/). You can remind yourself of how to use the OpenActive Validator [here](../../getting-started/tools-and-resources/#openactive-validator).  &#x20;
 
 ### Up next
 
