@@ -6,7 +6,7 @@ Now the orderQuote has created and the orderItems and customer confirmed by your
 
 Start by creating a route in your booking system in this format
 
-`{baseUri}/orders/{uuid}`
+`PUT {baseUri}/orders/{uuid}`
 
 Here's what a request will look like
 
@@ -77,7 +77,11 @@ Here's what a request will look like
 
 </details>
 
-??? Explain breakdown of fields of request ???
+Type changed to Order
+
+Payment ??? now included in comparision to C2 request
+
+Total Payment Due ??? now included in comparison to C2 request
 
 ### Response
 
@@ -272,7 +276,13 @@ You should use the request to make a booking within your system. If the booking 
 
 </details>
 
-??? Explain fields inline here ???
+Returns Order
+
+OrderItem has @id
+
+Order Number
+
+OrderItemStatus
 
 You can now run the `PUT Book (B)` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a response that matches the example above. You may wish to run the requests as follows, using the simple booking flow:&#x20;
 

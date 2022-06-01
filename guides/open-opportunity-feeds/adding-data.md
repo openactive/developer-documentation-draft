@@ -10,8 +10,6 @@ We are going to fill in the data within an item in a `ScheduledSession` feed. St
 This guide is taking you step-by-step through building a endpoint - it's not how you'll build every feed, but helps you grasp the concepts within the feeds.
 {% endhint %}
 
-??? postman link for change to scheduled-session ???
-
 ### Example feed
 
 Next you will be adding populating the `"data"` field so that it returns as shown in this example:&#x20;

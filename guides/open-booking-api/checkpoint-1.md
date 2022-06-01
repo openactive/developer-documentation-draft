@@ -103,7 +103,11 @@ Here's a breakdown of the key fields in this request:
 * brokerRole & broker are fields that identify who the broker is, and contain information that will eventually be used in authentication.
 * seller is the organization or person providing access to events or facilities.
 * orderItem is an array of items that make up the OrderQuote
-  * Each orderItem has an @id which is unique URI (that does not need to be an actual working link but a unique identifier) and a @type which corresponds to the type of orderItem (??? link to item types ???)
+  * Each orderItem has an @id which is unique URI (that does not need to be an actual working link but a unique identifier) and a @type which corresponds to the type of orderItem.
+
+{% hint style="info" %}
+Fields will appear here as&#x20;
+{% endhint %}
 
 ### Response
 
@@ -288,6 +292,8 @@ Here is what your response will eventually look like:
 </details>
 
 bookingService
+
+orderRequiresApporval
 
 totalPaymentDue
 

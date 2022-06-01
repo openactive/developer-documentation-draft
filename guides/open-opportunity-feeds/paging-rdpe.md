@@ -171,5 +171,3 @@ You should check that the last page in your feed is functioning correctly, it sh
 
 * The items property is an empty array.
 * The next property matches the URL of the current page.
-
-??? Test your feed with the validator ???

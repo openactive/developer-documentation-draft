@@ -57,7 +57,7 @@ This endpoint will receive a PATCH request, as shown in this example:&#x20;
 
 </details>
 
-??? Explain fields ???
+orderItemStatus ???
 
 Any orderItem omitted from the cancellation request must be ignored.
 

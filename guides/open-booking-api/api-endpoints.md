@@ -84,7 +84,7 @@ This endpoint is the same as in the simple booking flow, but for items that requ
 
 `PUT /order-proposals/:uuid`
 
-A customer submits their details to confirm a booking, the broker sends an `OrderProposal` to this endpoint with the same information as the Book (B) endpoint. You mark the items in the order for seller approval in your booking system and return the `OrderProposal`with an "awaiting seller confirmation" status.
+A customer submits their details to confirm a booking, the broker sends an `OrderProposal` to this endpoint with the same information as the Book (B) endpoint. You mark the items in the order for seller approval in your booking system and return the `OrderProposal` with an "awaiting seller confirmation" status.
 
 #### Order proposal update
 

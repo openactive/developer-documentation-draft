@@ -69,7 +69,7 @@ Here is an example of a C2 request that will be made to this endpoint.
 
 </details>
 
-??? highlight differences in request ???
+Customer ???
 
 ### Response
 
@@ -260,7 +260,7 @@ Here is an example of what your response will look like:
 
 This response contains the same fields as in C1 except in addition it confirms the customer details.
 
-??? explain fields ???
+Customer ???
 
 You can now run the `PUT Checkpoint 2 (C2)` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a response that matches the example above. You may wish to run the requests as follows, using the simple booking flow:&#x20;
 

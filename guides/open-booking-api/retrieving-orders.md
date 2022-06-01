@@ -101,8 +101,6 @@ You can now run the `GET Orders Feed` [Postman request](https://documenter.getpo
 * `PUT Book (B)`
 * `GET Orders Feed`
 
-??? Explain fields ???
-
 You can run the [OpenActive Validator](https://validator.openactive.io/) to check that your response is formatted correctly. You can remind yourself of how to use the OpenActive Validator [here](../../getting-started/tools-and-resources/#openactive-validator). &#x20;
 
 ### Error handling
@@ -309,8 +307,6 @@ You should respond to this request with the full contents of the Opportunity wit
 ```
 
 </details>
-
-??? Explain fields ???
 
 You can now run the `GET Order Status` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a response that matches the example above. You may wish to run the requests as follows, using the simple booking flow:&#x20;
 

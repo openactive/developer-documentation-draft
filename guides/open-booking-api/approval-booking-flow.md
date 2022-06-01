@@ -8,11 +8,9 @@ description: Two optional endpoints that enable sellers to approve or reject boo
 The Approval Booking Flow endpoints are not required and many booking system use the Simple Booking Flow. Decide which flow makes sense for your booking system and skip this section if you do not need the approval endpoints.
 {% endhint %}
 
-We've previously discussed the approval booking flow (??? LINK) and how it enables Sellers using your booking system to approve or reject bookings, now it's time to actually create the endpoints required.
+We've previously discussed the [approval booking flow](api-endpoints.md#approval-booking-flow) and how it enables Sellers using your booking system to approve or reject bookings, now it's time to actually create the endpoints required.
 
-??? Probably need more explanation and discussion of why you would use this ???
-
-??? Need to include the necessary changes to C1/C2 ???
+You will need to ensure that both your C1 and C2 endpoints are changed so that the `orderRequiresApporval` is `true` if you are going to use the approval booking flow in your implementation. You will also need to create two further endpoints which are outlined below.
 
 ### Postman adjustments
 
@@ -26,7 +24,7 @@ An `orderProposal` is sent as a PUT request by the Broker to your booking system
 
 ### Request
 
-You should create an end point `{baseURi}/order-proposals/{uuid}`
+You should create an end point `PUT {baseURi}/order-proposals/{uuid}`
 
 This endpoint will receive a PUT request, like the example below, the details submitted are identical to those required for B with the addition of an optional `lease`.
 
@@ -97,9 +95,11 @@ This endpoint will receive a PUT request, like the example below, the details su
 
 </details>
 
+This request is identical to the one made to the Book (B) endpoint, except that the @type is change to `OrderProposal`.
+
 ### Response
 
-The response should contain the`OrderProposal` with an `orderProposalStatus` of `https://openactive.io/AwaitingSellerConfirmation`.
+The response should contain the `OrderProposal` with an `orderProposalStatus` of `https://openactive.io/AwaitingSellerConfirmation`.
 
 <details>
 
@@ -291,7 +291,9 @@ The response should contain the`OrderProposal` with an `orderProposalStatus` of 
 
 </details>
 
-??? explain fields if necessary ???
+OrderProposalStatus
+
+OrderProposalVersion
 
 You can now run the `PUT Proposal (P)` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a response that matches the example above. You may wish to run the requests in the approval flow order, as follows:&#x20;
 
@@ -328,9 +330,9 @@ If an orderProposal is accepted by the seller the order will be successfully cre
 
 ### Request
 
-You should create the endpoint `/order-proposals/{uuid}`&#x20;
+You should create the endpoint `PATCH {baseUri}/order-proposals/{uuid}`&#x20;
 
-This end point should receive a PATCH request, here's an example of the request that will be made:
+This end point should receive a `PATCH` request, here's an example of the request that will be made:
 
 <details>
 
@@ -347,9 +349,7 @@ This end point should receive a PATCH request, here's an example of the request 
 
 </details>
 
-??? explain fields ???
-
-??? Validator ???
+OrderProposalStatus
 
 ### Response
 
