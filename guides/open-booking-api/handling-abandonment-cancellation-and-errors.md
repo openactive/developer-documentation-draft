@@ -14,15 +14,18 @@ A customer may start the flow of creating a booking but may not actually finaliz
 
 Create a route with the following structure `{baseUri}/order-quotes/{uuid}`
 
-The broker will make an empty `DELETE`request to this endpoint which you should respond to with an empty request carrying a 204 status if successful. You should remove any leases made associated with the booking.
+The broker will make an empty `DELETE` request to this endpoint which you should respond to with an empty request carrying a 204 status if successful. You should remove any leases made associated with the booking.
 
-??? postman to check endpoint valid ???
+You can now run the `DELETE OrderQuote Deletion` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a 204 response. You may wish to run the requests in Postman as follows:
+
+* `GET Sample requests`
+* `PUT Checkpoint 1 (C1)`
+* `PUT Checkpoint 2 (C2)`
+* `DELETE OrderQuote Deletion`
 
 ### Error handling
 
 Ensure that an error is returned if a request is made using this endpoint to a UUID that does not exist.
-
-??? postman to check error returns ???
 
 ## Order cancellation
 
@@ -54,7 +57,7 @@ This endpoint will receive a PATCH request, as shown in this example:&#x20;
 
 </details>
 
-??? Postman link for valid endpoint ???
+??? Valid request validator ???
 
 ??? Explain fields ???
 
@@ -64,7 +67,13 @@ Any orderItem omitted from the cancellation request must be ignored.
 
 You should cancel the bookings for the orderItems in the request, and you should return a empty response with a 204 status, even if the item has already been cancelled.
 
-??? Postman link for valid response ???
+You can now run the `PATCH Order Cancellation` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a 204 response. You may wish to run the requests as follows, using the simple booking flow:&#x20;
+
+* `GET Sample requests`
+* `PUT Checkpoint 1 (C1)`
+* `PUT Checkpoint 2 (C2)`
+* `PUT Book (B)`
+* `PATCH Order Cancellation`
 
 ### Error handling
 
@@ -84,8 +93,6 @@ If the request being made to this endpoint does not align with the rules in your
 
 </details>
 
-??? Postman link for valid error response ???
-
 The `orderItemStatus` can only be a customer cancellation, any other status should return a 400 error to say the property is not allowed for the PATCH request.
 
 <details>
@@ -101,8 +108,6 @@ The `orderItemStatus` can only be a customer cancellation, any other status shou
 ```
 
 </details>
-
-??? Postman link for valid error response ???
 
 ## Deleting an order
 
@@ -120,7 +125,15 @@ This request should only be used by the broker in cases of a fatal error or when
 
 ### Response
 
-The response should be empty with a 204 status when a order is succesfully deleted in your system following the request.
+The response should be empty with a 204 status when a order is successfully deleted in your system following the request.
+
+You can now run the `DELETE Order Deletion` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a response that matches the example above. You may wish to run the requests as follows, using the simple booking flow:&#x20;
+
+* `GET Sample requests`
+* `PUT Checkpoint 1 (C1)`
+* `PUT Checkpoint 2 (C2)`
+* `PUT Book (B)`
+* `DELETE Order Deletion`
 
 ### Error Handling
 

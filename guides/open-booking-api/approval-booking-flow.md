@@ -10,11 +10,17 @@ The Approval Booking Flow endpoints are not required and many booking system use
 
 We've previously discussed the approval booking flow (??? LINK) and how it enables Sellers using your booking system to approve or reject bookings, now it's time to actually create the endpoints required.
 
-??? Probably need more explanation and discussion of why you would use this
+??? Probably need more explanation and discussion of why you would use this ???
 
-??? Need to include the necessary changes to C1/C2
+??? Need to include the necessary changes to C1/C2 ???
 
-## Order Proposal (P)
+### Postman adjustments
+
+For the approval booking flow to be tested using the Postman collection you've already set up, you'll need to mkae changes to the `GET Sample requests` body. Head to the postman, and select the `GET Sample requests` and select the 'body' tab. Change the `"test:testOpenBookingFlow"` from `"OpenBookingSimpleFlow"` to `"OpenBookingApprovalFlow"` and click save.&#x20;
+
+![](<../../.gitbook/assets/Screenshot from 2022-06-01 11-44-18.png>)
+
+## &#x20;Order Proposal (P)
 
 An `orderProposal` is sent as a PUT request by the Broker to your booking system to request approval of an order. The broker will notify the customer that their order is pending approval.
 
@@ -91,7 +97,7 @@ This endpoint will receive a PUT request, like the example below, the details su
 
 </details>
 
-??? Postman link to check this endpoint can be hit ???
+??? Check request is valid with validator ???&#x20;
 
 ### Response
 
@@ -289,7 +295,12 @@ The response should contain the`OrderProposal` with an `orderProposalStatus` of 
 
 ??? explain fields if necessary ???
 
-??? postman link to check response valid ???
+You can now run the `PUT Proposal (P)` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a response that matches the example above. You may wish to run the requests in the approval flow order, as follows:&#x20;
+
+* `GET Sample requests`
+* `PUT Checkpoint 1 (C1)`
+* `PUT Checkpoint 2 (C2)`
+* `PUT Proposal (P)`
 
 ### Error handling&#x20;
 
@@ -310,8 +321,6 @@ Here is an example of the error to return:&#x20;
 ```
 
 </details>
-
-??? postman link to check valid error returned ???
 
 ## Order proposal update (U)
 
@@ -340,13 +349,19 @@ This end point should receive a PATCH request, here's an example of the request 
 
 ??? explain fields ???
 
-??? postman link for valid endpoint ???
+??? Validator ???
 
 ### Response
 
 Since the only request made to this endpoint is a rejection of an orderProposal the response can be empty and carry a 204 status to indicate the rejection was successfully received.&#x20;
 
-??? Postman link for valid response ???
+You can now run the `PATCH Proposal update` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a 204 response. You may wish to run the requests in the approval flow order, as follows:&#x20;
+
+* `GET Sample requests`
+* `PUT Checkpoint 1 (C1)`
+* `PUT Checkpoint 2 (C2)`
+* `PUT Proposal (P)`
+* `PATCH Proposal update`
 
 ### Error handling
 
@@ -365,8 +380,6 @@ If the request made is not a rejection of an orderProposal you should return the
 ```
 
 </details>
-
-??? post man link for valid error ???
 
 ## Up next
 

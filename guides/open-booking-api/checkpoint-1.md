@@ -30,19 +30,15 @@ Reminder - an opportunity is an instance of an event e.g. "Yoga Tuesday 14th 7pm
 You'll need to have installed Postman and set up the workspace, instructions for this can be [found here](../../getting-started/tools-and-resources/testing-with-postman.md).
 {% endhint %}
 
-We are now going to test with Postman, you'll find links throughout the guide but this first one we will take you through step-by-step.
+We are now going to test with Postman, you'll find links throughout the guide but for this first one we will take you through step-by-step, ensure you've run the through the [Postman setup first](../../getting-started/tools-and-resources/testing-with-postman.md).
 
-Click on the collection called "Open Booking API" and click on the "Variables" tab, set the baseUri to the URI you chose.&#x20;
-
-Select the end point in the collection called "Checkpoint 1 (C1)".&#x20;
-
-Click "Send"
-
-You should see the response from your end point in the body tab.
-
-You should see the first test has passed under the "Test Results" tab, and the rest should have failed.
-
-We will move on to ensuring your response to a request at this endpoint passes all tests.&#x20;
+* Head to the [Postman documentation](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and click "Run in Postman"
+* Select the "Open Booking API" collection
+* Ensure the Broker Microservice is running in the background.
+* Select the `GET Sample requests` request
+* Click 'Send' and see a response body containing data for other requests in the Postman.
+* Select the `PUT Checkpoint 1 (C1)` request
+* Click 'Send' and if your C1 request is set up correctly you'll see a 200 status response, with a body containing a correctly formatted OrderQuote. For now you will see an error, since you have not set up your endpoint yet.
 
 ### Request
 
@@ -303,7 +299,9 @@ totalPaymentTax
 You can choose to use the `lease` field in your response to hold the booking for the customer, this can be extended or created as part of checkpoint 2 (C2).
 {% endhint %}
 
-??? run postman to check C1 response is valid ???
+You can now run the `PUT Checkpoint 1 (C1)` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a response that matches the example above.&#x20;
+
+??? check this response with validator ???
 
 ### Error handling
 
@@ -492,8 +490,6 @@ If the items being ordered can no longer be ordered, for example if all the avai
 
 </details>
 
-??? Postman link here for error ???
-
 If for some reason there is an error outside of the orderQuote you should respond with a 500 error. Here's an example:&#x20;
 
 ??? If there are issues with other properties of the `OrderQuote` outside of `orderedItem`, the [Booking System](https://openactive.io/open-booking-api/EditorsDraft/1.0CR3/#dfn-booking-system) _must_ respond with a JSON-LD response which includes only the appropriate `OpenBookingError` and the appropriate status code ???
@@ -512,4 +508,3 @@ If for some reason there is an error outside of the orderQuote you should respon
 
 </details>
 
-??? Postman link here for error ???

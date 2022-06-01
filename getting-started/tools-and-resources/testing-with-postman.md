@@ -6,6 +6,8 @@ description: >-
 
 # Testing with Postman
 
+??? Postman Auth setup ???
+
 Postman is an API tool - it enables you to generate test requests to your local implementation and tests whether the response you are providing is correct. Postman will be used to test your Open Booking API implementation.&#x20;
 
 {% hint style="info" %}

@@ -71,7 +71,7 @@ Here is an example of a C2 request that will be made to this endpoint.
 
 ??? highlight differences in request ???
 
-??? postman link to check endpoint functions ???
+??? check the request is valid using validator ???
 
 ### Response
 
@@ -264,7 +264,7 @@ This response contains the same fields as in C1 except in addition it confirms t
 
 ??? explain fields ???
 
-??? postman link to check valid response created ???
+You can now run the `PUT Checkpoint 2 (C2)` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a response that matches the example above.&#x20;
 
 {% hint style="info" %}
 A lease can be created or extended in this response
@@ -468,8 +468,6 @@ Issues with the orderItem's themselves can be responded to in the same way as in
 
 </details>
 
-??? Postman here for error ???
-
 Issues outside of the orderItem's for example a connectivity error should be responded to with a 500 error.&#x20;
 
 ??? If there are issues with other properties of the `OrderQuote` outside of `orderedItem`, the [Booking System](https://openactive.io/open-booking-api/EditorsDraft/1.0CR3/#dfn-booking-system) _must_ respond with a JSON-LD response which includes only the appropriate `OpenBookingError` and the appropriate status code. ???
@@ -487,8 +485,6 @@ Issues outside of the orderItem's for example a connectivity error should be res
 ```
 
 </details>
-
-??? Postman link here for error ???
 
 ### Up next
 

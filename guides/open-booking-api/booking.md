@@ -77,8 +77,6 @@ Here's what a request will look like
 
 </details>
 
-??? Postman link to checkend point can be hit ???
-
 ??? Explain breakdown of fields of request ???
 
 ### Response
@@ -276,7 +274,7 @@ You should use the request to make a booking within your system. If the booking 
 
 ??? Explain fields inline here ???
 
-??? Use the postman to check the response is valid ???
+You can now run the `PUT Book (B)` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a response that matches the example above.&#x20;
 
 Build your own test in your booking system to ensure that when a successful request is made, a booking is made within your system.
 
