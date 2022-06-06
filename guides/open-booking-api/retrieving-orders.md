@@ -323,4 +323,4 @@ You can run the [OpenActive Validator](https://validator.openactive.io/) to chec
 
 ### Error handling
 
-??? Link to generic error handling ???
+There are no specific errors for this endpoint. Authentication errors, server errors, etc., should conform to the specification as with other endpoints.
