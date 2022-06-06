@@ -1,7 +1,5 @@
 # Your second feed
 
-??? Need to talk about materializing scheduledSession ???
-
 The data in your scheduled session feed is a list of specific events that occur at a place and time. So that data consumers can easily navigate your booking system we are going to add a second feed that lists all the event series you have.&#x20;
 
 {% hint style="info" %}
