@@ -55,10 +55,7 @@ This endpoint will receive a `PUT` request, like the example below, the details 
       "addressCountry": "GB"
     }
   },
-  "seller": {
-    "@type": "Organization",
-    "@id": "https://example.com/api/organisations/123"
-  },
+  "seller": "https://example.com/api/organisations/123",
   "customer": {
     "@type": "Person",
     "email": "geoffcapes@example.com",
@@ -70,14 +67,8 @@ This endpoint will receive a `PUT` request, like the example below, the details 
     {
       "@type": "OrderItem",
       "position": 0,
-      "acceptedOffer": {
-        "@type": "Offer",
-        "@id": "https://example.com/events/452#/offers/878"
-      },
-      "orderedItem": {
-        "@type": "ScheduledSession",
-        "@id": "https://example.com/events/452/subEvents/132"
-      }
+      "acceptedOffer": "https://example.com/events/452#/offers/878",
+      "orderedItem": "https://example.com/events/452/subEvents/132"
     }
   ],
   "totalPaymentDue": {
