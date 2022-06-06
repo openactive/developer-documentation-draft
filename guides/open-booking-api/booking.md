@@ -299,41 +299,11 @@ If you have used a lease make sure it is removed following a successful booking
 
 ### Error handling
 
-If for some reason the booking cannot logically be completed you because there is a conflict with the orderItems and the availability in the system for example, or for some reason the conditions of the booking have changed between C2 and B a 409 error should be raised. This should be a rare, as most errors of this type are likely to be raised in C1 or C2.
+If the booking cannot be completed because there is a conflict with the `OrderItem`s and the availability in the system for example, or for any other reason the conditions of the booking have changed between C2 and B a 409 error should be raised.
 
-<details>
+Errors at the Book stage should be rare, because they will almost always be caught at C1 or C2.
 
-<summary>Example 409 error</summary>
-
-```
-{
-  "@context": "https://openactive.io/",
-  "@type": "UnableToProcessOrderItemError",
-  "description": "An error occurred while processing the items within this booking."
-}
-```
-
-</details>
-
-As in C1 and C2 you should ensure that booking endpoint B can respond to connectivity issues with a 500 error.
-
-??? If there are issues with other properties of the `OrderQuote` outside of `orderedItem`, the [Booking System](https://openactive.io/open-booking-api/EditorsDraft/1.0CR3/#dfn-booking-system) _must_ respond with a JSON-LD response which includes only the appropriate `OpenBookingError` and the appropriate status code. ???
-
-<details>
-
-<summary>Example 500 error</summary>
-
-```
-{
-  "@context": "https://openactive.io/",
-  "@type": "TemporarilyUnableToProduceOrderQuoteError",
-  "description": "Temporary error occurred in the database"
-}
-```
-
-</details>
-
-### Up next
+## Up Next
 
 Now you have created main end points for the API it's time consider payment&#x20;
 

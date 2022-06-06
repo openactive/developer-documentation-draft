@@ -306,7 +306,9 @@ You can run the [OpenActive Validator](https://validator.openactive.io/) to chec
 
 ### Error handling
 
-If the items being ordered can no longer be ordered, for example if all the available slots for an event have been booked you should return a 409 error. Here's an example:&#x20;
+#### OrderItem errors
+
+If the items being ordered can no longer be ordered you should return an `error` with the relevant `OrderItem` along with the HTTP status code "409 Conflict". For example if all the available slots for an event have been booked:
 
 <details>
 
@@ -491,21 +493,43 @@ If the items being ordered can no longer be ordered, for example if all the avai
 
 </details>
 
-If for some reason there is an error outside of the orderQuote you should respond with a 500 error. Here's an example:&#x20;
+Only the `@type` field is required in the error. However for a better debugging experience for both users of your API and yourself you should also include a `description` field that describes why the error occurred in this particular case. There are other optional fields you may include in your errors if they are helpful:
 
-??? If there are issues with other properties of the `OrderQuote` outside of `orderedItem`, the [Booking System](https://openactive.io/open-booking-api/EditorsDraft/1.0CR3/#dfn-booking-system) _must_ respond with a JSON-LD response which includes only the appropriate `OpenBookingError` and the appropriate status code ???
+* `name` A short, human-readable summary of the problem type. It should not change from occurrence to occurrence of the problem.
+* `instance` A URI reference that identifies the specific occurrence of the problem.
+* `statusCode` An integer representing the HTTP status code.
+* `requestId` An ID for the request to help technical support debug problems in production.
+
+There are a number of error `@type`s in the Open Booking API. For any `OrderItem` related errors use an error `@type` from the [10.2.2.3 Order Creation - `OrderItem` Errors](https://openactive.io/open-booking-api/EditorsDraft/1.0CR3/#order-creation-orderitem-errors) section of the Open Booking specification.
+
+#### Other errors
+
+For errors in any other part of the request you should return just the error, not the full `OrderQuote` object. For example if the broker details supplied are not valid:
 
 <details>
 
-<summary>Example 500 error</summary>
+<summary>Example 400 error</summary>
 
 ```
 {
   "@context": "https://openactive.io/",
-  "@type": "TemporarilyUnableToProduceOrderQuoteError",
-  "description": "Temporary error occurred in the database"
+  "@type": "IncompleteBrokerDetailsError",
+  "description": "The broker property supplied is not a valid Organisation object"
 }
 ```
 
 </details>
+
+There are many possible errors, all valid error `@type`s can be found in the [10.2 Error Model](https://openactive.io/open-booking-api/EditorsDraft/1.0CR3/#error-model) section of the specification. When deciding what to return in your errors:
+
+* Always prefer a more specific error `@type` to a less specific one.
+* The HTTP status code returned must be the status code required in the specification for the error `@type`.
+* `description`s can be different for errors with the same `@type`.
+* It is better to give too much information in the `description` than too little.
+
+#### Example errors in the Validator
+
+Example error responses can be found in the [Validator](https://validator.openactive.io/) under the "Samples" menu as shown below.
+
+![](<../../.gitbook/assets/Screenshot 2022-06-06 at 17.06.57.png>)
 
