@@ -96,32 +96,142 @@ LIMIT 500
 
 And put the result of the query directly in the `items` field of your feed page response.
 
-## HTTP caching + CDN
+## HTTP caching and Content Delivery Networks (CDN)
 
-We can cache whole page request
+In most cases your feed will change intermittently and between changes multiple brokers will check and consume your feed. We have discussed caching individual items to improve performance but your system still builds the final response on every request, even if nothing has changed.&#x20;
 
-How to set relevant HTTP headers
+We can improve performance further by adding HTTP caching to your feed pages. This way clients will use their cached version of your feed for a period of time before making another request. More importantly it allows you to use a CDN which will cache your feed pages for all clients on servers all around the world, reducing load and further improving performance.
 
-LastModified, ETag and why to do the best one (find out what's best)
+{% hint style="info" %}
+In order for the CDN to be effective your application **should not** implement the [optional `limit` parameter specified in the RPDE specification](https://www.w3.org/2017/08/realtime-paged-data-exchange/#modified-timestamp-and-id).
+{% endhint %}
 
-Clients that respect cache headers will get super quick responses.
+### Headers
 
-On it's own not that useful, because client will rarely visit same page twice
+Your booking system should set the following `Cache-Control` headers for your feeds:
 
-Solution: Use a CDN. CDN will pass on request, any new client CDN will know it's cached and just pass on it's cached version.
+* For the last page in your feed, which contains zero items, set the time to live (TTL) to 8 seconds: `Cache-Control: public, max-age=8`
+* For all other pages set the TTL to 1 hour: `Cache-Control: public, max-age=3600`
 
-Explain how to use CDNs.
+### CDN configuration using Cloudflare
+
+{% hint style="info" %}
+We are using Cloudflare as an example on how to set up a CDN for your feeds but the steps should be similar with other CDNs.
+{% endhint %}
+
+In order for [CloudFlare](https://www.cloudflare.com/) to respect your cache control headers, there are five simple steps to follow:
+
+#### 1) Set up CloudFlare as your DNS provider and proxy
+
+After you've [set up CloudFlare](https://support.cloudflare.com/hc/en-us/categories/200275218-Getting-Started) as your DNS provider, check requests are being routed through CloudFlare by enabling the orange cloud button.
+
+#### 2) Set up a page rule with a wildcard that covers your feeds
+
+Use the wildcards to ensure the rule covers all your feeds, for example:
+
+```
+*opendata.example.com/api/feeds/*
+```
+
+The page rule should have the following configuration:
+
+* **Cache Level:** Everything
+* **Origin Cache Control**: On
+* **SSL:** Flexible (if you do not have SSL configured on your own server)
+
+#### 3) Set Browser Cache Expiration to Respect Existing Headers
+
+On the Caching configuration page, ensure that following is set:
+
+* **Browser Cache Expiration:** Respect Existing Headers
+
+#### 4) Ensure that your feed does not inadvertently set any cookies
+
+Ensure that your web application or web server infrastructure does not set any cookies on the feed pages (for example load balancer [affinity cookies](https://azure.microsoft.com/en-gb/blog/disabling-arrs-instance-affinity-in-windows-azure-web-sites/)), as these will prevent CloudFlare from caching pages.
+
+#### 5) Test your configuration
+
+Inspect the headers returned by your page to see if CloudFlare is successfully caching your feed.
+
+A successfully cached page will return the following header:
+
+* **cf-cache-status: HIT**
+
+#### Further information
+
+The following articles will help you dive deeper in case you have any issues:
+
+* [Understanding and Configuring Cloudflare Page Rules (Page Rules Tutorial)](https://support.cloudflare.com/hc/en-us/articles/218411427-Understanding-and-Configuring-Cloudflare-Page-Rules-Page-Rules-Tutorial-)
+* [How Do I Tell Cloudflare What to Cache?](https://support.cloudflare.com/hc/en-us/articles/202775670-How-Do-I-Tell-Cloudflare-What-to-Cache-)
+* [Origin Cache-Control](https://support.cloudflare.com/hc/en-us/articles/115003206852-Origin-Cache-Control)
+* [What do the various Cloudflare cache responses (HIT, Expired, etc.) mean?](https://support.cloudflare.com/hc/en-us/articles/200168266-What-do-the-various-Cloudflare-cache-responses-HIT-Expired-etc-mean-)
+* [View HTTP headers in Chrome Dev Tools](https://developers.google.com/web/tools/chrome-devtools/network-performance/reference#headers)
 
 ## Removing items from feed after retention period
 
-Ideally items once in feed remain forever
+In order to minimise the total number of items within feeds, it is recommended to apply a retention period. In particular `Event,` `ScheduledSession` or `Slot` data items are likely to benefit from removing items after transitioning them to the "deleted" state.
 
-Might make your feed too big, or use up too storage in your DB
+The [Realtime Paged Data Exchange specification](https://www.w3.org/2017/08/realtime-paged-data-exchange/#deleted-items) specifies that:
 
-In RDPE you are allowed to remove items, so long as you give consumers enough time to catch.
+> If any record is added to the list or updated it must remain in the list in perpetuity while it is in an "updated" state, or remain in the list for at least 7 days from the point in time at which it transitioned to a "deleted" state
 
-This is set to 7 days
+{% hint style="info" %}
+The [high-volume proposal](https://github.com/openactive/realtime-paged-data-exchange/issues/93) for the RPDE specification is currently widely adopted, and hence it is recommended that `Slot` feeds that have a particularly high volume of small payload items wait 2 days before removing `"deleted"` items from the feed, in place of the specified 7 days.
+{% endhint %}
 
-Example of what you can do to reduce feed size
+### Option 1: Retention period to minimise storage requirements
 
-Example of cron script to clean up "deleted" older than 7 days
+If the objective of implementing a retention period is primarily to reduce the number of records stored, records representing events that occur in the past should be pruned by:
+
+* First setting their [`state` to the `"deleted"` state and updating the `modified` value](https://www.w3.org/2017/08/realtime-paged-data-exchange/#deleted-items).
+* Then after 7 days removing them from the feed.
+
+This may be implemented via a regular CRON job, for example.
+
+{% hint style="danger" %}
+Simply filtering out or removing opportunities from the feed that are in the past is not sufficient, because any opportunity that is edited to have a `startDate` in the past would then disappear from the feed without first transitioning into the [`"deleted"` state](https://www.w3.org/2017/08/realtime-paged-data-exchange/#deleted-items) with an updated `modified` value. Hence the previous version of such a record would live on forever in the downstream applications.
+{% endhint %}
+
+### Option 2: Retention period to reduce feed size
+
+If the objective of implementing a retention period is primarily to reduce the size of the feed, an effective retention period can be implemented by having the first page of the feed start from the first relevant record (instead of from the beginning of time). This approach is useful for simple cases where a CRON job is not desirable.
+
+The approach can be implemented as follows: if the `@afterTimestamp` and `@afterId` parameters are **not** supplied to the RPDE endpoint (i.e. for the first page), use the query below to try to get the `@firstTimestamp` and `@firstId` and use these as default values:
+
+```sql
+-- Execute ONLY if @afterTimestamp and @afterId NOT provided
+  SELECT @firstTimestamp = modified, @firstId = id
+    FROM ...
+   WHERE startDate >= @now AND state <> "deleted"
+ORDER BY modified, id
+   LIMIT 1
+```
+
+For the first page only (where `@afterTimestamp` and `@afterId` parameters are **not** supplied), these default values are included within the `WHERE` clause of the RPDE query as below, with a slight change to the operands such that **`id >= @firstId`** to ensure the default value itself is included in the feed.
+
+For the first page, if no default values are returned, the RPDE query must exclude the `WHERE` clause as per the [specification](https://www.openactive.io/realtime-paged-data-exchange/#sql-query-example-for-timestamp-id), and return results from the beginning of time.
+
+Hence the query either uses:
+
+* For the first page: the default values supplied from the query above or otherwise returns results from the beginning of time
+* For all other pages: the values supplied by the parameters
+
+```sql
+-- Include this WHERE clause only if @afterTimestamp and @afterId
+-- are NOT provided (first page), and if default values are available
+   WHERE (modified = @firstTimestamp AND id >= @firstId)
+      OR (modified > @firstTimestamp)
+-- Include this WHERE clause only if @afterTimestamp and @afterId
+-- are provided (not first page)
+   WHERE (modified = @afterTimestamp AND id > @afterId)
+      OR (modified > @afterTimestamp)
+-- If @afterTimestamp and @afterId not provided, and default values
+-- are not available, do not include WHERE clause
+ORDER BY modified, id
+```
+
+To further reduce the number of records in the feed, any record for an opportunity in the past can be rendered as `"deleted"` in the feed without any change to the `updated` value (note the record **must not** be removed from the feed). This means that records representing past opportunities are effectively frozen after they have occurred, and by default will live on forever in downstream applications. If the record is edited, the `modified` value must still be updated, at which point the record will be removed from downstream applications, to ensure historical accuracy.
+
+{% hint style="info" %}
+Alternative approaches for implementing this option are available in [this proposal](https://github.com/openactive/realtime-paged-data-exchange/issues/96). Feedback and thoughts very welcome.
+{% endhint %}
