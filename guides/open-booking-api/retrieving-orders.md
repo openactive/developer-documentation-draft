@@ -103,10 +103,6 @@ You can now run the `GET Orders Feed` [Postman request](https://documenter.getpo
 
 You can run the [OpenActive Validator](https://validator.openactive.io/) to check that your response is formatted correctly. You can remind yourself of how to use the OpenActive Validator [here](../../getting-started/tools-and-resources/#openactive-validator). &#x20;
 
-### Error handling
-
-??? Link to general open booking error handling ???
-
 ## Order status
 
 This endpoint is similar to orders feed, but the request is for a single opportunity instead of a feed. This end point is recommended but not required.
@@ -321,6 +317,6 @@ You can now run the `GET Order Status` [Postman request](https://documenter.getp
 
 You can run the [OpenActive Validator](https://validator.openactive.io/) to check that your response is formatted correctly. You can remind yourself of how to use the OpenActive Validator [here](../../getting-started/tools-and-resources/#openactive-validator). &#x20;
 
-### Error handling
+## Error handling
 
-There are no specific errors for this endpoint. Authentication errors, server errors, etc., should conform to the specification as with other endpoints.
+There are no specific errors for either of these endpoints. Authentication errors, server errors, etc., should conform to the specification as with the other endpoints.
