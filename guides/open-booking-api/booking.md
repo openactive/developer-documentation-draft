@@ -12,7 +12,7 @@ Here's what a request will look like
 
 <details>
 
-<summary>Example request</summary>
+<summary>Example B request</summary>
 
 ```
 {
@@ -37,10 +37,7 @@ Here's what a request will look like
       "addressCountry": "GB"
     }
   },
-  "seller": {
-    "@type": "Organization",
-    "@id": "https://example.com/api/organisations/123"
-  },
+  "seller": "https://example.com/api/organisations/123",
   "customer": {
     "@type": "Person",
     "email": "geoffcapes@example.com",
@@ -52,14 +49,8 @@ Here's what a request will look like
     {
       "@type": "OrderItem",
       "position": 0,
-      "acceptedOffer": {
-        "@type": "Offer",
-        "@id": "https://example.com/events/452#/offers/878"
-      },
-      "orderedItem": {
-        "@type": "ScheduledSession",
-        "@id": "https://example.com/events/452/subEvents/132"
-      }
+      "acceptedOffer": "https://example.com/events/452#/offers/878",
+      "orderedItem": "https://example.com/events/452/subEvents/132"
     }
   ],
   "totalPaymentDue": {
@@ -89,7 +80,7 @@ You should use the request to make a booking within your system. If the booking 
 
 <details>
 
-<summary>Example response</summary>
+<summary>Example B response</summary>
 
 ```
 {
@@ -216,8 +207,8 @@ You should use the request to make a booking within your system. If the booking 
           "name": "Bodypump",
           "activity": [
             {
-              "type": "Concept",
-              "id": "https://openactive.io/activity-list#5e78bcbe-36db-425a-9064-bf96d09cc351",
+              "@type": "Concept",
+              "@id": "https://openactive.io/activity-list#5e78bcbe-36db-425a-9064-bf96d09cc351",
               "prefLabel": "Bodypump™",
               "inScheme": "https://openactive.io/activity-list"
             }

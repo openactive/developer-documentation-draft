@@ -39,10 +39,7 @@ Here is an example of a C2 request that will be made to this endpoint.
       "addressCountry": "GB"
     }
   },
-  "seller": {
-    "@type": "Organization",
-    "@id": "https://example.com/api/organisations/123"
-  },
+  "seller": "https://example.com/api/organisations/123",
   "customer": {
     "@type": "Person",
     "email": "geoffcapes@example.com",
@@ -54,14 +51,8 @@ Here is an example of a C2 request that will be made to this endpoint.
     {
       "@type": "OrderItem",
       "position": 0,
-      "acceptedOffer": {
-        "@type": "Offer",
-        "@id": "https://example.com/events/452#/offers/878"
-      },
-      "orderedItem": {
-        "@type": "ScheduledSession",
-        "@id": "https://example.com/events/452/subEvents/132"
-      }
+      "acceptedOffer": "https://example.com/events/452#/offers/878",
+      "orderedItem": "https://example.com/events/452/subEvents/132"
     }
   ]
 }
@@ -208,8 +199,8 @@ Here is an example of what your response will look like:
           "name": "Bodypump",
           "activity": [
             {
-              "type": "Concept",
-              "id": "https://openactive.io/activity-list#5e78bcbe-36db-425a-9064-bf96d09cc351",
+              "@type": "Concept",
+              "@id": "https://openactive.io/activity-list#5e78bcbe-36db-425a-9064-bf96d09cc351",
               "prefLabel": "Bodypump™",
               "inScheme": "https://openactive.io/activity-list"
             }
