@@ -300,9 +300,11 @@ You can run the [OpenActive Validator](https://validator.openactive.io/) to chec
 
 ### Error handling&#x20;
 
-If there are any errors with the orderProposal or orderItems you must respond with a 400 error, the broker can try a different endpoint to get more specific errors. It is unlikely that this error will ever be raised, as similar errors should have been raised in C1 and C2 prior to the approval process.
+If there are any errors with the orderProposal or orderItems you must respond with an error. It is unlikely that this errors will be raised at this stage, as similar errors should have been raised in C1 and C2 prior to the approval process.
 
-Here is an example of the error to return:&#x20;
+As with the Simple Booking Flow, errors must conform to the Open Booking API specification section [10.2 Error Model](https://openactive.io/open-booking-api/EditorsDraft/1.0CR3/#error-model).
+
+Here is an example of an error response:&#x20;
 
 <details>
 
@@ -375,4 +377,4 @@ If the request made is not a rejection of an orderProposal you should return the
 
 ## Up next
 
-Now you've worked through the approval booking flow, it's not time to utilise the testsuite to check your implementation.&#x20;
+Now you've worked through the approval booking flow, it's time to use the test suite to check your implementation.&#x20;

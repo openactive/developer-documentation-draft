@@ -301,7 +301,7 @@ If you have used a lease make sure it is removed following a successful booking
 
 If the booking cannot be completed because there is a conflict with the `OrderItem`s and the availability in the system for example, or for any other reason the conditions of the booking have changed between C2 and B a 409 error should be raised.
 
-Errors at the Book stage should be rare, because they will almost always be caught at C1 or C2.
+Errors at the Book stage should be rare because they will almost always be caught at C1 or C2.
 
 ## Up Next
 
