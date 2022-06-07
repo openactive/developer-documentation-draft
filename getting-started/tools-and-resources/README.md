@@ -89,39 +89,37 @@ The validator also contains samples of JSON under the "SAMPLES" dropdown, which 
 
 ## OpenActive test suite
 
-Use this tool to validate your implementation once you think you have it working
+The OpenActive test suite enables you to test both your Open Opportunity Feeds and you Open Booking API implementation. You will be able to configure the test suite so that it tests the features that are relevant to your booking system, but for now you just need to download it and make sure it works by running it against the [reference implementation](./#reference-implementation).&#x20;
 
-Can be configured to test the features your booking system implements
+### Steps to follow
 
-For now just download and make sure it works by running it against the reference implementation
+Ensure you have node installed already&#x20;
 
-### Instructions
+Clone the repository [https://github.com/openactive/openactive-test-suite](https://github.com/openactive/openactive-test-suite)
 
-Visit [https://github.com/openactive/openactive-test-suite](https://github.com/openactive/openactive-test-suite)
+Change into the directory of the openactive-test-suite that you just cloned
 
-Ensure you have node installed&#x20;
+Run `npm install`
 
-Clone the repository (maybe into your app)
+You are now ready to test the installation by running `npm start --core`&#x20;
 
-Change into directory that you cloned into openactive-test-suite
+Wait approximately 60 seconds for the test suite to run against our test implementation
 
-Run npm install
+{% hint style="info" %}
+If you find the command is not working - please get in touch (contact link)
+{% endhint %}
 
-to check the installation has worked run`npm start --core` this should run your test suite against our test implementation and it should take around 60 seconds - if this breaks get in touch.
+Next, you need to set up your own Config. Start by copying `default.json` as follows (linux command line) `cp config/default.json config/dev.json`
 
-Next up Config your setup, copy default as follows (linux command line)
+Open the `config/dev.json` file you just created
 
-`cp config/default.json config/dev.json`
+In the JSON under broker, make sure `datasetSiteUrl` points to a `datasetSiteUrl` that you are going to create locally in your development e.g `http://localhost:4000/openactive`
 
-Open the config file created
+Before we run the test suite against your `datasetSiteUrl` you need to configure your bash profile by running `export NODE_ENV=dev` .
 
-In the JSON under broker, make sure datasetSiteUrl points to a dataSiteUrl that you are going to create locally in dev e.g `http://localhost:4000/openactive`
+You also need to select a available port i.e. `export PORT=4567`
 
-export NODE\_ENV=dev to bash profile
-
-export PORT=4567 or another available port number of your choice&#x20;
-
-Now to run your first test
+Now to run your first test, run the command below
 
 `NODE_ENV=dev npm start -- --runInBand test/features/core/dataset-site/`
 

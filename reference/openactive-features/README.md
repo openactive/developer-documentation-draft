@@ -1,10 +1,6 @@
 # OpenActive Features
 
-??? A list / sections with each feed feature and required fields
-
-??? Similar to data model&#x20;
-
-#### Payment required
+#### Name of feature
 
 This is feature "name-of-feature" in the test suite configuration
 

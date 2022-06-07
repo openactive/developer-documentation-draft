@@ -141,7 +141,5 @@ Outlined below are the key properties and recommended properties for this feed, 
 
 ### Validation
 
-Once you are happy that you have created the required fields for your feed as well as any recommended or optional fields you should run the validation steps outlined here.&#x20;
-
-
+Once you are happy that you have created the required fields for your feed as well as any recommended or optional fields you should run the test suite and use the validator as outlined in the previous [validating your feed](validating-your-feed.md) section.
 

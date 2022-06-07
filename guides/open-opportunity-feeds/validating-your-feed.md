@@ -78,7 +78,7 @@ You need Node JS 14.16.0 or later installed to run the test suite&#x20;
 For the test suite to run you first need to set up a dataset site. Either follow the instructions for that in [Publishing your feeds](dataset-site.md#dataset-site), or use the OpenActive validator to validate your feeds for now and come back to the test suite later.
 {% endhint %}
 
-Clone the test suite project and install its dependencies:
+If you have not already done so, clone the test suite project and install its dependencies:
 
 ```
 git clone https://github.com/openactive/openactive-test-suite.git

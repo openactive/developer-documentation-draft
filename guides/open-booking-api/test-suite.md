@@ -22,7 +22,7 @@ Clone the test suite project on to your computer if you haven't already.
 git clone https://github.com/openactive/openactive-test-suite.git
 ```
 
-Next you need to configure the test suite to point to the local URL of your booking system running in development. Make a copy of the file `default.json` in the config folder of the test suite and call it `dev.json` _._ This file will contain all the information the test suite needs to test your API implementation. Don't worry about all the different settings for now, we will go through everything you need to change step by step.&#x20;
+You may have already completed this step from the tools and resources section, but in case you have not - you need to configure the test suite to point to the local URL of your booking system running in development. Make a copy of the file `default.json` in the config folder of the test suite and call it `dev.json` _._ This file will contain all the information the test suite needs to test your API implementation. Don't worry about all the different settings for now, we will go through everything you need to change step by step.&#x20;
 
 All you need to do for now is change the broker -> datasetSiteUrl property to the local URL of the dataset site you set up in [Publishing your feeds](../open-opportunity-feeds/dataset-site.md#dataset-site).&#x20;
 
