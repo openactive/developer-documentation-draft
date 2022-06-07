@@ -106,6 +106,15 @@ Keep in mind that the `@id` and `superEvent` fields must be URIs. You should com
 
 It might not be easy or even possible to do it in one query. Don't worry about being performant or elegant, we will cover performance in the [Feed performance](efficient-database-queries.md) section later on.
 
+#### Materialising sessions
+
+It is possible that your booking system does not have an equivalent table for **ScheduledSession**s (or **Slot**s for **FacilityUse**s). Instead you have a table that corresponds to **SessionSeries** and a rule that generates the session schedule. For example: "1 session every Monday from June 6th 2022 to August 29th 2022".
+
+To make this database structure work with your feeds will probably be quite difficult and prone to bugs. We recommend you instead "materialise" each scheduled session as its own row. There are two ways you could do this:
+
+* Restructure your existing database to use materialised sessions and drop the rule-based sessions schedule.
+* Keep your rule-based session schedule, but use a caching table that materialises sessions as described in the [Feed performance](efficient-database-queries.md#a-caching-table) section.
+
 ### Libraries
 
 You may find it helpful to investigate some of the OpenActive libraries at this point, they have been made to make it easy to create open opportunity data feeds.
