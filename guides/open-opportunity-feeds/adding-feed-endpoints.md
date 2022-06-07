@@ -50,7 +50,7 @@ Change your endpoint `{baseUri}/events`so that it returns the fields shown in th
 
 The `state` property must either be set to `"updated"` or value `"deleted"`. Deleted items are included in the response with a `"deleted"` state.
 
-The `kind` property allows for the representation of different types of items, which we will come onto when discussing the different types of data you can use in your feed (??? link)
+The `kind` property allows for the representation of different types of items, which we will come onto when discussing the different types of data you can use in your feed.
 
 The `id` property is the unique identifier of the item. Two items **must not** share the same `id`.&#x20;
 
