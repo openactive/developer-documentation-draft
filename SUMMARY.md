@@ -43,6 +43,7 @@
 
 ## Reference
 
-* [Data model](reference/data-model.md)
+* [Data model](reference/data-model/README.md)
+  * [@context and JSON-LD](reference/data-model/context-and-json-ld.md)
 * [OpenActive Features](reference/feed-features.md)
 * [Implementing the test interface](reference/implementing-the-test-interface.md)
