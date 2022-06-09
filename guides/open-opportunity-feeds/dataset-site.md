@@ -4,7 +4,7 @@ description: How to create your dataset site
 
 # Publishing your feeds
 
-Your feeds should now be ready to publish, and you may have already made them available in production. There are just two steps left, both will help people find and consume your feeds:
+Your feeds should now be ready to publish, and you may have already made them available in production. There are just two steps left, and both will help people find and consume your feeds:
 
 * Creating a dataset site
 * Listing your feed in the OpenActive catalog
@@ -21,7 +21,7 @@ For booking systems or bespoke websites with a single database and one set of Op
 
 **Multiple database systems**
 
-If you are a booking system with multiple databases, each of which has their own set of OpenActive data feeds, a Dataset Site is required for each customer. This can be achieved using customer configuration to drive the mustache template. If you are publishing multiple dataset sites you also need to provide a [Data Catalog](https://developer.openactive.io/publishing-data/dataset-sites#step-5-providing-a-data-catalog-multiple-databases-only).
+If you are a booking system with multiple databases, each of which has its own set of OpenActive data feeds, a Dataset Site is required for each customer. This can be achieved using customer configuration to drive the mustache template. If you are publishing multiple dataset sites you, also need to provide a [Data Catalog](https://developer.openactive.io/publishing-data/dataset-sites#step-5-providing-a-data-catalog-multiple-databases-only).
 
 You need to create a [GitHub issues board](https://developer.openactive.io/publishing-data/dataset-sites#step-2-github-issues-board-creation) for each Dataset Site.
 
@@ -49,7 +49,7 @@ Several libraries are available that make it easy to render the dataset site tem
 
 ### Other Languages <a href="#other-languages" id="other-languages"></a>
 
-The [Dataset Site Template](https://github.com/openactive/dataset-site-template/) is a single self-contained mustache template of an HTML page that contains embedded CSS, an embedded encoded image, and references to CDNs of [Font Awesome](https://fontawesome.com/) and [Google Fonts](https://fonts.google.com/). It works across all browsers, and includes fully compliant DCAT and schema.org machine-readable metadata to ensure it is compatible with [Google Dataset Search](https://toolbox.google.com/datasetsearch/search?query=openactive).Steps to render the template:
+The [Dataset Site Template](https://github.com/openactive/dataset-site-template/) is a single self-contained mustache template of an HTML page that contains embedded CSS, embedded encoded image, and references to CDNs of [Font Awesome](https://fontawesome.com/) and [Google Fonts](https://fonts.google.com/). It works across all browsers, and includes fully compliant DCAT and schema.org machine-readable metadata to ensure it is compatible with [Google Dataset Search](https://toolbox.google.com/datasetsearch/search?query=openactive).Steps to render the template:
 
 1. Construct the JSON-LD to match the format found in [this example](https://validator.openactive.io/?url=https%3A%2F%2Fwww.openactive.io%2Fdataset-site-template%2Fexample.json\&version=2.x\&validationMode=DatasetSite), following [this documentation](https://developer.openactive.io/data-model/types/dataset).
 2. Find a [mustache library](https://mustache.github.io/) for your platform or language.
@@ -97,7 +97,7 @@ Although the customer will likely be able to fill in most properties specific to
 
 ## Step 3: GitHub Issues Board creation <a href="#step-3-github-issues-board-creation" id="step-3-github-issues-board-creation"></a>
 
-The `discussionUrl` is the url of the GitHub issues board for that specific dataset site.We recommend that you create each GitHub repository (that will include a GitHub Issues Board) within your own GitHub organisation either [manually](https://developer.openactive.io/publishing-data/dataset-sites#manually) or via an [API call](https://developer.openactive.io/publishing-data/dataset-sites#automatically).
+The `discussionUrl` is the url of the GitHub issues board for that specific dataset site. We recommend that you create each GitHub repository (that will include a GitHub Issues Board) within your own GitHub organisatio,  either [manually](https://developer.openactive.io/publishing-data/dataset-sites#manually) or via an [API call](https://developer.openactive.io/publishing-data/dataset-sites#automatically).
 
 If you have multiple databases and customers with large data volumes, you should create one GitHub repository (that will include a GitHub Issues Board) for each customer. Single database systems need only create one GitHub repository (that will include a GitHub Issues Board).
 

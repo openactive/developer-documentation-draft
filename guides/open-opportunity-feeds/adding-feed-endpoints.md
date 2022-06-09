@@ -4,17 +4,17 @@ description: Creating a generic URL which returns a JSON object
 
 # Starting your feed
 
-In order to create an opportunity feed you need to create a URL where your feed can be accessed via a HTTP request.
+In order to create an opportunity feed, you need to create a URL where your feed can be accessed via a HTTP request.
 
-To start you may wish to use a baseUri called `feeds` to make it clear which group these endpoints are part. Create your first endpoint`{baseUri}/events` (you can change this name later on) that returns successfully.&#x20;
+To start, you may wish to use a baseUri called `feeds` to make it clear which group these endpoints are part of. Create your first endpoint `{baseUri}/events` (you can change this name later on) that returns successfully.&#x20;
 
-## Top level fields
+## Top-level fields
 
-Your feed will be made up of JSON objects. To get started will start by returning three top level fields from your `{baseUri}/events`
+Your feed will be made up of JSON objects. To get started, will start by returning three top-level fields from your `{baseUri}/events`.
 
 ### Request and Response
 
-Setup your endpoint so that it has three top level fields `next`, `items`, and `license`. So it returns this example for a GET request.
+Setup your endpoint so that it has three top-level fields `next`, `items`, and `license`. So it returns this example for a GET request.
 
 ```
 {
@@ -28,15 +28,15 @@ The `next` URL is a precomputed URL that will be called by the Broker to get the
 
 `Licence` is a link to the licence under which the data has been published.
 
-`items` is where an array of items will be found, for now this is an empty array but we will explain what will go in this array next.&#x20;
+`items` is where an array of items will be found, for now, this is an empty array, but we will explain what will go in this array next.&#x20;
 
 ## What are Items?
 
-An item is the generic term for the object listed in your feed. These items are listed in the array of the items field, that is currently empty in your response.
+An item is a generic term for the object listed in your feed. These items are listed in the array of the items field that is currently empty in your response.
 
 ### Request and Response
 
-Change your endpoint `{baseUri}/events`so that it returns the fields shown in the example below:
+Change your endpoint `{baseUri}/events` so that it returns the fields shown in the example below:
 
 ```
 {
@@ -54,10 +54,10 @@ The `kind` property allows for the representation of different types of items, w
 
 The `id` property is the unique identifier of the item. Two items **must not** share the same `id`.&#x20;
 
-The `modified` property should contain either the modified timestamp or change number of the item. It **must** be appropriately comparable to itself as either a string or integer, representing a chronological ordering. It **must** always be updated when **any** for the item is updated, and such an update **must** set the value of the property to be greater than or equal to all existing `modified` values.&#x20;
+The `modified` property should contain either the modified timestamp or the change number of the item. It **must** be appropriately comparable to itself as either a string or integer, representing a chronological ordering. It **must** always be updated when **any** part of the item is updated, and such an update **must** set the value of the property to be greater than or equal to all existing `modified` values.&#x20;
 
-The `data` property is present when `state` us `"updated"` but should not be present if the `state` is `"deleted"` . We will come on to what should populate the `data` property in the next section of the guide.
+The `data` property is present when the `state` is `"updated"` but should not be present if the `state` is `"deleted"` . We will come on to what should populate the `data` property in the next section of the guide.
 
 ## Next steps
 
-Now you have a feed with items, but no actual data in the items. Next we will add data to your feed.
+Now you have a feed with items but no actual data in the items. Next, we will add data to your feed.

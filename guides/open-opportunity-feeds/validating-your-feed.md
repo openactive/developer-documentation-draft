@@ -1,6 +1,6 @@
 # Validating your feed
 
-Now you have a feed setup and learnt about potential pitfalls, it's time to double check that your feed is valid and operating correctly. OpenActive provides two tools for validating your feed:
+Now you have a feed setup and have learnt about potential pitfalls, it's time to double check that your feed is valid and operating correctly. OpenActive provides two tools for validating your feed:
 
 * The [OpenActive Validator](https://validator.openactive.io/rpde)
 * The [OpenActive test suite](https://github.com/openactive/openactive-test-suite)
@@ -9,21 +9,21 @@ Now you have a feed setup and learnt about potential pitfalls, it's time to doub
 
 The OpenActive Validator can be found at [validator.openactive.io](https://validator.openactive.io/). It has a variety of modes for validating feeds and API queries against the relevant OpenActive specifications.
 
-To validate your feeds, we will first need to set up a tunnel so that the validator can access the feeds running locally on your machine, then we will go through validating a feed.
+To validate your feeds, we will first need to set up a tunnel so that the validator can access the feeds running locally on your machine, and then we will go through validating a feed.
 
 ### Setting up an ngrok tunnel
 
-At the moment the your feeds are not accessible to the wider internet, so the validator will not be able to access them. We are going to use a command line tool called ngrok to temporarily expose your feeds to the internet.
+At the moment your feeds are not accessible to the wider internet, so the validator will not be able to access them. We are going to use a command line tool called ngrok to temporarily expose your feeds to the internet.
 
-First follow the [installation instructions](https://ngrok.com/download) for ngrok for your operating system.
+First, follow the [installation instructions](https://ngrok.com/download) for ngrok for your operating system.
 
-Start a tunnel for your local booking system using ngrok. For example if your booking system is running on port 5001:
+Start a tunnel for your local booking system using ngrok. For example, if your booking system is running on port 5001:
 
 ```
 ngrok http 5001
 ```
 
-You will get output that looks something like this:
+You will get an output that looks something like this:
 
 ```
 ngrok                                                                                 (Ctrl+C to quit)
@@ -106,4 +106,4 @@ Harvesting is up-to-date
 Feed validation passed
 ```
 
-Otherwise the test suite should tell you any problems it finds in your feeds. Fix them and run the command again until your tests are passing.
+Otherwise, the test suite should tell you any problems it finds in your feeds. Fix them and run the command again until your tests are passing.

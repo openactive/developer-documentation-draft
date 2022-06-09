@@ -6,8 +6,6 @@ description: >-
 
 # Testing with Postman
 
-??? Postman Auth setup ???
-
 Postman is an API tool - it enables you to generate test requests to your local implementation and tests whether the response you are providing is correct. Postman will be used to test your Open Booking API implementation.&#x20;
 
 {% hint style="info" %}
@@ -37,7 +35,7 @@ First, test this collection against the OpenActive Reference Implementation to e
    b. `npm install`\
    c. `npm run start-broker`
 2. "Fork" the "Open Booking API" collection in Postman
-3. Ensure the "Hosted Reference Implementation" is selected from the Environment dropdown in the top righthand corner.
+3. Ensure the "Hosted Reference Implementation" is selected from the Environment dropdown in the top right-hand corner.
 4. Select the "Open Booking API" collection, and then at the bottom of the page**,** click "Get New Access Token", use the username "test1", and the password "test1" to complete the authentication flow, then click "Use Token".
 5. Click one of the "Sample" requests on the left and "Run" the request.
 6. Proceed through C1, C2, and B requests to make a booking for the Simple Flow (or C1, C2, P, accept, B for the Approval Flow).
@@ -49,6 +47,10 @@ First, test this collection against the OpenActive Reference Implementation to e
 {% endhint %}
 
 ### Postman and your implementation
+
+{% hint style="info" %}
+Note that there is an Oauth2 template setup, that you may need to adjust to work with your implementation, here is how to use auth in Postman (LINK)
+{% endhint %}
 
 Throughout the guide, you will see prompts to run the Postman against your implementation. As a guide, here are those stages:
 
