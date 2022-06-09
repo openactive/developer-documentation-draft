@@ -275,7 +275,7 @@ The `Order` response contains some properties that have not appeared before:
 
 You can now run the `PUT Book (B)` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a response that matches the example above. You may wish to run the requests as follows, using the simple booking flow:&#x20;
 
-* `GET Sample requests`
+* Select the `GET Sample X (Simple)` request (where `X` is your desired opportunity type)
 * `PUT Checkpoint 1 (C1)`
 * `PUT Checkpoint 2 (C2)`
 * `PUT Book (B)`

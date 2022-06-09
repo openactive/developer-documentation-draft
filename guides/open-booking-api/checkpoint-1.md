@@ -30,7 +30,7 @@ Reminder - an opportunity is an instance of an event e.g. "Yoga Tuesday 14th 7pm
 You'll need to have installed Postman and set up the workspace, instructions for this can be [found here](../../getting-started/tools-and-resources/testing-with-postman.md).
 {% endhint %}
 
-We are now going to test with Postman, you'll find links throughout the guide but for this first one we will take you through step-by-step, ensure you've run the through the [Postman setup first](../../getting-started/tools-and-resources/testing-with-postman.md).
+We are now going to test with Postman, you'll find links throughout the guide but for this first one we will take you through step-by-step, ensure you've run through the [Postman setup first](../../getting-started/tools-and-resources/testing-with-postman.md).
 
 * Select the "Open Booking API" collection
 * Ensure the Broker Microservice is running in the background.

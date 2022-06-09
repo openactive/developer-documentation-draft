@@ -93,9 +93,11 @@ The `acceptedOffer` property within the Orders feed must include a snapshot of t
 
 </details>
 
-You can now run the `GET Orders Feed` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a response that matches the example above. You may wish to run the requests as follows, using the simple booking flow:&#x20;
+You can now run the `GET Orders Feed` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf) found within the common operations folder. and if you've set this up correctly your should see a response that matches the example above.
 
-* `GET Sample requests`
+You may wish to run the requests as follows, using the simple booking flow:
+
+* Select the `GET Sample X (Approval)` request (where `X` is your desired opportunity type)
 * `PUT Checkpoint 1 (C1)`
 * `PUT Checkpoint 2 (C2)`
 * `PUT Book (B)`
@@ -304,9 +306,9 @@ You should respond to this request with the full contents of the Opportunity wit
 
 </details>
 
-You can now run the `GET Order Status` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a response that matches the example above. You may wish to run the requests as follows, using the simple booking flow:&#x20;
+You can now run the `GET Order Status` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf) found within the common operations folder, and if you've set this up correctly your should see a response that matches the example above. You may wish to run the requests as follows, using the simple booking flow:&#x20;
 
-* `GET Sample requests`
+* Select the `GET Sample X (Approval)` request (where `X` is your desired opportunity type)
 * `PUT Checkpoint 1 (C1)`
 * `PUT Checkpoint 2 (C2)`
 * `GET Order Status`

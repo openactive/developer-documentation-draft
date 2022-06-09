@@ -16,34 +16,40 @@ You should have complete your Open Opportunity Feed implementation before using 
 
 Firstly you need to create a postman account and install the postman app locally, a download can be found here [https://www.postman.com/downloads/](https://www.postman.com/downloads/).
 
-Next, you should import the Open Booking API collection into your postman, by clicking the button below:
-
 {% embed url="https://www.postman.com/openactive/workspace/openactive-implementation-guide/overview" %}
 Open Postman Workspace
 {% endembed %}
 
-### Broker Microservice setup
+### **Overview**
 
-The postman collection you have imported operates by using a Broker Microservice that harvest data from your Open Opportunity Feeds. To set this service up follow these steps:&#x20;
+This Postman Collection contains "Sample" requests that use the test suite to pick a random opportunity from OpenActive feeds. It then provides C1, C2 and B requests to make a booking against this opportunity.
 
-* Open a terminal in a appropriate directory and run&#x20;
-  * `git clone` [`https://github.com/openactive/openactive-test-suite.git`](https://github.com/openactive/openactive-test-suite.git)``
-* Change into the `openactive-test-suite` directory and open the code in your code editor
-* Make a copy of the `config/default.json` file, and leave the copy in the config folder
-* Rename this copied file `dev.json`
-* Within the `dev.json` file change the `datasetSiteUrl` to your dataset site URL and save the file
-* Return to your terminal within the openactive-test-suite directory run `npm install`
-* You can then start the broker, which will retrieve your feeds, to do this run:
-  * `NODE_ENV=dev npm run start-broker`
-* You will see the logs of the Broker Microservice running, this will keep running until it has harvested your feed. Leave it running in the background.
-* In your Postman, select the Open Booking API collection, and select the 'Variables' tab.&#x20;
-* Set the baseUri variable to your Dataset site URL, so the postman knows where your Open Opportunity Feeds are located.&#x20;
+{% hint style="info" %}
+Note that each request validates the response automatically using the OpenActive Validator within Postman, and any validator errors are displayed in the "Test Results" tab in Postman within C1, C2 etc.
+{% endhint %}
 
-![](<../../.gitbook/assets/Screenshot from 2022-06-01 10-53-59.png>)
+### **Getting Started**
 
-* Select the 'Sample requests' GET request and click 'Send'.&#x20;
-* You should see a 200 response with a body that contains an object with data that will be used for other requests in the Postman collection.
+First, test this collection against the OpenActive Reference Implementation, to ensure that you've installed everything correctly, by doing the following:
 
-![](<../../.gitbook/assets/Screenshot from 2022-06-01 10-55-51.png>)
+1. Run the broker-microservice from within the OpenActive Test Suite:\
+   a. `git clone https://github.com/openactive/openactive-test-suite.git`\
+   b. `npm install`\
+   c. `npm run start-broker`
+2. "Fork" the "Open Booking API" collection in Postman
+3. Ensure the "Hosted Reference Implementation" is selected from the Environment dropdown in the top righthand corner.
+4. Select the "Open Booking API" collection, and then at the bottom of the page click "Get New Access Token", use the username "test1" and the password "test1" to complete the authentication flow, then click "Use Token".
+5. Click one of the "Sample" requests on the left and "Run" the request.
+6. Proceed through C1, C2, and B requests to make a booking for the Simple Flow (or C1, C2, P, accept, B for the Approval Flow).
 
-You are now ready to make other requests to your Open Booking API endpoints - you may not have started creating them yet, that's okay, you can start by heading to [this guide here.](../../required-features-guides/simple-booking/)
+### Postman and your implementation
+
+Throughout the guide you will see prompts to run the Postman against your implementation, as a guide here are those stages:
+
+1. Create a new Environment in Postman with values relevant to your implementation
+2. Setup a [`dev.json` file](https://developer.openactive.io/open-booking-api/test-suite#step-2-create-a-local-configuration-file) to point the test suite to the same environment
+3. Run the broker-microservice from within the OpenActive Test Suite using the configuration data in `dev.json`:\
+   a. `export NODE_ENV=dev`\
+   b. `npm run start-broker`
+4. Click one of the "Sample" requests on the left and "Run" the request.
+5. Proceed through C1, C2, and B requests to make a booking for the Simple Flow (or C1, C2, P, accept, B for the Approval Flow).

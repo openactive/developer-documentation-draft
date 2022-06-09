@@ -16,7 +16,7 @@ You will need to ensure that both your C1 and C2 endpoints are changed so that t
 
 Within Postman simply use the "Approval Flow" requests instead of the "Simple Flow" requests.
 
-![](<../../.gitbook/assets/Screenshot from 2022-06-01 11-44-18.png>)
+![](<../../.gitbook/assets/Screenshot from 2022-06-09 13-53-33.png>)
 
 ## &#x20;Order Proposal (P)
 
@@ -282,7 +282,7 @@ The response should contain the `OrderProposal` with an `orderProposalStatus` of
 
 You can now run the `PUT Proposal (P)` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a response that matches the example above. You may wish to run the requests in the approval flow order, as follows:&#x20;
 
-* `GET Sample requests`
+* Select the `GET Sample X (Approval)` request (where `X` is your desired opportunity type)
 * `PUT Checkpoint 1 (C1)`
 * `PUT Checkpoint 2 (C2)`
 * `PUT Proposal (P)`
@@ -342,7 +342,7 @@ Since the only request made to this endpoint is a rejection of an orderProposal 
 
 You can now run the `PATCH Proposal update` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a 204 response. You may wish to run the requests in the approval flow order, as follows:&#x20;
 
-* `GET Sample requests`
+* Select the `GET Sample X (Approval)` request (where `X` is your desired opportunity type)
 * `PUT Checkpoint 1 (C1)`
 * `PUT Checkpoint 2 (C2)`
 * `PUT Proposal (P)`

@@ -18,7 +18,7 @@ The broker will make an empty `DELETE` request to this endpoint which you should
 
 You can now run the `DELETE OrderQuote Deletion` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a 204 response. You may wish to run the requests in Postman as follows:
 
-* `GET Sample requests`
+* Select the `GET Sample X (Approval)` request (where `X` is your desired opportunity type)
 * `PUT Checkpoint 1 (C1)`
 * `PUT Checkpoint 2 (C2)`
 * `DELETE OrderQuote Deletion`
@@ -63,9 +63,9 @@ The `orderItemStatus` must indicate a cancellation, as shown in the example abov
 
 You should cancel the bookings for the orderItems in the request, and you should return a empty response with a 204 status, even if the item has already been cancelled.
 
-You can now run the `PATCH Order Cancellation` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a 204 response. You may wish to run the requests as follows, using the simple booking flow:&#x20;
+You can now run the `PATCH Order Cancellation` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf) found within the common operations folder, and if you've set this up correctly your should see a 204 response. You may wish to run the requests as follows, using the simple booking flow:&#x20;
 
-* `GET Sample requests`
+* Select the `GET Sample X (Approval)` request (where `X` is your desired opportunity type)
 * `PUT Checkpoint 1 (C1)`
 * `PUT Checkpoint 2 (C2)`
 * `PUT Book (B)`
@@ -125,9 +125,9 @@ This request should only be used by the broker in cases of a fatal error or when
 
 The response should be empty with a 204 status when a order is successfully deleted in your system following the request.
 
-You can now run the `DELETE Order Deletion` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a response that matches the example above. You may wish to run the requests as follows, using the simple booking flow:&#x20;
+You can now run the `DELETE Order Deletion` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf) found within the common operations folder, and if you've set this up correctly your should see a response that matches the example above. You may wish to run the requests as follows, using the simple booking flow:&#x20;
 
-* `GET Sample requests`
+* Select the `GET Sample X (Approval)` request (where `X` is your desired opportunity type)
 * `PUT Checkpoint 1 (C1)`
 * `PUT Checkpoint 2 (C2)`
 * `PUT Book (B)`
