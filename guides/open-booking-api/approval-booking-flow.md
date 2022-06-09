@@ -12,9 +12,9 @@ We've previously discussed the [approval booking flow](api-endpoints.md#approval
 
 You will need to ensure that both your C1 and C2 endpoints are changed so that the `orderRequiresApporval` is `true` if you are going to use the approval booking flow in your implementation. You will also need to create two further endpoints which are outlined below.
 
-### Postman adjustments
+### Postman
 
-For the approval booking flow to be tested using the Postman collection you've already set up, you'll need to mkae changes to the `GET Sample requests` body. Head to the postman, and select the `GET Sample requests` and select the 'body' tab. Change the `"test:testOpenBookingFlow"` from `"OpenBookingSimpleFlow"` to `"OpenBookingApprovalFlow"` and click save.&#x20;
+Within Postman simply use the "Approval Flow" requests instead of the "Simple Flow" requests.
 
 ![](<../../.gitbook/assets/Screenshot from 2022-06-01 11-44-18.png>)
 

@@ -32,11 +32,10 @@ You'll need to have installed Postman and set up the workspace, instructions for
 
 We are now going to test with Postman, you'll find links throughout the guide but for this first one we will take you through step-by-step, ensure you've run the through the [Postman setup first](../../getting-started/tools-and-resources/testing-with-postman.md).
 
-* Head to the [Postman documentation](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and click "Run in Postman"
 * Select the "Open Booking API" collection
 * Ensure the Broker Microservice is running in the background.
-* Select the `GET Sample requests` request
-* Click 'Send' and see a response body containing data for other requests in the Postman.
+* Select the `GET Sample X (Simple)` request (where `X` is your desired opportunity type)
+* Click 'Send' and see a response body containing a randomly selected opportunity, which is used to parameterise the other requests in Postman.
 * Select the `PUT Checkpoint 1 (C1)` request
 * Click 'Send' and if your C1 request is set up correctly you'll see a 200 status response, with a body containing a correctly formatted OrderQuote. For now you will see an error, since you have not set up your endpoint yet.
 

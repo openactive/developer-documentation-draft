@@ -16,11 +16,19 @@ You should have complete your Open Opportunity Feed implementation before using 
 
 Firstly you need to create a postman account and install the postman app locally, a download can be found here [https://www.postman.com/downloads/](https://www.postman.com/downloads/).
 
-Next, you should import the Open Booking API collection into your postman, by clicking the button below:
+Next, you should import the Open Booking API collection into your postman.
 
-{% embed url="https://www.postman.com/openactive/workspace/openactive-implementation-guide/overview" %}
-Open Postman Workspace
-{% endembed %}
+Follow [this link](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), then click "Run in Postman" and you will be prompted to run Postman locally and import the collection to a workspace.
+
+![](<../../.gitbook/assets/Screenshot from 2022-06-01 10-09-20.png>)
+
+![](<../../.gitbook/assets/Screenshot from 2022-06-01 10-10-21.png>)
+
+
+
+![](<../../.gitbook/assets/Screenshot from 2022-06-01 10-10-58.png>)
+
+
 
 ### Broker Microservice setup
 
