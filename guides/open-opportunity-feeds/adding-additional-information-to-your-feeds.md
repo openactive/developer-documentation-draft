@@ -12,7 +12,7 @@ You may wish to publish certain amenities that sellers offer via your booking sy
 
 The reference documentation shows you a table that outlines what the additional information is used for, in this case for sharing information on amenities such as car park, wifi, changing room or vending machine information.&#x20;
 
-Other columns in the reference documentation with give you information on where the property can be placed, and an example of the object. For Amenities you will see the reference outlines taht the value in the object can be set to "True / false / Null" and the example looks as follows:&#x20;
+Other columns in the reference documentation with give you information on where the property can be placed, and an example of the object. For Amenities you will see the reference outlines that the value in the object can be set to "True / false / Null" and the example looks as follows:&#x20;
 
 <details>
 
