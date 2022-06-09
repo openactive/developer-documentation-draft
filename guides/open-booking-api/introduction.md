@@ -42,7 +42,7 @@ The organisation providing access to events or facilities via a Booking System e
 
 #### Payment Provider
 
-The service providing payment processing between the Customer, Broker and Seller. Payment is mostly outside the scope of the Open Booking API, and implementation can vary. We will go in to more detail on this later.
+The service providing payment processing between the Customer, Broker and Seller. Payment is mostly outside the scope of the Open Booking API and implementation can vary, we will go in to more detail on this later.
 
 ## What you are going to make
 
@@ -56,20 +56,20 @@ Your API implementation will also handle other common situations: abandonment; c
 
 ## Multiple and single seller systems
 
-A significant difference between booking systems is whether they support single or multiple sellers.
+A significant difference between booking systems is whether they support a single or multiple sellers.
 
 * **Single Seller**: The booking system either supports a single Seller by design (e.g. an agency build for a specific organisation), or the booking system is designed to have a database provisioned for each customer (e.g. larger leisure management solutions deployed on-premise or cloud hosted).
-* **Multiple Sellers**: The booking system is multi-tenancy within the same database, so for example, multiple Sellers are able to log in and manage sessions and facilities within the same underlying database (e.g. a booking system targeting at a large number of small/medium size activity providers).
+* **Multiple Sellers**: The booking system is multi-tenancy within the same database, so for example multiple Sellers are able to log in and manage sessions and facilities within the same underlying database (e.g. a booking system targeting at a large number of small/medium size activity providers).
 
-Whether your system has a single or multiple sellers, you can add the Open Booking API to your system, but there are some differences in implementation which will be highlighted along the way.
+Whether your system has a single or multiple sellers you can add the Open Booking API to your system but there are some differences in implementation which will be highlighted along the way.
 
 ## Approach
 
-This guide will hopefully give you all the information you need to implement the Open Booking API  in your booking system. We take a step by step approach and encourage you to read the sections in order. However, we have tried where possible to also make each section useful to someone looking for an answer to a specific problem.
+This guide will hopefully give you all the information you need to implement the Open Booking API  in your booking system. We take a step by step approach and encourage you to read the sections in order. However we have tried where possible to also make each section useful to someone looking for an answer to a specific problem.
 
-This is a general guide for developers using any language or framework, but where language specific tools exist, we will point them out.
+This is a general guide for developers using any language or framework but where language specific tools exist we will point them out.
 
 If you are still deciding whether you want to add the Open Booking API to your booking system, it should still be useful to read the guide to get an idea of what is involved. We also have some tips on [estimating an OpenActive implementation project](../../getting-started/estimating-an-openactive-implementation.md).
 
-In the next section, we will take a look at how a customer makes a booking using the Open Booking API and the specific endpoints you will need to implement in your booking system.
+In the next section we will take a look at how a customer makes a booking using the Open Booking API and the specific endpoints you will need to implement in your booking system.
 

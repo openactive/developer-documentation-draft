@@ -49,7 +49,7 @@ First, test this collection against the OpenActive Reference Implementation to e
 ### Postman and your implementation
 
 {% hint style="info" %}
-Note that there is an Oauth2 template setup, that you may need to adjust to work with your implementation, here is how to use auth in Postman (LINK)
+Note that there is an Oauth2 template setup in the authorisation tab of the collection, that you may need to adjust to work when building your implementation. Here is the [Postman documentation on authorizing requests](https://learning.postman.com/docs/sending-requests/authorization/).
 {% endhint %}
 
 Throughout the guide, you will see prompts to run the Postman against your implementation. As a guide, here are those stages:

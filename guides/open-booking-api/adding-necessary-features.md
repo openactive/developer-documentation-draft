@@ -18,17 +18,17 @@ Here are the most common features:
 
 ## Planning
 
-First, identify which features are part of your existing booking system, then split them into three categories:
+First identify which features are part of your existing booking system, then split them in to three categories:
 
 1. Features required for your booking system to work at all
 2. Features required to give Open Booking users a good experience of your system
 3. Features that enhance booking through your system, but are not essential
 
-Obviously, you must implement all features from (1) before you can make your API publicly available. We also strongly recommend implementing all features from (2) before going live, particularly if you have a multiple seller system, to avoid customers booking through your API from having a lesser experience.
+Obviously you must implement all features from (1) before you can make your API publicly available. We also strongly recommend implementing all features from (2) before going live, particularly if you have a multiple seller system, to avoid customers booking through your API from having a lesser experience.
 
 ## Implementing features
 
-Most features simply require exposing more fields in your API responses, though some are more involved. The OpenActive test suite has tests for most features, and we will go over how to configure your booking system's feature-set below.
+Most features simply require exposing more fields in your API responses, though some are more involved. The OpenActive test suite has tests for most features, and we will go over how to configure for your booking system's feature-set below.
 
 Reference documentation for all features can be found here (LINK).
 
@@ -123,7 +123,7 @@ An `Order` with payment looks like this:
 
 </details>
 
-Details for all fields can be found in the [data model reference](../../reference/data-model/), or the relevant section of the [Open Booking API specification](https://openactive.io/open-booking-api/EditorsDraft/1.0CR3/#oa-payment).
+Details for all fields can be found in the data model reference (LINK), or the relevant section of the [Open Booking API specification](https://openactive.io/open-booking-api/EditorsDraft/1.0CR3/#oa-payment).
 
 The broker will send payment information as part of endpoint B, so you will need to change that endpoint to do the following:
 
@@ -142,5 +142,5 @@ You should be able to follow a similar process for adding other features of your
 
 ## Up next
 
-You are almost there! Next, we will go through what you need to think about before making your API publicly available, in particular some additional features that multiple seller systems should add for the sellers to manage how the data is used in the API.
+You are almost there! Next we will go through what you need to think about before making your API publicly available, in particular some additional features that multiple seller systems should add for the sellers to manage how the data is used in the API.
 

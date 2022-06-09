@@ -1,9 +1,9 @@
 # Open Booking API data model
 
-You will have already considered how the OpenActive data model fits with your booking system when implementing your opportunity feeds. As we saw in the previous section on API endpoints, there are a few new objects for the API. As you did when implementing the feeds, you may need to make adjustments to your database schema or code.
+You will have already considered how the OpenActive data model fits with your booking system when implementing your opportunity feeds. As we saw in the previous section on API endpoints, there are a few new objects for the API. As you did when implementing the feeds you may need to make adjustments to your database schema or code.
 
 {% hint style="info" %}
-OpenActive has open-source data model libraries (LINK) for .NET, PHP, Ruby, and Node JS that can help when mapping your data to the OpenActive data model.
+OpenActive has open source data model libraries (LINK) for .NET, PHP, Ruby, and Node JS that can help when mapping your data to the OpenActive data model.
 {% endhint %}
 
 Let's take the objects in the OpenActive data model one by one and discuss how this might fit in your existing system.
@@ -28,7 +28,7 @@ An object that associates a bookable opportunity with a specific order. This mig
 
 #### Offer
 
-An offer represents the price of an opportunity, or prices if there are multiple options based on, e.g. the age of the attendee. If this concept does not exist in your system, you might be able to build it from other existing data.
+An offer represents the price of an opportunity, or prices if there are multiple options based on e.g. the age of the attendee. If this concept does not exist in your system, you might be able to build it from other existing data.
 
 #### Seller
 
@@ -42,9 +42,9 @@ We will cover this in detail later in [Authentication](authentication.md).
 
 If the data model described above is similar to your booking system's, then it is likely you will only have to add a few columns to your database tables to work with the Open Booking API.&#x20;
 
-However, if it is significantly different, you will have to make more substantial changes. You might choose to adapt your system to the Open Booking data model, to add new tables for concepts that do not exist in your current system, or even build a separate service for the API.
+However if it is significantly different you will have to make more substantial changes. You might choose to adapt your system to the Open Booking data model, to add new tables for concepts that do not exist in your current system, or even build a separate service for the API.
 
-Whichever approach you take, we recommend first attempting to implement the C1 endpoint, and ideally C1 and B too, within your existing system to get an idea of where issues are going to arise.&#x20;
+Whichever approach you take we recommend first attempting to implement the C1 endpoint, and ideally C1 and B too, within your existing system to get an idea of where issues are going arise.&#x20;
 
 ## Up next
 

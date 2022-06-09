@@ -4,7 +4,7 @@ Congratulations, you now have a working Open Booking API!&#x20;
 
 You might have already deployed to a staging environment but if not it is recommended you do so to iron out any issues with running your API in your production environment. It should also be fine to deploy to production, though you may want to disable your dataset site and restrict access through your OpenID authentication in production for now.
 
-There are a few things left to consider when going live:
+There are a few things left to consider to consider when going live:
 
 * Testing your staging environment with the test suite.
 * Adding Open Booking API administration tools to your booking system.
@@ -46,7 +46,7 @@ npm run validate-feeds "<your production dataset site URL>"
 
 If you have a single seller system you may want to provide a user interface to administrators. This could be to help with debugging feeds, or to provide metrics on how your feeds and API are being used. You may already have these administration tools and can simply integrate the Open Booking API in a way that makes sense for your booking system.
 
-However, for single seller systems, none of these tools are required to go live.
+However for single seller systems none of these tools are required to go live.
 
 ### Multiple seller systems
 
@@ -64,7 +64,7 @@ You are encouraged to give sellers control over the seller to broker relationshi
 
 #### Terms and conditions
 
-Sellers should be able to provide URLs for their terms and conditions and privacy policy, to be published in the feed.
+Sellers should be able to provide URLs for their terms and conditions and privacy policy, to be publish in the feed.
 
 #### Feed validation interface
 
@@ -72,4 +72,4 @@ You should provide an interface that allows sellers to see how their data will b
 
 #### Reporting
 
-Sellers should be able to see information on bookings that have been made through the API. This could be a simple list of bookings made through the API with relevant metadata like broker, activity, etc. You may also want to provide useful aggregate metrics such as bookings-per-broker or similar.
+Sellers should be able to see information on bookings that have been made through he API. This could be a simple list of bookings made through the API with relevant metadata like broker, activity, etc. You may also want to provide useful aggregate metrics such as bookings-per-broker or similar.

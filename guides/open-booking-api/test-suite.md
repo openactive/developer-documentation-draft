@@ -284,16 +284,16 @@ The section we are interested in is `integrationTests` . Change the following pa
 
 * `bookableOpportunityTypesInScope` By default `ScheduledSession` and `FacilityUseSlot` are set to true. This means the test suite will only run tests that are relevant to those opportunity types. Configure this so that opportunity types that currently work with your API are set to `true` and all the rest are set to `false`.
 * `bookingFlowsInScope` By default both simple and approval booking flows are tested. If you have not implemented the approval booking flow, set `OpenBookingApprovalFlow` to `false` .
-* `implementedFeatures` This is where you will eventually configure the test suite to enable the specific features your booking system implements. For now, set all fields that are currently set to `true` to false, except for `dataset-site` , `opportunity-feed`, and `multiple-sellers`, `named-leasing`, or `anonymous-leasing` if applicable.
+* `implementedFeatures` This is where you will eventually configure the test suite to enable the specific features your booking system implements. For now set all fields that are currently set to `true` to false, except for `dataset-site` , `opportunity-feed`, and `multiple-sellers`, `named-leasing`, or `anonymous-leasing` if applicable.
 
-Now run the test suite again and fewer tests will run, and more of them should pass. If any have failed go back and fix your implementation so that they pass.
+Now run the test suite again and fewer test will run, and more of them should pass. If any have failed go back and fix your implementation so that they pass.
 
 ## Random and Controlled mode
 
-As it is currently configured the test suite will pick random opportunities from your feeds to test your API. After several runs, it might run out of bookable opportunities to test against and therefore fail.&#x20;
+As it is currently configured the test suite will pick random opportunities from your feeds to test your API. After several runs it might run out of bookable opportunities to test against and therefore fail.&#x20;
 
 One way to solve this issue is to run a script to reseed your development database so that the test suite has fresh data to run against. Each time you run the test suite, first run your script and the tests should work as expected. This does mean that the test suite will need to harvest your feeds every time you reseed your database.
 
 A more robust alternative is to use the "controlled" mode of the test suite which can be turned on by setting integrationTests -> useRandomOpportunities in the configuration to `false`. In controlled mode the test suite will reseed your database for you, removing the need for your own script and for the test suite to harvest your feeds on every run.&#x20;
 
-Controlled mode requires your booking system to implement the OpenActive test interface. You can read about how to implement this in [Implementing the test interface](../../reference/implementing-the-test-interface.md). Implementing the test interface so you can use controlled mode is not essential but it is strongly recommended as it will allow you to iterate on your booking API implementation more quickly.
+Controlled mode requires your booking system to implement the OpenActive test interface. You can read about how to implement this in [Implementing the test interface](../../reference/implementing-the-test-interface.md). Implementing the test interface so you can use controlled mode is not essential but it is strongly recommended as it will allow you iterate on your booking API implementation more quickly.
