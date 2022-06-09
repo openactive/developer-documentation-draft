@@ -11,10 +11,10 @@ description: >-
 Postman is an API tool - it enables you to generate test requests to your local implementation and tests whether the response you are providing is correct. Postman will be used to test your Open Booking API implementation.&#x20;
 
 {% hint style="info" %}
-You should have complete your Open Opportunity Feed implementation before using setting up Postman.
+You should have completed your Open Opportunity Feed implementation before using setting up Postman.
 {% endhint %}
 
-Firstly you need to create a postman account and install the postman app locally, a download can be found here [https://www.postman.com/downloads/](https://www.postman.com/downloads/).
+Firstly you need to create a Postman account and install the Postman app locally. A download can be found here [https://www.postman.com/downloads/](https://www.postman.com/downloads/).
 
 {% embed url="https://www.postman.com/openactive/workspace/openactive-implementation-guide/overview" %}
 Open Postman Workspace
@@ -30,7 +30,7 @@ Note that each request validates the response automatically using the OpenActive
 
 ### **Getting Started**
 
-First, test this collection against the OpenActive Reference Implementation, to ensure that you've installed everything correctly, by doing the following:
+First, test this collection against the OpenActive Reference Implementation to ensure that you've installed everything correctly by doing the following:
 
 1. Run the broker-microservice from within the OpenActive Test Suite:\
    a. `git clone https://github.com/openactive/openactive-test-suite.git`\
@@ -38,13 +38,19 @@ First, test this collection against the OpenActive Reference Implementation, to 
    c. `npm run start-broker`
 2. "Fork" the "Open Booking API" collection in Postman
 3. Ensure the "Hosted Reference Implementation" is selected from the Environment dropdown in the top righthand corner.
-4. Select the "Open Booking API" collection, and then at the bottom of the page click "Get New Access Token", use the username "test1" and the password "test1" to complete the authentication flow, then click "Use Token".
+4. Select the "Open Booking API" collection, and then at the bottom of the page**,** click "Get New Access Token", use the username "test1", and the password "test1" to complete the authentication flow, then click "Use Token".
 5. Click one of the "Sample" requests on the left and "Run" the request.
 6. Proceed through C1, C2, and B requests to make a booking for the Simple Flow (or C1, C2, P, accept, B for the Approval Flow).
 
+{% hint style="warning" %}
+**Ensure that you have pulled the latest updates for your collection**
+
+****![](<../../.gitbook/assets/Screenshot 2022-06-09 at 11.53.49.png>)****
+{% endhint %}
+
 ### Postman and your implementation
 
-Throughout the guide you will see prompts to run the Postman against your implementation, as a guide here are those stages:
+Throughout the guide, you will see prompts to run the Postman against your implementation. As a guide, here are those stages:
 
 1. Create a new Environment in Postman with values relevant to your implementation
 2. Setup a [`dev.json` file](https://developer.openactive.io/open-booking-api/test-suite#step-2-create-a-local-configuration-file) to point the test suite to the same environment

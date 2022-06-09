@@ -6,21 +6,21 @@ description: Ensure you've taken these steps before you get started with the gui
 
 ## Reference implementation
 
-This is an important resource for your implementation. It is an example of how once implemented correctly an Open Opportunity Feed will appear to users. We will be mentioning it throughout the guides and using it in various examples. If you'd like to get familiar with it now you can [view it here](https://reference-implementation.openactive.io/OpenActive).
+This is an important resource for your implementation. It is an example of how, once implemented correctly, an Open Opportunity Feed will appear to users. We will mention it throughout the guides and use it in various examples. If you'd like to get familiar with it now, you can [view it here](https://reference-implementation.openactive.io/OpenActive).
 
 ## JSON viewer extensions
 
-You will be sharing your booking system data via what is called an Open Opportunity Feed. This is a feed of JSON objects - and it can be very helpful to use a browser extension that makes the JSON easy to read such as [JSON viewer](https://github.com/tulios/json-viewer). This will help you also when examining the reference implementation.&#x20;
+You will be sharing your booking system data via what is called an Open Opportunity Feed, which is a feed of JSON objects. It can be very helpful to use a browser extension that makes the JSON easy to read such as [JSON viewer](https://github.com/tulios/json-viewer). The JSON viewer will help you also when examining the reference implementation.&#x20;
 
 ## OpenActive validator
 
-As you work through the implementation you will want to check that the Open Opportunity feeds and Open Booking API responses are returning correctly. For this you can use the [OpenActive validator](https://validator.openactive.io/rpde). Don't worry if you don't understand all the terminology at this point, it will be introduced both guides.
+As you work through the implementation, you will want to check that the Open Opportunity feeds and Open Booking API responses are returning correctly. The [OpenActive validator](https://validator.openactive.io/rpde) has been created to make checking your responses easier, and don't worry if you don't understand all the terminology at this point, it will be introduced both guides. The validator runs in two modes, explained below:
 
 ### RPDE validation
 
-The [RPDE ](https://validator.openactive.io/rpde)validator is for testing a Open Opportunity Feed URL, particularly that the pages are formatted and operating correctly.
+The [RPDE ](https://validator.openactive.io/rpde)validator is for testing an Open Opportunity Feed URL, particularly that the pages are formatted and operating correctly.
 
-For example you can copy and paste the reference implementation URL below into the validation input bar, click validate and you will see the validator tests run, and results appear.
+For example you can copy and paste the reference implementation URL below into the validation input bar, click validate, and you will see the validator tests run and results appear.
 
 [`https://reference-implementation.openactive.io/feeds/scheduled-sessions`](https://reference-implementation.openactive.io/feeds/scheduled-sessions)``
 
@@ -28,9 +28,9 @@ For example you can copy and paste the reference implementation URL below into t
 
 The [Model](https://validator.openactive.io/) validator is for testing JSON produced by your Open Booking API and Open Opportunity feed implementation.
 
-For example you can take the code block below and copy it into the text editor on the left hand side of the validator.&#x20;
+For example, you can take the code block below and copy it into the text editor on the left-hand side of the validator.&#x20;
 
-You can select from the "MODE" drop down menu OrderQuote Creation C1 Request and then click validate. If you add and remove sections of the request or format the request incorrectly the validation with an error message that will suggest corrections to your request.&#x20;
+You can select from the "MODE" drop-down menu OrderQuote Creation C1 Request and then click validate. If you add and remove sections of the request or format the request incorrectly the validation will display an error message that will suggest corrections to your request.&#x20;
 
 <details>
 
@@ -83,13 +83,13 @@ You can select from the "MODE" drop down menu OrderQuote Creation C1 Request and
 
 </details>
 
-The validator also contains samples of JSON under the "SAMPLES" dropdown, which may be useful to refer to when working on you implementation.&#x20;
+The validator also contains samples of JSON under the "SAMPLES" drop-down, which may be useful to refer to when working on your implementation.&#x20;
 
 
 
 ## OpenActive test suite
 
-The OpenActive test suite enables you to test both your Open Opportunity Feeds and you Open Booking API implementation. You will be able to configure the test suite so that it tests the features that are relevant to your booking system, but for now you just need to download it and make sure it works by running it against the [reference implementation](./#reference-implementation).&#x20;
+The OpenActive test suite enables you to test both your Open Opportunity Feeds and your Open Booking API implementation. You will be able to configure the test suite to test features that are relevant to your booking system, but for now, you need to download it and make sure it works by running it against the [reference implementation](./#reference-implementation).&#x20;
 
 ### Steps to follow
 
@@ -109,7 +109,7 @@ Wait approximately 60 seconds for the test suite to run against our test impleme
 If you find the command is not working - please get in touch (contact link)
 {% endhint %}
 
-Next, you need to set up your own Config. Start by copying `default.json` as follows (linux command line) `cp config/default.json config/dev.json`
+Next, you need to set up your Config. Start by copying `default.json` as follows (linux command line) `cp config/default.json config/dev.json`
 
 Open the `config/dev.json` file you just created
 
@@ -117,13 +117,13 @@ In the JSON under broker, make sure `datasetSiteUrl` points to a `datasetSiteUrl
 
 Before we run the test suite against your `datasetSiteUrl` you need to configure your bash profile by running `export NODE_ENV=dev` .
 
-You also need to select a available port i.e. `export PORT=4567`
+You also need to select an available port i.e. `export PORT=4567`
 
 Now to run your first test, run the command below
 
 `NODE_ENV=dev npm start -- --runInBand test/features/core/dataset-site/`
 
-You should get an error as you have not setup your dataset site yet&#x20;
+You should get an error, shown below, as you have not setup your dataset site yet:
 
 ```
 Broker Microservice running on port 4567
