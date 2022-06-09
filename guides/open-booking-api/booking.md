@@ -1,6 +1,6 @@
 # Booking (B)
 
-Now the orderQuote has created and the orderItems and customer confirmed by your first two endpoints C1 and C2 it's time to make the booking. You will be building booking endpoint (B) which will receive a PUT request which should create an order in your booking system.
+Now the orderQuote has been created and the orderItems and customer confirmed by your first two endpoints C1 and C2, it's time to make the booking. You will be building booking endpoint (B), which will receive a PUT request which should create an order in your booking system.
 
 ### Request
 
@@ -70,13 +70,13 @@ Here's what a request will look like
 
 This request is different to the one made in C2. It now is an `Order` not an `OrderQuote` .
 
-You will also notice that the request contains a Payment property. This property has fields which you should be able to map to those which your payment provider and booking system require. as well as a totalPaymentDue property.
+You will also notice that the request contains a Payment property. This property has fields which you should be able to map to those which your payment provider and booking system require, as well as a totalPaymentDue property.
 
 This request also differs to C2 by including the `totalPaymentDue` for the `Order`.
 
 ### Response
 
-You should use the request to make a booking within your system. If the booking is successful you should respond with the order, an example response is shown below.&#x20;
+You should use the request to make a booking within your system. If the booking is successful, you should respond with the order, an example response is shown below.&#x20;
 
 <details>
 
@@ -271,9 +271,9 @@ The `Order` response contains some properties that have not appeared before:
 
 * `OrderItem` now contains an `@id` property that is a unique identifier, again in the format of a URL (it does not need to actually link to a web page).
 * `orderNumber` is a property that is meant for the customer, so they can have an identifier for the order.
-* `OrderItem` now contains the `orderItemStatus` property which shows that the item has been booked when the status is shown as `"https://openactive.io/OrderItemConfirmed"`
+* `OrderItem` now contains the `orderItemStatus` property, which shows that the item has been booked when the status is shown as `"https://openactive.io/OrderItemConfirmed"`
 
-You can now run the `PUT Book (B)` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a response that matches the example above. You may wish to run the requests as follows, using the simple booking flow:&#x20;
+You can now run the `PUT Book (B)` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly you should see a response that matches the example above. You may wish to run the requests as follows, using the simple booking flow:&#x20;
 
 * Select the `GET Sample X (Simple)` request (where `X` is your desired opportunity type)
 * `PUT Checkpoint 1 (C1)`
@@ -290,7 +290,7 @@ If you have used a lease make sure it is removed following a successful booking
 
 ### Error handling
 
-If the booking cannot be completed because there is a conflict with the `OrderItem`s and the availability in the system for example, or for any other reason the conditions of the booking have changed between C2 and B a 409 error should be raised.
+If the booking cannot be completed because there is a conflict with the `OrderItem`s and the availability in the system, for example, or for any other reason, the conditions of the booking have changed between C2 and B a 409 error should be raised.
 
 `OrderItem` errors returned from B are the same as those returned from C1 and C2.
 
@@ -298,5 +298,5 @@ Errors at the Book stage should be rare because they will almost always be caugh
 
 ## Up Next
 
-Now you have created main end points for the API it's time consider payment&#x20;
+Now you have created the main endpoints for the API it's time consider payment.
 

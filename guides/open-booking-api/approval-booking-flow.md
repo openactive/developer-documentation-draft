@@ -5,12 +5,12 @@ description: Two optional endpoints that enable sellers to approve or reject boo
 # Approval booking flow
 
 {% hint style="info" %}
-The Approval Booking Flow endpoints are not required and many booking system use the Simple Booking Flow. Decide which flow makes sense for your booking system and skip this section if you do not need the approval endpoints.
+The Approval Booking Flow endpoints are not required, and many booking systems use the Simple Booking Flow. Decide which flow makes sense for your booking system and skip this section if you do not need the approval endpoints.
 {% endhint %}
 
 We've previously discussed the [approval booking flow](api-endpoints.md#approval-booking-flow) and how it enables Sellers using your booking system to approve or reject bookings, now it's time to actually create the endpoints required.
 
-You will need to ensure that both your C1 and C2 endpoints are changed so that the `orderRequiresApporval` is `true` if you are going to use the approval booking flow in your implementation. You will also need to create two further endpoints which are outlined below.
+You will need to ensure that both your C1 and C2 endpoints are changed so that the `orderRequiresApporval` is `true` if you are going to use the approval booking flow in your implementation. You will also need to create two further endpoints, which are outlined below.
 
 ### Postman
 
@@ -20,11 +20,11 @@ Within Postman simply use the "Approval Flow" requests instead of the "Simple Fl
 
 ## &#x20;Order Proposal (P)
 
-An `orderProposal` is sent as a PUT request by the Broker to your booking system to request approval of an order. The broker will notify the customer that their order is pending approval.
+An `orderProposal` is sent as a PUT request by the Broker to your booking system to request approval of an order. The Broker will notify the customer that their order is pending approval.
 
 ### Request
 
-You should create an end point `PUT {baseURi}/order-proposals/{uuid}`
+You should create an endpoint `PUT {baseURi}/order-proposals/{uuid}`
 
 This endpoint will receive a `PUT` request, like the example below, the details submitted are identical to those required for endpoint B with the addition of an optional `lease`.
 
@@ -86,7 +86,7 @@ This endpoint will receive a `PUT` request, like the example below, the details 
 
 </details>
 
-This request is identical to the one made to the Book (B) endpoint, except that the `@type` is change to `OrderProposal`.
+This request is identical to the one made to the Book (B) endpoint, except that the `@type` is changed to `OrderProposal`.
 
 ### Response
 
@@ -280,7 +280,7 @@ The response should contain the `OrderProposal` with an `orderProposalStatus` of
 
 </details>
 
-You can now run the `PUT Proposal (P)` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a response that matches the example above. You may wish to run the requests in the approval flow order, as follows:&#x20;
+You can now run the `PUT Proposal (P)` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly, you should see a response that matches the example above. You may wish to run the requests in the approval flow order, as follows:&#x20;
 
 * Select the `GET Sample X (Approval)` request (where `X` is your desired opportunity type)
 * `PUT Checkpoint 1 (C1)`
@@ -291,7 +291,7 @@ You can run the [OpenActive Validator](https://validator.openactive.io/) to chec
 
 ### Error handling&#x20;
 
-If there are any errors with the orderProposal or orderItems you must respond with an error. It is unlikely that this errors will be raised at this stage, as similar errors should have been raised in C1 and C2 prior to the approval process.
+If there are any errors with the orderProposal or orderItems you must respond with an error. It is unlikely that errors will be raised at this stage, as similar errors should have been raised in C1 and C2 prior to the approval process.
 
 As with the Simple Booking Flow, errors must conform to the Open Booking API specification section [10.2 Error Model](https://openactive.io/open-booking-api/EditorsDraft/1.0CR3/#error-model).
 
@@ -313,13 +313,13 @@ Here is an example of an error response:&#x20;
 
 ## Order proposal update (U)
 
-If an orderProposal is accepted by the seller the order will be successfully created in your booking system and added to the order feed (another endpoint you will be creating shortly, and not to be confused with the opportunity feed). If however the Seller chooses to reject the orderProposal, i.e. they do not approve it, they will use this order proposal update endpoint to reject the proposal.&#x20;
+If an orderProposal is accepted by the Seller the order will be successfully created in your booking system and added to the order feed (another endpoint you will be creating shortly, and not to be confused with the opportunity feed). If however, the Seller chooses to reject the orderProposal, i.e. they do not approve it, they will use this order proposal update endpoint to reject the proposal.&#x20;
 
 ### Request
 
 You should create the endpoint `PATCH {baseUri}/order-proposals/{uuid}`&#x20;
 
-This end point should receive a `PATCH` request, here's an example of the request that will be made:
+This endpoint should receive a `PATCH` request, here is an example of the request that will be made:
 
 <details>
 
@@ -340,7 +340,7 @@ This end point should receive a `PATCH` request, here's an example of the reques
 
 Since the only request made to this endpoint is a rejection of an orderProposal the response can be empty and carry a 204 status to indicate the rejection was successfully received.&#x20;
 
-You can now run the `PATCH Proposal update` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a 204 response. You may wish to run the requests in the approval flow order, as follows:&#x20;
+You can now run the `PATCH Proposal update` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly you should see a 204 response. You may wish to run the requests in the approval flow order, as follows:&#x20;
 
 * Select the `GET Sample X (Approval)` request (where `X` is your desired opportunity type)
 * `PUT Checkpoint 1 (C1)`

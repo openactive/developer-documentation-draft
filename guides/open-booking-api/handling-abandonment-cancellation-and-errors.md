@@ -8,7 +8,7 @@ description: >-
 
 ## Abandonment
 
-A customer may start the flow of creating a booking but may not actually finalize it. In this instance the broker will use this endpoint to delete the orderQuote and release any lease being held.
+A customer may start the flow of creating a booking but may not actually finalize it. In this instance, the broker will use this endpoint to delete the orderQuote and release any lease being held.
 
 ### Request and Response
 
@@ -16,7 +16,7 @@ Create a route with the following structure `{baseUri}/order-quotes/{uuid}`
 
 The broker will make an empty `DELETE` request to this endpoint which you should respond to with an empty request carrying a 204 status if successful. You should remove any leases made associated with the booking.
 
-You can now run the `DELETE OrderQuote Deletion` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a 204 response. You may wish to run the requests in Postman as follows:
+You can now run the `DELETE OrderQuote Deletion` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly you should see a 204 response. You may wish to run the requests in Postman as follows:
 
 * Select the `GET Sample X (Approval)` request (where `X` is your desired opportunity type)
 * `PUT Checkpoint 1 (C1)`
@@ -61,9 +61,9 @@ The `orderItemStatus` must indicate a cancellation, as shown in the example abov
 
 ### Response
 
-You should cancel the bookings for the orderItems in the request, and you should return a empty response with a 204 status, even if the item has already been cancelled.
+You should cancel the bookings for the orderItems in the request, and you should return an empty response with a 204 status, even if the item has already been cancelled.
 
-You can now run the `PATCH Order Cancellation` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf) found within the common operations folder, and if you've set this up correctly your should see a 204 response. You may wish to run the requests as follows, using the simple booking flow:&#x20;
+You can now run the `PATCH Order Cancellation` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf) found within the common operations folder, and if you've set this up correctly you should see a 204 response. You may wish to run the requests as follows, using the simple booking flow:&#x20;
 
 * Select the `GET Sample X (Approval)` request (where `X` is your desired opportunity type)
 * `PUT Checkpoint 1 (C1)`
@@ -109,13 +109,13 @@ The `orderItemStatus` can only be a customer cancellation, any other status shou
 
 ## Deleting an order
 
-If something goes wrong with the entire booking flow, either because of a fatal error or perhaps during testing this end point can be used.
+If something goes wrong with the entire booking flow, either because of a fatal error or perhaps during testing this endpoint can be used.
 
 ### Request
 
 Ensure this route is present in your booking system `DELETE order/{uuid}`
 
-An empty DELETE request will be made by the broker to this endpoint, at which point the order should be hard deleted within your system, with only a stub of the order remaining containing the UUID. Alternatively, you may want to soft delete the order and purge all personal data from it.
+An empty DELETE request will be made by the broker to this endpoint, at which point the order should be hard deleted within your system, with only a stub of the order remaining which contains the UUID. Alternatively, you may want to soft delete the order and purge all personal data from it.
 
 If the order is present in the orders feed, a topic we will come on to shortly, it must be marked as deleted.&#x20;
 
@@ -123,9 +123,9 @@ This request should only be used by the broker in cases of a fatal error or when
 
 ### Response
 
-The response should be empty with a 204 status when a order is successfully deleted in your system following the request.
+The response should be empty with a 204 status when an order is successfully deleted in your system following the request.
 
-You can now run the `DELETE Order Deletion` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf) found within the common operations folder, and if you've set this up correctly your should see a response that matches the example above. You may wish to run the requests as follows, using the simple booking flow:&#x20;
+You can now run the `DELETE Order Deletion` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf) found within the common operations folder, and if you've set this up correctly you should see a response that matches the example above. You may wish to run the requests as follows, using the simple booking flow:&#x20;
 
 * Select the `GET Sample X (Approval)` request (where `X` is your desired opportunity type)
 * `PUT Checkpoint 1 (C1)`
@@ -159,4 +159,4 @@ C1, C2, P, B endpoints should return `OrderAlreadyExistsError` in response to a 
 
 ## Up next
 
-Now you have end points that enable a booking to be placed, in either the simple or approval booking flow, it's time to look at ensuring that only those who are authenticated can use your API to make bookings.
+Now you have endpoints that enable a booking to be placed, in either the simple or approval booking flow, it's time to look at ensuring that only those who are authenticated can use your API to make bookings.

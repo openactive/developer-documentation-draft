@@ -1,6 +1,6 @@
 # Checkpoint 2 (C2)
 
-Now you have completed checkpoint one (C1), it's time to move on to checkpoint 2 (C2). In this endpoint the broker will make a similar request except this time it will confirm the opportunity and the customer information.
+Now you have completed checkpoint one (C1), it's time to move on to checkpoint 2 (C2). In this endpoint, the broker will make a similar request, except this time it will confirm the opportunity and the customer information.
 
 ### Request
 
@@ -249,9 +249,9 @@ Here is an example of what your response will look like:
 
 </details>
 
-This response contains the same properties as in C1 except in addition it confirms the customer details.
+This response contains the same properties as in C1, except in addition, it confirms the customer details.
 
-You can now run the `PUT Checkpoint 2 (C2)` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a response that matches the example above. You may wish to run the requests as follows, using the simple booking flow:&#x20;
+You can now run the `PUT Checkpoint 2 (C2)` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly you should see a response that matches the example above. You may wish to run the requests as follows, using the simple booking flow:&#x20;
 
 * `GET Sample X (Simple)` request (where `X` is your desired opportunity type)
 * `PUT Checkpoint 1 (C1)`
@@ -273,4 +273,4 @@ Error handling is similar to [Checkpoint 1](checkpoint-1.md#error-handling). The
 
 ### Up next
 
-Now you have endpoints that allow a customer and a broker to select an opportunity to book, it's time to move on to completing the booking with the booking endpoint B
+Now you have endpoints that allow a customer and a broker to select an opportunity to book, it's time to move on to completing the booking with the booking endpoint B.
