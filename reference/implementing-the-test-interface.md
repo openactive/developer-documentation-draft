@@ -122,7 +122,7 @@ The endpoint is called when the test suite is run in both “Controlled” and �
 
 If this endpoint is not implemented, the features whose tests depend on this endpoint must be configured to “disabled-tests” mode, to allow the test suite to run successfully.
 
-The Booking System must respond with a `204` status code and an empty body to indicate success.
+The Booking System must respond with a `204` status code and an empty body to indicate success. If the action `@type` requested by the test suite is not recognised by your booking system, you should return an empty 400 error to make sure the test fails early.
 
 The example request below would execute the simulation specified by `test:SellerRequestedCancellationSimulateAction` on the `ScheduledSession` with `@id` of `https://id.booking-system.example.com/session-series/42`.
 
