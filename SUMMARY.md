@@ -62,6 +62,7 @@
 
 ## Archive
 
+* [Harvesting opportunity data](archive/harvesting-opportunity-data.md)
 * [Including geo coordinates](archive/including-geo-coordinates.md)
 * [Schedules](archive/schedules.md)
 * [Specifications Overview](archive/specifications-overview.md)
