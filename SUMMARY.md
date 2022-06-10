@@ -59,3 +59,12 @@
   * [Terms](reference/openactive-features/terms.md)
 * [Implementing the test interface](reference/implementing-the-test-interface.md)
 * [Open Data Fields](reference/open-data-fields.md)
+
+## Archive
+
+* [Including geo coordinates](archive/including-geo-coordinates.md)
+* [Schedules](archive/schedules.md)
+* [Specifications Overview](archive/specifications-overview.md)
+* [On-Demand Events](archive/on-demand-events.md)
+* [Virtual Events](archive/virtual-events.md)
+* [Opening Hours](archive/opening-hours.md)
