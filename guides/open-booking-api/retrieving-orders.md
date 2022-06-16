@@ -2,13 +2,13 @@
 
 ## Orders feed
 
-Broker and Brokers customers will want to be able to access a list of completed orders, so as to keep up-to-date and in sync with bookings on your system. The concept of Realtime Paged Data Exchange (RDPE) feeds is explained in more detail in the Open Opportunity Feeds guide (??? LINK).
+Broker and Brokers customers will want to be able to access a list of completed orders, so as to keep up-to-date and in sync with bookings on your system. The concept of Realtime Paged Data Exchange (RDPE) feeds is explained in more detail in the [Open Opportunity Feeds guide](../../required-features-guides/opportunity-feeds/).
 
 ### Request
 
 Ensure you have the route  `GET {baseURi}/orders-rpde`
 
-The broker will call this endpoint with an GET request.
+The broker will call this endpoint with a GET request.
 
 ### Response
 
@@ -93,7 +93,7 @@ The `acceptedOffer` property within the Orders feed must include a snapshot of t
 
 </details>
 
-You can now run the `GET Orders Feed` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf) found within the common operations folder. and if you've set this up correctly your should see a response that matches the example above.
+You can now run the `GET Orders Feed` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf) found within the common operations folder. and if you've set this up correctly you should see a response that matches the example above.
 
 You may wish to run the requests as follows, using the simple booking flow:
 
@@ -107,7 +107,7 @@ You can run the [OpenActive Validator](https://validator.openactive.io/) to chec
 
 ## Order status
 
-This endpoint is similar to orders feed, but the request is for a single opportunity instead of a feed. This end point is recommended but not required.
+This endpoint is similar to the orders feed, but the request is for a single opportunity instead of a feed. This end point is recommended but not required.
 
 ### Request
 
@@ -306,7 +306,7 @@ You should respond to this request with the full contents of the Opportunity wit
 
 </details>
 
-You can now run the `GET Order Status` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf) found within the common operations folder, and if you've set this up correctly your should see a response that matches the example above. You may wish to run the requests as follows, using the simple booking flow:&#x20;
+You can now run the `GET Order Status` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf) found within the common operations folder, and if you've set this up correctly you should see a response that matches the example above. You may wish to run the requests as follows, using the simple booking flow:&#x20;
 
 * Select the `GET Sample X (Approval)` request (where `X` is your desired opportunity type)
 * `PUT Checkpoint 1 (C1)`

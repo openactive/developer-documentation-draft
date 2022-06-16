@@ -4,7 +4,7 @@ description: Create your first endpoint for the Open Booking API.
 
 # Checkpoint 1 (C1)
 
-Now you have an understanding of how the booking flow works, and have understood how your own database maps to the objects required we can get started.
+Now you have an understanding of how the booking flow works and have understood how your own database maps to the objects required, we can get started.
 
 ### Endpoint URL
 
@@ -14,7 +14,7 @@ Firstly you should decide on the `baseUri` to form a namespace for your implemen
 Set your`DatasetSiteUrl`in your dataset site template to this `baseUri`. It will be the homepage for your Open Booking API, making it easy to discover.
 {% endhint %}
 
-Next, create a route in the following format that can receive a PUT request&#x20;
+Next, create a route in the following format that can receive a PUT request.
 
 `PUT {baseUri}/order-quote-templates/{uuid}`
 
@@ -27,7 +27,7 @@ Reminder - an opportunity is an instance of an event e.g. "Yoga Tuesday 14th 7pm
 ### Testing with Postman
 
 {% hint style="info" %}
-You'll need to have installed Postman and set up the workspace, instructions for this can be [found here](../../getting-started/tools-and-resources/testing-with-postman.md).
+You'll need to have installed Postman and set up the workspace. Instructions for this can be [found here](../../getting-started/tools-and-resources/testing-with-postman.md).
 {% endhint %}
 
 We are now going to test with Postman, you'll find links throughout the guide but for this first one we will take you through step-by-step, ensure you've run through the [Postman setup first](../../getting-started/tools-and-resources/testing-with-postman.md).
@@ -37,7 +37,7 @@ We are now going to test with Postman, you'll find links throughout the guide bu
 * Select the `GET Sample X (Simple)` request (where `X` is your desired opportunity type)
 * Click 'Send' and see a response body containing a randomly selected opportunity, which is used to parameterise the other requests in Postman.
 * Select the `PUT Checkpoint 1 (C1)` request
-* Click 'Send' and if your C1 request is set up correctly you'll see a 200 status response, with a body containing a correctly formatted OrderQuote. For now you will see an error, since you have not set up your endpoint yet.
+* Click 'Send', and if your C1 request is set up correctly you'll see a 200 status response, with a body containing a correctly formatted OrderQuote. For now you will see an error, since you have not set up your endpoint yet.
 
 ### Request
 
@@ -96,7 +96,7 @@ Here's a breakdown of the key fields in this request:
   * Each `orderItem` has a `@id` which is unique URL (that does not need to be an actual working link but a unique identifier) and a `@type` which corresponds to the type of `orderItem`.
 
 {% hint style="info" %}
-These guides will mention the key properties in requests and responses, for the details of every property used, head to the reference section (reference link).
+These guides will mention the key properties in requests and responses, for the details of every property used, head to the [reference section](../../reference/data-model/).
 {% endhint %}
 
 ### Response
@@ -283,14 +283,14 @@ Here is what your response will eventually look like:
 
 * `bookingService` is a property that contains details about your booking system, like it's `name` and `url`
 * `orderRequiresApporval` is a boolean property that indicates if the `OrderItem`'s require approval.&#x20;
-* `totalPaymentDue` is a property that outlines the specification of the price, for example the cost and currency.
-* `totalPaymentTax` is a property that outlines the specification for the tax, for example the amount of tax due, the name of the tax.&#x20;
+* `totalPaymentDue` is a property that outlines the specification of the price, for example, the cost and currency.
+* `totalPaymentTax` is a property that outlines the specification for the tax, for example, the amount of tax due, the name of the tax.&#x20;
 
 {% hint style="info" %}
 You can choose to use the `lease` field in your response to hold the booking for the customer, this can be extended or created as part of checkpoint 2 (C2).
 {% endhint %}
 
-You can now run the `PUT Checkpoint 1 (C1)` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly your should see a response that matches the example above.&#x20;
+You can now run the `PUT Checkpoint 1 (C1)` [Postman request](https://documenter.getpostman.com/view/21015180/Uz5DqdCf), and if you've set this up correctly you should see a response that matches the example above.&#x20;
 
 You can run the [OpenActive Validator](https://validator.openactive.io/) to check that your response is formatted correctly. You can remind yourself of how to use the OpenActive Validator [here](../../getting-started/tools-and-resources/#openactive-validator). &#x20;
 
@@ -298,7 +298,7 @@ You can run the [OpenActive Validator](https://validator.openactive.io/) to chec
 
 #### OrderItem errors
 
-If the items being ordered can no longer be ordered you should return an `error` with the relevant `OrderItem` along with the HTTP status code "409 Conflict". For example if all the available slots for an event have been booked:
+If the items being ordered can no longer be ordered, you should return an `error` with the relevant `OrderItem` along with the HTTP status code "409 Conflict". For example, if all the available slots for an event have been booked:
 
 <details>
 
@@ -483,7 +483,7 @@ If the items being ordered can no longer be ordered you should return an `error`
 
 </details>
 
-Only the `@type` field is required in the error. However for a better debugging experience for both users of your API and yourself you should also include a `description` field that describes why the error occurred in this particular case. There are other optional fields you may include in your errors if they are helpful:
+Only the `@type` field is required in the error. However, for a better debugging experience for both users of your API and yourself, you should also include a `description` field that describes why the error occurred in this particular case. There are other optional fields you may include in your errors if they are helpful:
 
 * `name` A short, human-readable summary of the problem type. It should not change from occurrence to occurrence of the problem.
 * `instance` A URI reference that identifies the specific occurrence of the problem.
@@ -494,7 +494,7 @@ There are a number of error `@type`s in the Open Booking API. For any `OrderItem
 
 #### Other errors
 
-For errors in any other part of the request you should return just the error, not the full `OrderQuote` object. For example if the broker details supplied are not valid:
+For errors in any other part of the request, you should return just the error, not the full `OrderQuote` object. For example, if the broker details supplied are not valid:
 
 <details>
 
@@ -519,7 +519,7 @@ There are many possible errors, all valid error `@type`s can be found in the [10
 
 #### Example errors in the Validator
 
-Example error responses can be found in the [Validator](https://validator.openactive.io/) under the "Samples" menu as shown below.
+Example error responses can be found in the [Validator](https://validator.openactive.io/) under the "Samples" menu, as shown below.
 
 ![](<../../.gitbook/assets/Screenshot 2022-06-06 at 17.06.57.png>)
 
